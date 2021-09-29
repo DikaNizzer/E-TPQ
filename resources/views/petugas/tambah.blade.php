@@ -1,0 +1,95 @@
+@extends('petugas.main')
+@section('container')
+
+<div class="bg">
+    <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images/santri.png" alt=""/>
+                    <h3>Assalamualaikum</h3>
+                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
+                        yang memusuhimu akan seperti teman yang setia.</p>
+                        <p><strong>Q.S Fusshilat: 34</strong></p>
+                </div>
+                <div class="col-md-9 register-right">
+                    {{-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                        </li>
+                    </ul> --}}
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Data Diri Santri</h3>
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="Absen">Nama : </label>
+                                        {{-- <p class="kotak">{{ $data->NAMASATRI }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Absen">Tanggal Lahir : </label>
+                                        {{-- <p class="kotak">{{ $data->TAGGALLHR }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Absen">Nama Orang Tua : </label>
+                                        {{-- <p class="kotak">{{ $data->NAMAORTU }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Absen">Alamat Orang Tua : </label>
+                                        {{-- <p class="kotak">{{ $data->ALAMATORTU }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="maxl">
+                                            
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="gender" value="L" checked>
+                                                <span> L </span> 
+                                            </label>
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="gender" value="P">
+                                                <span>P </span> 
+                                            </label>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="Absen">Email : </label>
+                                        {{-- <p class="kotak">{{ $data->EMAIL }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Absen">Nomor Hp : </label>
+                                        {{-- <p class="kotak">{{ $data->HP }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Absen">Tanggal Msuk : </label>
+                                        {{-- <p class="kotak">{{ $data->TANGGALMASUK }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Absen">Tempat Lahir : </label>
+                                        {{-- <p class="kotak">{{ $data->KOTALHR }}</p> --}}
+                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                    </div>
+                                    <input type="submit" class="btnRegister"  value="Tambah Data"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@endsection

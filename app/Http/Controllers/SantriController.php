@@ -24,10 +24,12 @@ class SantriController extends Controller
         $santri = DB::table('santri')->get();
 
         // mengirim data ke view santri
-        return view('santri/table', [
+        return view('petugas/table', [
             'santri' => $santri
         ]);
     }
+
+
 
 
 }

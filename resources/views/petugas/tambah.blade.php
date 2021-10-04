@@ -12,38 +12,30 @@
                         <p><strong>Q.S Fusshilat: 34</strong></p>
                 </div>
                 <div class="col-md-9 register-right">
-                    {{-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
-                        </li>
-                    </ul> --}}
+                    <form action="/santri/store" method="post">
+                        {{ csrf_field() }}
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Data Diri Santri</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Absen">Nama : </label>
-                                        {{-- <p class="kotak">{{ $data->NAMASATRI }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="ID Santri" value="" name="id"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="Absen">Tanggal Lahir : </label>
-                                        {{-- <p class="kotak">{{ $data->TAGGALLHR }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Password" value="" name="pass"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="Absen">Nama Orang Tua : </label>
-                                        {{-- <p class="kotak">{{ $data->NAMAORTU }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="" name="nama" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="Absen">Alamat Orang Tua : </label>
-                                        {{-- <p class="kotak">{{ $data->ALAMATORTU }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Tanggal Lahir" value="" name="lahir"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nama Orang Tua" value="" name="ortu"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Alamat Orang Tua" value="" name="alamat"/>
                                     </div>
                                     <div class="form-group">
                                         <div class="maxl">
@@ -62,30 +54,29 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Absen">Email : </label>
-                                        {{-- <p class="kotak">{{ $data->EMAIL }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="jk"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="Absen">Nomor Hp : </label>
-                                        {{-- <p class="kotak">{{ $data->HP }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Email" value="" name="email"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="Absen">Tanggal Msuk : </label>
-                                        {{-- <p class="kotak">{{ $data->TANGGALMASUK }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Nomor Hp" value="" name="hp"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="Absen">Tempat Lahir : </label>
-                                        {{-- <p class="kotak">{{ $data->KOTALHR }}</p> --}}
-                                        <input type="text" class="form-control" placeholder=" *" value="" />
+                                        <input type="text" class="form-control" placeholder="Tanggal Masuk" value="" name="masuk"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Tempat Lahir" value="" name="tempatLahir"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Upload Foto" value="" name="foto"/>
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Tambah Data"/>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>

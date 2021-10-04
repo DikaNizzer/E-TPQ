@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class PengurusController extends Controller
 {
@@ -16,4 +17,40 @@ class PengurusController extends Controller
             'pengurus' => $pengurus
         ]);
     }
+
+    public function tambah(){
+
+        return view('petugas/tambah');
+    }
+
+   // method untuk insert data ke table santri
+    public function store(Request $request)
+    {
+        // insert data ke table Santri
+        DB::table('santri')->insert([
+            'IDSANTRI' => $request->id,
+            'PASSWORD' => $request->pass,
+            'NAMASATRI' => $request->nama,
+            'TAGGALLHR' => $request->lahir,
+            'NAMAORTU' => $request->ortu,
+            'ALAMATORTU' => $request->alamat,
+            'GENDER' => $request->jk,
+            'EMAIL' => $request->email,
+            'HP' => $request->hp,
+            'TANGGALMASUK' => $request->masuk,
+            'KOTALHR' => $request->tempatLahir,
+            'foto' => $request->foto]
+        );
+
+        // alihkan halaman ke halaman santri
+        return redirect('/tabelsantri');
+    }
+
+    public function edit($IDSANTRI){ 
+    // mengambil data siswa berdasarkan id yang dipilih
+    $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+    
+    // passing data siswa yang didapat ke view edit.blade.php 
+    return view('petugas/detail',['santri' => $santri]);
+}
 }

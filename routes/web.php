@@ -53,3 +53,16 @@ Route::get('/pengurus', [PengurusController::class, 'index'] );
 Route::get('/tambah', function () {
     return view('petugas/tambah');
 }); 
+
+//menambah Data Santri
+Route::get('/tambah', [PengurusController::class, 'tambah'] );
+
+//Menyimpan Data Santri Baru
+Route::post('/santri/store', [PengurusController::class, 'store'] );
+
+//menampilkan Detail Santri
+Route::get('/santri/edit/{ IDSANTRI }', [PengurusController::class, 'edit'] );
+
+Route::get('/coba', function () {
+    return view('petugas.detail');
+});

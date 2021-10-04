@@ -1,4 +1,4 @@
-@extends('santri.main')
+@extends('petugas.main')
 @section('container')
 
     @foreach ($santri as $data)
@@ -13,14 +13,6 @@
                     <p><strong>Q.S Fusshilat: 34</strong></p>
             </div>
             <div class="col-md-9 register-right">
-                {{-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
-                    </li>
-                </ul> --}}
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Data Diri Santri</h3>

@@ -38,11 +38,11 @@
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 text-left">
                                         <div class="big-tagline">
-                                            <h2 data-animation="animated zoomInRight">SmartEDU <strong>education school</strong></h2>
-                                            <p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
-                                                <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                            <h2 data-animation="animated zoomInRight">Selamat Datang <strong>di TPQ Digital</strong></h2>
+                                            <p class="lead" data-animation="animated fadeInLeft">Sebuah Platform Pembelajaran Al Quran Yang Dikemas Secara Digital</p>
+                                                <a href="#" class="hover-btn-new"><span>Hubungi Kami</span></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                                <a href="#" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
                                 </div><!-- end row -->            

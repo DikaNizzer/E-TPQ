@@ -33,8 +33,9 @@
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>{{ $data->TANGGALMASUK }}</td>
 							{{-- <td>$5.00</td> --}}
-							<td><a href="/santri/edit/{{ $data->IDSANTRI }}" class="btn btn-primary">Edit Data</a>
-                                <a href="#" class="btn btn-primary">Hapus Data</a>
+							<td><a href="/santri/edit/{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Data</a>
+                                <a href="#" class="btn btn-primary">Edit Data</a>
+								<a href="#" class="btn btn-primary">Hapus Data</a>
                             </td>
 						</tr>
 						</tbody>

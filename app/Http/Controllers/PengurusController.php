@@ -47,10 +47,10 @@ class PengurusController extends Controller
     }
 
     public function edit($IDSANTRI){ 
-    // mengambil data siswa berdasarkan id yang dipilih
+    // mengambil data santri berdasarkan id yang dipilih
     $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
     
-    // passing data siswa yang didapat ke view edit.blade.php 
+    // passing data santri yang didapat ke view detail
     return view('petugas/detail',['santri' => $santri]);
-}
+    }
 }

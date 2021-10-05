@@ -64,5 +64,5 @@ Route::post('/santri/store', [PengurusController::class, 'store'] );
 Route::get('/santri/edit/{IDSANTRI}', [PengurusController::class, 'edit'] );
 
 Route::get('/coba', function () {
-    return view('petugas.detail');
+    return view('petugas.detail'); 
 });

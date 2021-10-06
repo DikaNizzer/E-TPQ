@@ -210,7 +210,7 @@
 	
 	<!-- Start header -->
 	<header class="top-navbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">
 					<img src="images/logon.png" alt="" />

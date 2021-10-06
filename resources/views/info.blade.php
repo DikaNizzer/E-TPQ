@@ -3,7 +3,7 @@
 
 <div class="all-title-box">
     <div class="container text-center">
-        <h1> TPQ Digital<span class="m_1">TPQ Digital Merupakan Sebuah Platform Online Yang Digunakan</span></h1>
+        <h1> TPQ Digital<span class="m_1">Sebuah Platform Online Yang Digunakan Untuk Mengembangkan Minat dan Bakat</span></h1>
     </div>
 </div>
 
@@ -12,7 +12,7 @@
         <div class="section-title row text-center">
             <div class="col-md-8 offset-md-2">
                 <h3>Tentang</h3>
-                <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                <p class="lead">merupakan sarana pengembangan para santri dan santriwati untuk terus mengembangkan minat dan bakat dalam mendalami Qur'an</p>
             </div>
         </div><!-- end title -->
     

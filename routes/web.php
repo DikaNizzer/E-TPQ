@@ -63,6 +63,11 @@ Route::post('/santri/store', [PengurusController::class, 'store'] );
 //menampilkan Detail Santri
 Route::get('/santri/edit/{IDSANTRI}', [PengurusController::class, 'edit'] );
 
+//menampilkan kelas Iqra'
+Route::get('/kelasIqra', function () {
+    return view('kelasIqra');
+}); 
+
 Route::get('/coba', function () {
     return view('petugas.detail'); 
 });

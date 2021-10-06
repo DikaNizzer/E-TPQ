@@ -227,7 +227,7 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Kelas</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="#">Iqra' </a>
+								<a class="dropdown-item" href="/kelasIqra">Iqra' </a>
 								<a class="dropdown-item" href="#">Jus Amma</a>
 								<a class="dropdown-item" href="#">Al - Quran</a>
 							</div>

@@ -24,10 +24,6 @@ Route::get('/info', function () {
     return view('info');
 });
 
-// Route::get('/siswa', function () {
-//     return view('siswa');
-// });
-
 
 //cek koneksi database
 Route::get('/test-koneksi-database', function() {
@@ -53,6 +49,11 @@ Route::get('/pengurus', [PengurusController::class, 'index'] );
 Route::get('/tambah', function () {
     return view('petugas/tambah');
 }); 
+
+//menambah data pengurus
+Route::get('/buat', function () {
+    return view('petugas.buat');
+});
 
 //menambah Data Santri
 Route::get('/tambah', [PengurusController::class, 'tambah'] );

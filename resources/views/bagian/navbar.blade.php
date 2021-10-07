@@ -61,9 +61,9 @@
 							</div>
 							<div class="row">							
 								<div class="col-sm-10">
-									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
-										Simpan &amp; Lanjutkan
-									</button>
+									{{-- <button type="button" class="btn btn-light btn-radius btn-brd grd1"> --}}
+										<a href="buat" class="btn btn-light btn-radius btn-brd grd1">Simpan &amp; Lanjutkan</a>
+									{{-- </button> --}}
 									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
 										Cancel</button>
 								</div>

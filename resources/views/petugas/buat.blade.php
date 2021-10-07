@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Booking Form HTML Template</title>
+	<title>Tambah Data Pengurus</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
@@ -51,7 +51,7 @@
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="#">Pengajar</a></li>
-						<li class="nav-item dropdown">
+						{{-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Data Santri</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="tabelsantri">Detail Data Santri </a>
@@ -60,7 +60,7 @@
 						</li>
 						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>
 						<ul></ul>
-						<ul></ul>
+						<ul></ul> --}}
 					</ul>
 				</div>
 			</div>

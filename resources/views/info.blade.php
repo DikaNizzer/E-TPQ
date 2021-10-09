@@ -7,84 +7,103 @@
     </div>
 </div>
 
+
 <div id="overviews" class="section lb">
     <div class="container">
         <div class="section-title row text-center">
             <div class="col-md-8 offset-md-2">
-                <h3>Tentang</h3>
-                <p class="lead">merupakan sarana pengembangan para santri dan santriwati untuk terus mengembangkan minat dan bakat dalam mendalami Qur'an</p>
+                <h3 id="tentang">TENTANG</h3>
+                <p class="lead"><strong>TPQ Digital</strong> merupakan sarana pengembangan para santri dan santriwati untuk terus belajar dalam mengembangkan minat dan bakat dalam mendalami Qur'an</p>
             </div>
         </div><!-- end title -->
     
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <div class="message-box">
-                    <h4>2018 BEST SmartEDU education school</h4>
-                    <h2>Awards Winner Support Center</h2>
-                    <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
-
-                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis montes, nascetur ridiculus mus. Sed vitae rutrum neque. </p>
-
-                    <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
-                </div><!-- end messagebox -->
-            </div><!-- end col -->
-            
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="post-media wow fadeIn">
-                    <img src="images/about_02.jpg" alt="" class="img-fluid img-rounded">
-                </div><!-- end media -->
-            </div><!-- end col -->
-        </div>
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <div class="post-media wow fadeIn">
-                    <img src="images/about_03.jpg" alt="" class="img-fluid img-rounded">
+                    <img src="images/quran.jpg" alt="" class="img-fluid img-rounded">
                 </div><!-- end media -->
             </div><!-- end col -->
             
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="message-box">
-                    <h2>The standard Lorem Ipsum passage, used since the 1500s</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>TAHFIDZ AL-QUR'AN</h2>
+                    <p>Tahfidz Alquran atau penghafalan Alquran adalah tradisi
+                        tertua dalam upaya pemeliharaan Alquran. Seiring dengan
+                        perjalanan sejarah perkembangan Islam, berbagai upaya
+                        dilakukan untuk menanamkan tradisi tersebut. Tujuan yang
+                        ingin dicapai oleh seorang hafidz adalah mewujudkan
+                        derajat kemuliaan diri seseorang terhadap agamanya melalui
+                        pemeliharaan kitab suci.</p>
 
-                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum.</p>
-
-                    <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    {{-- <a href="#" class="hover-btn-new orange"><span>Learn More</span></a> --}}
                 </div><!-- end messagebox -->
             </div><!-- end col -->
             
         </div><!-- end row -->
+
+
+
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="message-box">
+                    {{-- <h4>2018 BEST SmartEDU education school</h4> --}}
+                    <h2>HAFIDZ AL-QUR'AN</h2>
+                    <p>Orang yang mampu menghafal 100.000 hadis secara matan dan sanad.ini gelar di buat pada awalan nama bagi orang yg hafal 100.000 hadis.</p>
+
+                    <p>Rasulullah SAW bersabda 
+                        "Penghafal Al-Quran akan datang pada hari kiamat, kemudian akan berkata, 'Ya Tuhanku, berikan lah perhiasan (kepada orang yang membaca al-Quran'), kemudian orang itu dipakaikan mahkota karomah (kemuliaan). Sesudah itu Al-Quran memohon kembali, 'Ya Tuhanku ridhailah dia', kemudian Allah meridhainya. Dan diperintahkan kepada orang itu, baca lah (Al-Quran) dan terus lah naik lah (ke surga). Lantas, derajatnya (di surga) pun terus bertambah. pada setiap ayat (yang dibacanya) terdapat satu kebaikan."
+                        - hadits riwayat Tirmidzi
+                        </p>
+
+                    {{-- <a href="#" class="hover-btn-new orange"><span>Learn More</span></a> --}}
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+            
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="post-media wow fadeIn">
+                    <img src="images/hafidz.jpeg" alt="" class="img-fluid img-rounded">
+                </div><!-- end media -->
+            </div><!-- end col -->
+        </div>
+        
     </div><!-- end container -->
 </div><!-- end section -->
 
+
 <div class="hmv-box">
     <div class="container">
+        <div class="section-title row text-center">
+            <div class="col-md-8 offset-md-2">
+                <h3 id="hubungi">HUBUNGI KAMI</h3>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-8">
                 <div class="inner-hmv">
-                    <div class="icon-box-hmv"><i class="flaticon-achievement"></i></div>
-                    <h3>Mission</h3>
-                    <div class="tr-pa">M</div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eligendi expedita, provident cupiditate in excepturi.</p>
+                    <div class="icon-box-hmv">
+                        {{-- <i class="flaticon-instagram"></i> --}}
+                        <left><img src="images/instagram-logo.png" alt="" style="width:100px;height:100px;object-fit:cover;-webkit-filter:brightness(100%);"></left>
+                    </div>
+                    <h3>INSTAGRAM</h3>
+                    <div class="tr-pa">IG</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="inner-hmv">
-                    <div class="icon-box-hmv"><i class="flaticon-eye"></i></div>
-                    <h3>Vision</h3>
-                    <div class="tr-pa">V</div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eligendi expedita, provident cupiditate in excepturi.</p>
+                    <div class="icon-box-hmv">
+                        <left><img src="images/whatsapp.png" alt="" style="width:70px;height:70px;object-fit:cover;-webkit-filter:brightness(100%);"></left>
+                    </div>
+                    <h3>WHATSAPP</h3>
+                    <div class="tr-pa">WA</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="inner-hmv">
-                    <div class="icon-box-hmv"><i class="flaticon-history"></i></div>
-                    <h3>History</h3>
-                    <div class="tr-pa">H</div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eligendi expedita, provident cupiditate in excepturi.</p>
+                    <div class="icon-box-hmv">
+                        <left><img src="images/facebook.png" alt="" style="width:70px;height:70px;object-fit:cover;-webkit-filter:brightness(100%);"></left>
+                    </div>
+                    <h3>FACEBOOK</h3>
+                    <div class="tr-pa">F</div>
                 </div>
             </div>
         </div>

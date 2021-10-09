@@ -23,7 +23,7 @@
                                             </p>
                                                 <a href="#" class="hover-btn-new"><span>Hubungi Kami</span></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" class="hover-btn-new"><span>Informasi</span></a>
+                                                <a href="/info" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
                                 </div><!-- end row -->            
@@ -32,7 +32,7 @@
                     </div><!-- end section -->
                 </div>
                 <div class="carousel-item">
-                    <div id="home" class="first-section" style="background-image:url('images/bgislam2.jpg');">
+                    <div id="home" class="first-section" style="background-image:url('images/khatam.jpg');">
                         <div class="dtab">
                             <div class="container">
                                 <div class="row">
@@ -40,9 +40,9 @@
                                         <div class="big-tagline">
                                             <h2 data-animation="animated zoomInRight">Selamat Datang <strong>di TPQ Digital</strong></h2>
                                             <p class="lead" data-animation="animated fadeInLeft">Sebuah Platform Pembelajaran Al Quran Yang Dikemas Secara Digital</p>
-                                                <a href="#" class="hover-btn-new"><span>Hubungi Kami</span></a>
+                                                <a href="/info/#hubungi" class="hover-btn-new"><span>Hubungi Kami</span></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" class="hover-btn-new"><span>Informasi</span></a>
+                                                <a href="/info/#tentang" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
                                 </div><!-- end row -->            
@@ -51,17 +51,17 @@
                     </div><!-- end section -->
                 </div>
                 <div class="carousel-item">
-                    <div id="home" class="first-section" style="background-image:url('images/bgislam.jpg');">
+                    <div id="home" class="first-section" style="background-image:url('images/muslimah.jpg');">
                         <div class="dtab">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 text-center">
                                         <div class="big-tagline">
                                             <h2 data-animation="animated zoomInRight"><strong>Daftarkan Putra Putri Anda</strong> Segera</h2>
-                                            <p class="lead" data-animation="animated fadeInLeft">Dan Dapatkan Penawaran Khusus</p>
-                                                <a href="#" class="hover-btn-new"><span>Hubungi Kami</span></a>
+                                            <p class="lead" data-animation="animated fadeInLeft">Dapatkan Penawaran Khusus</p>
+                                                <a href="#hubungi" class="hover-btn-new"><span>Hubungi Kami</span></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" class="hover-btn-new"><span>Informasi</span></a>
+                                                <a href="#tentang" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
                                 </div><!-- end row -->            

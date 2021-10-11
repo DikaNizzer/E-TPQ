@@ -21,7 +21,6 @@
 							<th>Foto </th>
 							<th>Nama</th>
 							<th>Tanggal Masuk</th>
-							{{-- <th>Transfer</th> --}}
 							<th>Pilihan</th>
 							</tr>
 						</thead>

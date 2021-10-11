@@ -68,13 +68,13 @@
         
     </div><!-- end container -->
 </div><!-- end section -->
+ 
 
-
-<div class="hmv-box">
+<div class="hmv-box" id="hubungi">
     <div class="container">
         <div class="section-title row text-center">
             <div class="col-md-8 offset-md-2">
-                <h3 id="hubungi">HUBUNGI KAMI</h3>
+                <h3 >HUBUNGI KAMI</h3>
             </div>
         </div>
         <div class="row">

@@ -1,12 +1,13 @@
 @extends('petugas.main')
 @section('container')
 
-    @foreach ($santri as $san)
+    {{-- @foreach ($santri as $san) --}}
 <div class="bg">
 <div class="container register">
         <div class="row">
             <div class="col-md-3 register-left">
-                <img src="images/{{ $san->foto}}" width="250px">
+                {{-- <img src="images/{{ $san->foto}}" width="250px"> --}}
+                <img src="images/santri.png" width="250px">
                 <h3>Assalamualaikum</h3>
                 <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
                     yang memusuhimu akan seperti teman yang setia.</p>
@@ -20,19 +21,23 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Absen">Nama : </label>
-                                    <p class="kotak">{{ $san->NAMASATRI }}</p>
+                                    {{-- <p class="kotak">{{ $san->NAMASATRI }}</p> --}}
+                                    <p class="kotak">Coba</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="Absen">Tanggal Lahir : </label>
-                                    <p class="kotak">{{ $san->TAGGALLHR }}</p>
+                                    {{-- <p class="kotak">{{ $san->TAGGALLHR }}</p> --}}
+                                    <p class="kotak">Coba</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="Absen">Nama Orang Tua : </label>
-                                    <p class="kotak">{{ $san->NAMAORTU }}</p>
+                                    {{-- <p class="kotak">{{ $san->NAMAORTU }}</p> --}}
+                                    <p class="kotak">Coba</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="Absen">Alamat Orang Tua : </label>
-                                    <p class="kotak">{{ $san->ALAMATORTU }}</p>
+                                    {{-- <p class="kotak">{{ $san->ALAMATORTU }}</p> --}}
+                                    <p class="kotak">Coba</p>
                                 </div>
                                 <div class="form-group">
                                     <div class="maxl">
@@ -49,7 +54,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Absen">Email : </label>
                                     <p class="kotak">{{ $san->EMAIL }}</p>
@@ -67,7 +72,7 @@
                                     <p class="kotak">{{ $san->KOTALHR }}</p>
                                 </div>
                                 <input type="submit" class="btnRegister"  value="Lihat Perkembangan"/>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -77,7 +82,7 @@
 </div>
 
 
-            @endforeach
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            {{-- @endforeach --}}
+
 
 @endsection

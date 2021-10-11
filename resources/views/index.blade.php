@@ -40,7 +40,7 @@
                                         <div class="big-tagline">
                                             <h2 data-animation="animated zoomInRight">Selamat Datang <strong>di TPQ Digital</strong></h2>
                                             <p class="lead" data-animation="animated fadeInLeft">Sebuah Platform Pembelajaran Al Quran Yang Dikemas Secara Digital</p>
-                                                <a href="/info/#hubungi" class="hover-btn-new"><span>Hubungi Kami</span></a>
+                                                <a href="/info/hubungi" class="hover-btn-new"><span>Hubungi Kami</span></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a href="/info/#tentang" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>

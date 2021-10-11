@@ -69,6 +69,8 @@ Route::get('/kelasIqra', function () {
     return view('kelasIqra');
 }); 
 
-Route::get('/coba', function () {
+
+
+Route::get('/santri/edit', function () {
     return view('petugas.detail'); 
 });

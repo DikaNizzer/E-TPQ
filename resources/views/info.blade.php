@@ -3,7 +3,15 @@
 
 <div class="all-title-box">
     <div class="container text-center">
-        <h1> TPQ Digital<span class="m_1">Sebuah Platform Online Yang Digunakan Untuk Mengembangkan Minat dan Bakat</span></h1>
+        <div class="col-md-12 col-sm-12 text-center">
+            <div class="big-tagline">
+                <h1> TPQ Digital <br>
+                    <a href="#hubungi" class="hover-btn-new"><span>Contact Us</span></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#tentang" class="hover-btn-new"><span>About</span></a>
+                </h1>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -13,7 +21,7 @@
         <div class="section-title row text-center">
             <div class="col-md-8 offset-md-2">
                 <h3 id="tentang">TENTANG</h3>
-                <p class="lead"><strong>TPQ Digital</strong> merupakan sarana pengembangan para santri dan santriwati untuk terus belajar dalam mengembangkan minat dan bakat dalam mendalami Qur'an</p>
+                <p class="lead"><strong>TPQ Digital</strong> merupakan sebuah Platform online sebagai sarana pengembangan para santri dan santriwati untuk terus belajar dalam mengembangkan minat dan bakat dalam mendalami Qur'an</p>
             </div>
         </div><!-- end title -->
     

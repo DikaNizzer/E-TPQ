@@ -46,7 +46,7 @@ class PengurusController extends Controller
         return redirect('/tabelsantri');
     }
 
-    public function edit($IDSANTRI){ 
+    public function detail($IDSANTRI){ 
     // mengambil data santri berdasarkan id yang dipilih
     $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
     

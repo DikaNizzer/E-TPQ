@@ -26,16 +26,16 @@ Route::get('/info', function () {
 
 
 //cek koneksi database
-Route::get('/test-koneksi-database', function() {
-	try {
-		\DB::connection()->getPdo();
+// Route::get('/test-koneksi-database', function() {
+// 	try {
+// 		\DB::connection()->getPdo();
 
-		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
+// 		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
 
-	} catch (\Exception $e) {
-		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
-	}
-});
+// 	} catch (\Exception $e) {
+// 		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
+// 	}
+// });
 
 //halaman data santri
 Route::get('/santri', [SantriController::class, 'index'] );
@@ -61,16 +61,12 @@ Route::get('/tambah', [PengurusController::class, 'tambah'] );
 //Menyimpan Data Santri Baru
 Route::post('/santri/store', [PengurusController::class, 'store'] );
 
-//menampilkan Detail Santri
-Route::get('/santri/edit/{IDSANTRI}', [PengurusController::class, 'edit'] );
+
 
 //menampilkan kelas Iqra'
 Route::get('/kelasIqra', function () {
     return view('kelasIqra');
 }); 
 
-
-
-Route::get('/santri/edit', function () {
-    return view('petugas.detail'); 
-});
+//menampilkan Detail Santri
+Route::get('/edit/{IDSANTRI}', [PengurusController::class, 'detail'] );

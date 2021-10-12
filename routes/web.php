@@ -26,16 +26,16 @@ Route::get('/info', function () {
 
 
 //cek koneksi database
-// Route::get('/test-koneksi-database', function() {
-// 	try {
-// 		\DB::connection()->getPdo();
+Route::get('/test-koneksi-database', function() {
+	try {
+		\DB::connection()->getPdo();
 
-// 		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
+		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
 
-// 	} catch (\Exception $e) {
-// 		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
-// 	}
-// });
+	} catch (\Exception $e) {
+		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
+	}
+});
 
 //halaman data santri
 Route::get('/santri', [SantriController::class, 'index'] );

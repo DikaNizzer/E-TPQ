@@ -28,8 +28,7 @@
         <!-- Modernizer for Portfolio -->
         <script src="js/modernizer.js"></script>
 
-        {{-- css halaman tambah --}}
-        <link rel="stylesheet" href="buatstyle.css">
+
     
     </head>
     <body class="host_version">

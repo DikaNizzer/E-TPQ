@@ -21,7 +21,6 @@
 							<th>Foto </th>
 							<th>Nama</th>
 							<th>Tanggal Masuk</th>
-							{{-- <th>Transfer</th> --}}
 							<th>Pilihan</th>
 							</tr>
 						</thead>
@@ -32,8 +31,8 @@
 							<td> <img src="images/{{ $data->foto }}" width="150px"></td>
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>{{ $data->TANGGALMASUK }}</td>
-							{{-- <td>$5.00</td> --}}
-							<td><a href="/santri/edit/{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Data</a>
+							<td><a href="/edit/{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Data</a>
+							{{-- <td><a href="/pengurus/detail" class="btn btn-primary">Detail Data</a>	 --}}
                                 <a href="#" class="btn btn-primary">Edit Data</a>
 								<a href="#" class="btn btn-primary">Hapus Data</a>
                             </td>

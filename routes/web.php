@@ -20,9 +20,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/info', function () {
-    return view('info');
-});
 
 Route::get('/datapengurus', function () {
     return view('datapengurus');
@@ -40,9 +37,17 @@ Route::get('/test-koneksi-database', function() {
 		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
 	}
 });
-
-//halaman data santri
+//halaman data santri yang dilihat Santri
 Route::get('/santri', [SantriController::class, 'index'] );
+
+//halaman data santri yang dilihat ortu
+Route::get('/ortu', [SantriController::class, 'index'] );
+
+//halaman perkembangan yang dilihat ortu
+Route::get('/perkembangan', function () {
+    return view('ortu.perkembangan');
+});
+
 
 //halaman Tabel Santri
 Route::get('/tabelsantri', [SantriController::class, 'tabel'] );
@@ -54,15 +59,15 @@ Route::get('/tambah', function () {
     return view('petugas/tambah');
 }); 
 
-// //Menyimpan Data Santri Baru
-// Route::post('/santri/store', [PengurusController::class, 'store'] );
+//Menyimpan Data Santri Baru
+Route::post('/santri/store', [PengurusController::class, 'store'] );
 
 
 
-// //menampilkan kelas Iqra'
-// Route::get('/kelasIqra', function () {
-//     return view('kelasIqra');
-// }); 
+//menampilkan kelas Iqra'
+Route::get('/kelasIqra', function () {
+    return view('kelasIqra');
+}); 
 
-// //menampilkan Detail Santri
-// Route::get('/edit/{IDSANTRI}', [PengurusController::class, 'detail'] );
+//menampilkan Detail Santri
+Route::get('/detail{IDSANTRI}', [PengurusController::class, 'detail'] );

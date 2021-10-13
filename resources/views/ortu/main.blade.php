@@ -13,6 +13,8 @@
         <!-- Site Icons -->
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -34,7 +36,7 @@
     <body class="host_version">
 
         {{-- ini untuk navbar --}}
-        @include('santri.navbar')
+        @include('ortu.navbar')
 
         {{-- ini untuk isi --}}
         @yield('container')
@@ -66,7 +68,6 @@
 			visibleItems: 4
 		});
 	</script>
-
 
     </body>
 </html>

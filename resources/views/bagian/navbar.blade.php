@@ -107,7 +107,7 @@
 							<div class="row">
 								<div class="col-sm-10">
 									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										Masuk
+										<a href="santri">Masuk</a>
 									</button>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>
@@ -184,7 +184,7 @@
 								<div class="row">
 									<div class="col-sm-10">
 										<button  class="btn btn-light btn-radius btn-brd grd1" >
-											<a href="/santri">Cari</a>
+											<a href="/ortu">Masuk</a>
 										</button>
 										<a class="for-pwd" href="javascript:;">Lupa Nama Anak Anda ?</a>
 									</div>

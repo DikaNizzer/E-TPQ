@@ -1,4 +1,4 @@
-@extends('santri.main')
+@extends('ortu.main')
 @section('container')
 
     @foreach ($santri as $data)
@@ -13,14 +13,6 @@
                     <p><strong>Q.S Fusshilat: 34</strong></p>
             </div>
             <div class="col-md-9 register-right">
-                {{-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
-                    </li>
-                </ul> --}}
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Data Diri Santri</h3>
@@ -74,7 +66,8 @@
                                     <label for="Absen">Tempat Lahir : </label>
                                     <p class="kotak">{{ $data->KOTALHR }}</p>
                                 </div>
-                                <input type="submit" class="btnRegister"  value="Lihat Perkembangan"/>
+                                
+                                <button class="btnRegister"><a href="perkembangan"> Lihat Perkembangan</a></button>
                             </div>
                         </div>
                     </div>
@@ -85,6 +78,4 @@
 </div>
             <br><br>
             @endforeach
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 @endsection

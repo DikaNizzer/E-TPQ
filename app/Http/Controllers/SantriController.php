@@ -13,7 +13,7 @@ class SantriController extends Controller
         $santri = DB::table('santri')->get();
 
         // mengirim data ke view santri
-        return view('santri/santri2', [
+        return view('ortu/santri2', [
             'santri' => $santri
         ]);
     }
@@ -28,8 +28,4 @@ class SantriController extends Controller
             'santri' => $santri
         ]);
     }
-
-
-
-
-}
+};

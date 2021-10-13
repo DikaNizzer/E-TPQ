@@ -73,6 +73,7 @@
                 </div>
             </div>
         </div>
+        <a href="/tabelsantri" class="btn btn-primary">Kembali</a>
     </div> 
 </div>
 

@@ -46,6 +46,6 @@ class PengurusController extends Controller
     $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
     
     // passing data santri yang didapat ke view detail
-    return view('petugas/detail',['santri' => $santri]);
+    return view('petugas.detail',['santri' => $santri]);
     }
 }

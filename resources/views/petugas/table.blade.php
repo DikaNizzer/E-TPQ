@@ -31,7 +31,7 @@
 							<td> <img src="images/{{ $data->foto }}" width="150px"></td>
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>{{ $data->TANGGALMASUK }}</td>
-							<td><a href="/edit/{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Data</a>
+							<td><a href="/detail{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Data</a>
 							{{-- <td><a href="/pengurus/detail" class="btn btn-primary">Detail Data</a>	 --}}
                                 <a href="#" class="btn btn-primary">Edit Data</a>
 								<a href="#" class="btn btn-primary">Hapus Data</a>

@@ -30,7 +30,7 @@
 							<div class="row">
 								<div class="col-sm-10">
 									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										<a href="/pengurus" class="light">Simpan</a>
+										<a href="/pengurus" class="light">Masuk</a>
 									</button>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>
@@ -107,7 +107,7 @@
 							<div class="row">
 								<div class="col-sm-10">
 									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										Simpan
+										Masuk
 									</button>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>
@@ -215,6 +215,9 @@
 				<a class="navbar-brand" href="/">
 					<img src="images/logon.png" alt="" />
 				</a>
+				<a class="navbar-brand" href="/">
+					<img src="images/vokasi.png" alt="" width="100px"/>
+				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -223,7 +226,7 @@
 				<div class="collapse navbar-collapse" id="navbars-host">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="/info">Informasi</a></li>
+						{{-- <li class="nav-item"><a class="nav-link" href="/info">Informasi</a></li> --}}
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Kelas</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
@@ -232,8 +235,7 @@
 								<a class="dropdown-item" href="#">Al - Quran</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Pengajar</a></li>
-						{{-- <li class="nav-item"><a class="nav-link" href="#">Narahubung</a></li> --}}
+						<li class="nav-item"><a class="nav-link" href="datapengurus">Pengajar</a></li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Login </a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
@@ -245,17 +247,6 @@
 						<ul></ul>
 						<ul></ul>
 					</ul>
-					{{-- <ul class="nav navbar-nav navbar-right">
-            			<li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#login"><span>Petugas</span></a></li>
-          			</ul>
-         			<br>
-          			<ul> --}}
-            {{-- <li></li> --}}
-          			{{-- </ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#loginsantri"><span>Santri</span></a></li>
-					</ul> --}}
-          
 				</div>
 			</div>
 		</nav>

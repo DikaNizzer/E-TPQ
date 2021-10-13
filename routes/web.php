@@ -24,6 +24,10 @@ Route::get('/info', function () {
     return view('info');
 });
 
+Route::get('/datapengurus', function () {
+    return view('datapengurus');
+});
+
 
 //cek koneksi database
 Route::get('/test-koneksi-database', function() {
@@ -50,23 +54,15 @@ Route::get('/tambah', function () {
     return view('petugas/tambah');
 }); 
 
-//menambah data pengurus
-Route::get('/buat', function () {
-    return view('petugas.buat');
-});
-
-//menambah Data Santri
-Route::get('/tambah', [PengurusController::class, 'tambah'] );
-
-//Menyimpan Data Santri Baru
-Route::post('/santri/store', [PengurusController::class, 'store'] );
+// //Menyimpan Data Santri Baru
+// Route::post('/santri/store', [PengurusController::class, 'store'] );
 
 
 
-//menampilkan kelas Iqra'
-Route::get('/kelasIqra', function () {
-    return view('kelasIqra');
-}); 
+// //menampilkan kelas Iqra'
+// Route::get('/kelasIqra', function () {
+//     return view('kelasIqra');
+// }); 
 
-//menampilkan Detail Santri
-Route::get('/edit/{IDSANTRI}', [PengurusController::class, 'detail'] );
+// //menampilkan Detail Santri
+// Route::get('/edit/{IDSANTRI}', [PengurusController::class, 'detail'] );

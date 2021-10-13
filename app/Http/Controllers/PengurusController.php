@@ -18,11 +18,6 @@ class PengurusController extends Controller
         ]);
     }
 
-    public function tambah(){
-
-        return view('petugas/tambah');
-    }
-
    // method untuk insert data ke table santri
     public function store(Request $request)
     {

@@ -15,7 +15,7 @@
             <div class="col-md-9 register-right">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">san Diri Santri</h3>
+                        <h3 class="register-heading">Data Diri Santri</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">

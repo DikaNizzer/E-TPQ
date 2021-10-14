@@ -4,7 +4,7 @@
 @foreach ($pengurus as $data)
 
  <!-- Page Content  -->
- <div class="jumbotron ">
+ <div class="jumbotron full">
     <h1 class="display-4"> Selamat Datang! </h1>
     <p class="lead">ASSALAMUALAIKUM, {{ $data->NAMA }} </p>
     <hr class="my-4">

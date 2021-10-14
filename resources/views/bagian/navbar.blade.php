@@ -29,9 +29,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-10">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										<a href="/pengurus" class="light">Masuk</a>
-									</button>
+										<a href="/pengurus" class="btn btn-light btn-radius btn-brd grd1">Masuk</a>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>
 							</div>
@@ -106,9 +104,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-10">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										<a href="santri">Masuk</a>
-									</button>
+										<a href="santri" class="btn btn-light btn-radius btn-brd grd1">Masuk</a>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>
 							</div>
@@ -183,9 +179,7 @@
 								</div>
 								<div class="row">
 									<div class="col-sm-10">
-										<button  class="btn btn-light btn-radius btn-brd grd1" >
-											<a href="/ortu">Masuk</a>
-										</button>
+											<a href="/ortu" class="btn btn-light btn-radius btn-brd grd1">Masuk</a>
 										<a class="for-pwd" href="javascript:;">Lupa Nama Anak Anda ?</a>
 									</div>
 								</div>

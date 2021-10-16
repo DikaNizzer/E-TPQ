@@ -11,27 +11,30 @@
 	<div id="teachers" class="section wb">
         <div class="container">
             <div class="row">
+
+@foreach($pengurus1 as $dataurus)
 				<div class="col-lg-3 col-md-6 col-12">
 					<div class="our-team">
 						<div class="team-img">
-							<img src="images/team-01.png">
+							<img src="images/team-01.png" >
 							<div class="social">
-								<ul>
-									<li><a href="#" class="fa fa-facebook"></a></li>
+								{{-- <ul> --}}
+									{{-- <li><a href="#" class="fa fa-facebook"></a></li>
 									<li><a href="#" class="fa fa-twitter"></a></li>
 									<li><a href="#" class="fa fa-linkedin"></a></li>
-									<li><a href="#" class="fa fa-skype"></a></li>
-								</ul>
+									<li><a href="#" class="fa fa-skype"></a></li> --}}
+									<a href="/detailPengurus{{ $dataurus->NAMA }}">{{ $dataurus->NAMA }}</a>
+								{{-- </ul> --}}
 							</div>
 						</div>
 						<div class="team-content">
-							<h3 class="title">IQRA' 1</h3>
+							{{-- <h3 class="title">IQRA' 1</h3> --}}
 							{{-- <span class="post">Web Developer</span> --}}
 						</div>
 					</div>
 				</div>
-
-				<div class="col-lg-3 col-md-6 col-12">
+@endforeach
+				{{-- <div class="col-lg-3 col-md-6 col-12">
 					<div class="our-team">
 						<div class="team-img">
 							<img src="images/team-02.png">
@@ -169,7 +172,7 @@
 							<span class="post">Web Developer</span>
 						</div>
 					</div>
-				</div>
+				</div> --}}
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->	

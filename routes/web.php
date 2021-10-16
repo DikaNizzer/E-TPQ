@@ -63,9 +63,9 @@ Route::get('/tambah', function () {
 Route::post('/santri/store', [PengurusController::class, 'store'] );
 
 //menampilkan kelas Iqra'
-Route::get('/kelasIqra', function () {
-    return view('kelasIqra');
-}); 
+// Route::get('/kelasIqra', function () {
+//     return view('kelasIqra');
+// }); 
 
 //menampilkan Detail Santri
 Route::get('/detail{IDSANTRI}', [PengurusController::class, 'detail'] );
@@ -91,3 +91,9 @@ Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 
 //Untuk Mengembalikan RIwayat Data Santri
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
+
+//menampilkan Data Pengurus
+Route::get('/kelasIqra', [PengurusController::class, 'pengurus'] );
+
+//Untuk Mengembalikan RIwayat Data Santri
+Route::get('/detailPengurus{NAMA}', [PengurusController::class, 'detailurus'] );

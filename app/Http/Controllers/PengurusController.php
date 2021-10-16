@@ -19,6 +19,7 @@ class PengurusController extends Controller
         ]);
     }
 
+
     //yang dikiri nama kolom yang di kanan request nama dari form
    // method untuk insert data ke table santri
     public function store(Request $request)
@@ -79,4 +80,26 @@ class PengurusController extends Controller
         // alihkan halaman ke halaman santri
         return redirect('/tabelsantri');
     }
+
+    // fungsi untuk mengakses data pengurus
+    public function pengurus(){
+
+        //ambil data dari table pengurus
+        $pengurus = DB::table('pengurus')->get();
+
+        // mengirim data ke view santri
+        return view('kelasIqra', [
+            'pengurus1' => $pengurus
+        ]);
+    }
+
+    // FUNGSI UNTUK MENAMPILKAN DATA PENGURUS 
+    public function detailurus($NAMA){ 
+        // mengambil data pengurus berdasarkan id yang dipilih
+        $pengurus = DB::table('pengurus')->where('NAMA',$NAMA)->get(); 
+        
+        // passing data pengurus yang didapat ke view detail
+        return view('detailPengurus',['pengurus' => $pengurus]);
+        }
+    
 }

@@ -41,6 +41,7 @@
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="tabelsantri">Detail Data Santri </a>
 								<a class="dropdown-item" href="tambah">Tambah Data Santri</a>
+								<a class="dropdown-item" href="santriterhapus">Data Santri Dihapus</a>
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>

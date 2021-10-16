@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
+// panggil model Santri
+use App\Models\Santri;
+
 class SantriController extends Controller
 {
     public function index(){
@@ -27,5 +30,41 @@ class SantriController extends Controller
         return view('petugas/table', [
             'santri' => $santri
         ]);
+    }
+
+    // hapus sementara
+    public function hapus($IDSANTRI)
+    {
+        // $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+        $santri = Santri::find($IDSANTRI);
+        $santri->delete();
+        
+        return redirect('/tabelsantri');
+    }
+
+    // menampilkan data santri yang sudah dihapus
+    public function riwayat()
+    {
+        $santri = Santri::onlyTrashed()->get();
+        return view('petugas.riwayat', ['santri' => $santri]);
+    }
+
+    // restore data guru yang dihapus
+    public function kembalikan($IDSANTRI)
+    {
+        $santri = Santri::onlyTrashed()->where('IDSANTRI',$IDSANTRI);
+        $santri->restore();
+        
+        return redirect('tabelsantri');
+    }
+
+        // hapus permanen
+    public function permanen($IDSANTRI)
+    {
+        // hapus permanen data guru
+        $santri = Santri::onlyTrashed()->where('IDSANTRI',$IDSANTRI);
+        $santri->forceDelete();
+        
+        return redirect('santriterhapus');
     }
 };

@@ -15,6 +15,7 @@ class SantriController extends Controller
         //ambil data dari table santri
         $santri = DB::table('santri')->get();
 
+
         // mengirim data ke view santri
         return view('ortu/santri2', [
             'santri' => $santri
@@ -25,6 +26,7 @@ class SantriController extends Controller
 
         //ambil data dari table santri
         $santri = DB::table('santri')->get();
+        $santri = DB::table('santri')->whereNull('deleted_at')->get();
 
         // mengirim data ke view santri
         return view('petugas/table', [
@@ -35,7 +37,6 @@ class SantriController extends Controller
     // hapus sementara
     public function hapus($IDSANTRI)
     {
-        // $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
         $santri = Santri::find($IDSANTRI);
         $santri->delete();
         

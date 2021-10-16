@@ -87,7 +87,7 @@ Route::get('/santrihapus{IDSANTRI}', [SantriController::class, 'hapus'] );
 Route::get('/santriterhapus', [SantriController::class, 'riwayat'] );
 
 //Untuk Mengembalikan RIwayat Data Santri
-Route::get('/kembalikan', [SantriController::class, 'kembalikan'] );
+Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 
 //Untuk Mengembalikan RIwayat Data Santri
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );

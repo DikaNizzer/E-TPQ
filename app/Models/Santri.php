@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Santri extends Model
 {
-    use SoftDeletes;
 
-    use HasFactory;
+    use SoftDeletes;
+    protected $primaryKey = 'IDSANTRI';
     protected $table = "santri";
     protected $dates = ['deleted_at'];
 }

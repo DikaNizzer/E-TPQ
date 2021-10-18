@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container full">
     <div class="row justify-content-center">
         <div class="col-md-3 text-center mb-2 mt-2">
             <h2 class="heading-section">DATA PENGURUS TPQ </h2>
@@ -26,39 +26,28 @@
                     <th>Hp</th>
                     <th>Email</th>
                     <th>Peran</th>
+                    <th>Piihan</th>
                     </tr>
                 </thead>
-                {{-- @foreach ($santri as $data) --}}
+                @foreach ($pengurus1 as $data)
                 <tbody>
                 <tr>
-                    <th scope="row" class="scope" > 1 </th>
-                    <td> Nama Pengururs</td>
-                    <td>Ini No Hp</td>
-                    <td>Ini Email</td>
-                    <td>Ini Peran</td>
-                </tr>
-                <tr>
-                    <th scope="row" class="scope" > 2 </th>
-                    <td> Hidayat</td>
-                    <td>08915234</td>
-                    <td>Hidatar@gmail</td>
-                    <td>Pemilik</td>
-                </tr>
-                <tr>
-                    <th scope="row" class="scope" > 3 </th>
-                    <td>Risa</td>
-                    <td>08915234</td>
-                    <td>Risa@gmail</td>
-                    <td>Pengajar</td>
+                    <th scope="row" class="scope" > {{ $data->IDPENGURUS }} </th>
+                    <td> {{ $data->NAMA }}</td>
+                    <td>{{ $data->HP }}</td>
+                    <td>{{ $data->EMAIL }}</td>
+                    <td>PERAN</td>
+                    <td><a href="/detailpengurus{{ $data->IDPENGURUS }}" class="btn btn-primary">Detail Data</a></td>
                 </tr>
                 </tbody>
-                {{-- @endforeach --}}
+                @endforeach
                 </table>
             </div>
         </div>
     </div>
-    <a href="/pengurus" class="btn btn-primary">Kembali</a>
+    <a href="/" class="btn btn-primary">Kembali</a>
 </div>
+
 
 
 

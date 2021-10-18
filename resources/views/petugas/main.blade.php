@@ -41,7 +41,7 @@
         
 
 
-        <div class="copyrights">
+        <div class="copyrights" id="footer">
             <div class="container">
                 <div class="footer-distributed">
                     <div class="footer-center">                   

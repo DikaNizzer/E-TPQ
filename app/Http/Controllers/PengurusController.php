@@ -88,18 +88,18 @@ class PengurusController extends Controller
         $pengurus = DB::table('pengurus')->get();
 
         // mengirim data ke view santri
-        return view('kelasIqra', [
+        return view('datapengurus', [
             'pengurus1' => $pengurus
         ]);
     }
 
     // FUNGSI UNTUK MENAMPILKAN DATA PENGURUS 
-    public function detailurus($NAMA){ 
-        // mengambil data pengurus berdasarkan id yang dipilih
-        $pengurus = DB::table('pengurus')->where('NAMA',$NAMA)->get(); 
+    public function detailurus($IDSANTRI){ 
+        // mengambil data santri berdasarkan id yang dipilih
+        $pengurus = DB::table('pengurus ')->where('IDPENGURUS',$IDSANTRI)->get(); 
         
-        // passing data pengurus yang didapat ke view detail
-        return view('detailPengurus',['pengurus' => $pengurus]);
+        // passing data santri yang didapat ke view detail
+        return view('detailpengurus', ['pengurus' => $pengurus]);
         }
     
 }

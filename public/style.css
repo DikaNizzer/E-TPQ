@@ -3984,9 +3984,13 @@ a.link-style3 {
 }
 
 .full{
-    height: 75%;
+    height: 100%;
 }
 
+#footer{
+    position:absolute;
+    bottom:0px;
+}
 
 
 

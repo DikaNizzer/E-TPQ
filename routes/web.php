@@ -21,9 +21,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/datapengurus', function () {
-    return view('datapengurus');
-});
+// Route::get('/datapengurus', function () {
+//     return view('datapengurus');
+// });
 
 
 //cek koneksi database
@@ -95,5 +95,8 @@ Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 //menampilkan Data Pengurus
 Route::get('/kelasIqra', [PengurusController::class, 'pengurus'] );
 
-//Untuk Mengembalikan RIwayat Data Santri
-Route::get('/detailPengurus{NAMA}', [PengurusController::class, 'detailurus'] );
+//Untuk Mengembalikan RIwayat Data pengurus MASIH ERROR
+Route::get('/detailpengurus{IDPENGURUS}', [PengurusController::class, 'detailurus'] );
+
+//menampilkan data pengurus dalam tabel
+Route::get('/datapengurus', [PengurusController::class, 'pengurus'] );

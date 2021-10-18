@@ -66,7 +66,7 @@
                                     <label for="Absen">Tempat Lahir : </label>
                                     <p class="kotak">{{ $san->KOTALHR }}</p>
                                 </div>
-                                <input type="submit" class="btnRegister"  value="Lihat Perkembangan"/>
+                                <input type="submit" class="btnRegister"  value="Tambah Perkembangan"/>
                             </div>
                         </div>
                     </div>

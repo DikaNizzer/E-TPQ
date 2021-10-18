@@ -23,12 +23,12 @@
 									<li><a href="#" class="fa fa-twitter"></a></li>
 									<li><a href="#" class="fa fa-linkedin"></a></li>
 									<li><a href="#" class="fa fa-skype"></a></li> --}}
-									<a href="/detailPengurus{{ $dataurus->NAMA }}">{{ $dataurus->NAMA }}</a>
+									{{-- <a href="/detailpengurus{{ $dataurus->NAMA }}">{{ $dataurus->NAMA }}</a> --}}
 								{{-- </ul> --}}
 							</div>
 						</div>
 						<div class="team-content">
-							{{-- <h3 class="title">IQRA' 1</h3> --}}
+							<a href="detailpengurus{{ $dataurus->NAMA }}"><h3 class="title">{{ $dataurus->NAMA }}</h3></a>
 							{{-- <span class="post">Web Developer</span> --}}
 						</div>
 					</div>

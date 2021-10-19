@@ -17,6 +17,10 @@
 				<a class="navbar-brand" href="/">
 					<img src="images/logon.png" alt="" />
 				</a>
+
+				<a class="navbar-brand" href="/">
+					<img src="images/vokasi.png" alt="" width="100px"/>
+				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -24,8 +28,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-host">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="/info">Informasi</a></li>
+						<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Kelas</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">

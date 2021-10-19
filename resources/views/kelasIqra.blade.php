@@ -28,7 +28,7 @@
 							</div>
 						</div>
 						<div class="team-content">
-							<a href="detailpengurus{{ $dataurus->NAMA }}"><h3 class="title">{{ $dataurus->NAMA }}</h3></a>
+							<a href="/detailpengurus{{ $dataurus->NAMA }}"><h3 class="title">{{ $dataurus->NAMA }}</h3></a>
 							{{-- <span class="post">Web Developer</span> --}}
 						</div>
 					</div>

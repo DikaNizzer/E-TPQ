@@ -35,7 +35,7 @@
                                         <p class="kotak">{{ $data->GENDER }}</p>
                                     </div>
                                     
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <div class="maxl">
                                             
                                             <label class="radio inline"> 
@@ -48,9 +48,9 @@
                                             </label>
                                         
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="Absen">Email : </label>
                                         <p class="kotak">{{ $san->EMAIL }}</p>
@@ -68,7 +68,7 @@
                                         <p class="kotak">{{ $san->KOTALHR }}</p>
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Lihat Perkembangan"/>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

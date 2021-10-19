@@ -22,6 +22,68 @@ class SantriController extends Controller
         ]);
     }
 
+    //yang dikiri nama kolom yang di kanan request nama dari form
+   // method untuk insert data ke table santri
+   public function store(Request $request)
+   {
+       // insert data ke table Santri
+       DB::table('santri')->insert([
+           'IDSANTRI' => $request->id,
+           'PASSWORD' => $request->pass,
+           'NAMASATRI' => $request->nama,
+           'TAGGALLHR' => $request->lahir,
+           'NAMAORTU' => $request->ortu,
+           'ALAMATORTU' => $request->alamat,
+           'GENDER' => $request->jk,
+           'EMAIL' => $request->email,
+           'HP' => $request->hp,
+           'TANGGALMASUK' => $request->masuk,
+           'KOTALHR' => $request->tempatLahir,
+           'foto' => $request->foto]
+       );
+
+       // alihkan halaman ke halaman santri
+       return redirect('/tabelsantri');
+   }
+
+   public function detail($IDSANTRI){ 
+   // mengambil data santri berdasarkan id yang dipilih
+   $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+   
+   // passing data santri yang didapat ke view detail
+   return view('petugas.detail',['santri' => $santri]);
+   }
+
+   public function edit($IDSANTRI){ 
+       // mengambil data santri berdasarkan id yang dipilih
+       $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+       
+       // passing data santri yang didapat ke view detail
+       return view('petugas.edit',['santri' => $santri]);
+   }
+
+   public function update(Request $request)
+   {
+       // update data ke table Santri
+       DB::table('santri')->where('IDSANTRI',$request->id)->update([
+           'PASSWORD' => $request->pass,
+           'NAMASATRI' => $request->nama,
+           'TAGGALLHR' => $request->lahir,
+           'NAMAORTU' => $request->ortu,
+           'ALAMATORTU' => $request->alamat,
+           'GENDER' => $request->jk,
+           'EMAIL' => $request->email,
+           'HP' => $request->hp,
+           'TANGGALMASUK' => $request->masuk,
+           'KOTALHR' => $request->tempatLahir,
+           'foto' => $request->foto]
+       );
+
+       // alihkan halaman ke halaman santri
+       return redirect('/tabelsantri');
+   }
+
+
     public function tabel(){
 
         //ambil data dari table santri

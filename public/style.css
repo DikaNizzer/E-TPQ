@@ -3988,7 +3988,8 @@ a.link-style3 {
 }
 
 #footer{
-    position:absolute;
+    position:fixed;
+    /* height: 100%; */
     bottom:0px;
 }
 

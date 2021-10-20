@@ -20,12 +20,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-// Route::get('/datapengurus', function () {
-//     return view('datapengurus');
-// });
-
-
 //cek koneksi database
 Route::get('/test-koneksi-database', function() {
 	try {
@@ -62,11 +56,6 @@ Route::get('/tambah', function () {
 //Menyimpan Data Santri Baru
 Route::post('/santri/store', [SantriController::class, 'store'] );
 
-//menampilkan kelas Iqra'
-// Route::get('/kelasIqra', function () {
-//     return view('kelasIqra');
-// }); 
-
 //menampilkan Detail Santri
 Route::get('/detail{IDSANTRI}', [SantriController::class, 'detail'] );
 
@@ -92,9 +81,19 @@ Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 //Untuk Mengembalikan RIwayat Data Santri
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 
-//menampilkan Data Pengurus
-Route::get('/kelasIqra', [PengurusController::class, 'pengurus'] );
-
+// //menampilkan Data Pengurus
+// Route::get('/kelasIqra', [PengurusController::class, 'pengurus'] );
 
 //menampilkan data pengurus dalam tabel
-Route::get('/datapengurus', [PengurusController::class, 'pengurus'] );
+Route::get('/data', [PengurusController::class, 'pengurus'] );
+
+//menampilkan detail data pengurus yang di HOME
+Route::get('/id{IDPENGURUS}', [PengurusController::class, 'detail']);
+
+//menampilkan detail data pengurus yang Setelah login
+Route::get('/di{IDPENGURUS}', [PengurusController::class, 'detail2']);
+
+//menampilkan detail data pengurus
+Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'detail']);
+
+

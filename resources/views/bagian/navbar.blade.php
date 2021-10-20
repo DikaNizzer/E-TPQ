@@ -229,7 +229,7 @@
 								<a class="dropdown-item" href="#">Al - Quran</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="datapengurus">Pengajar</a></li>
+						<li class="nav-item"><a class="nav-link" href="data">Pengajar</a></li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Login </a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">

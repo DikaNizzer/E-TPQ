@@ -9,6 +9,7 @@ class Peran extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'IDPERAN';
     protected $table = "peran";
  
     public function pengurus()

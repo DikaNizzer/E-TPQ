@@ -9,6 +9,7 @@ class Pengurus extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'IDPENGURUS';
     protected $table = "pengurus";
  
     public function peran()

@@ -94,6 +94,7 @@ Route::get('/id{IDPENGURUS}', [PengurusController::class, 'detail']);
 Route::get('/di{IDPENGURUS}', [PengurusController::class, 'detail2']);
 
 //menampilkan detail data pengurus
-Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'detail']);
+Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'ubah']);
 
-
+//Menyimpan Data Santri Baru
+Route::post('/pengurusupdate', [PengurusController::class, 'update'] );

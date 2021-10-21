@@ -55,5 +55,27 @@ class PengurusController extends Controller
         return view('petugas.detailpengurus',['pengurus' => $pengurus]);
     }
 
+    public function ubah($IDPENGURUS){
+
+        //Ambil data sesuai id santri
+        $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
+        
+        //Passing data dsb
+        return view('petugas.ubahpengurus',['pengurus' => $pengurus]);
+    }
+
+    public function update(Request $request)
+    {
+        // update data ke table Santri
+        DB::table('pengurus')->where('IDPENGURUS',$request->id)->update([
+            'NAMA' => $request->nama,
+            'GENDER' => $request->jk,
+            'EMAIL' => $request->email,
+            'HP' => $request->hp]
+        );
+ 
+        // alihkan halaman ke halaman santri
+        return redirect('/pengurus');
+    }
     
 }

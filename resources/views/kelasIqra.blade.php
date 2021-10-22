@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
 
-@foreach($pengurus1 as $dataurus)
+{{-- @foreach($pengurus1 as $dataurus) --}}
 				<div class="col-lg-3 col-md-6 col-12">
 					<div class="our-team">
 						<div class="team-img">
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 				</div>
-@endforeach
+{{-- @endforeach --}}
 				{{-- <div class="col-lg-3 col-md-6 col-12">
 					<div class="our-team">
 						<div class="team-img">

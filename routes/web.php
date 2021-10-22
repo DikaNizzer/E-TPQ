@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PengurusController;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +99,18 @@ Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'ubah']);
 
 //Menyimpan Data Santri Baru
 Route::post('/pengurusupdate', [PengurusController::class, 'update'] );
+
+//
+// Route::get('/kelasIqra', function () {
+//     return view('kelasIqra');
+// });
+
+Route::get('/tambahBuku', function () {
+    return view('petugas.tambahBuku');
+});
+
+//menamilkan data buku
+Route::get('/buku', [BukuController::class, 'dataBuku'] );
+
+//menambah data buku
+Route::post('/buku/store', [BukuController::class, 'tambahBuku'] );

@@ -44,6 +44,7 @@
 								<a class="dropdown-item" href="santriterhapus">Data Santri Dihapus</a>
 							</div>
 						</li>
+						<li class="nav-item active"><a class="nav-link" href="/buku">Buku</a></li>
 						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>
 						<ul></ul>
 						<ul></ul>

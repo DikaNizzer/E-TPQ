@@ -45,7 +45,7 @@
 							</div>
 						</li>
 						<li class="nav-item "><a class="nav-link" href="/buku">Buku</a></li>
-						<li class="nav-item "><a class="nav-link" href="#">Peran</a></li>
+						<li class="nav-item "><a class="nav-link" href="/peran">Peran</a></li>
 						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>
 						<ul></ul>
 						<ul></ul>

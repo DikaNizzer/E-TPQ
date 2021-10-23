@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3 text-center mb-2 mt-2">
-            <h2 class="heading-section">DAFTAR BUKU</h2>
+            <h2 class="heading-section">DAFTAR PERAN</h2>
         </div>
     </div>
 
@@ -15,21 +15,21 @@
                 <thead class="thead-primary table-primary">
                 <tr >
                     <th>No</th>
-                    <th>Nama Buku</th>
-                    <th>Keterangan</th>
+                    <th>Nama Peran</th>
+                    <th>Waktu DiBuat</th>
                     <th>Aksi</th>
                     </tr>
                 </thead>
-                @foreach ($buku as $data)
+                @foreach ($peran as $data)
                 <tbody>
                 <tr>
                     <?php $absen =1 ?>
-                    <th scope="row" class="scope" >{{ $data->IDBUKU }}</th>
-                    <td>{{$data->BUKU}}</td>
-                    <td>{{$data->KETERANGAN}}</td>
+                    <th scope="row" class="scope" >{{ $data->IDPERAN }}</th>
+                    <td>{{$data->PERAN}}</td>
+                    <td>{{$data->created_at}}</td>
                     <td>
-                        <a href="bukuubah{{ $data->IDBUKU }}" class="btn btn-info"> UBAH </a>
-                        <a href="bukuhapus{{ $data->IDBUKU }}" class="btn btn-info"> HAPUS </a>
+                        <a href="bukuubah{{ $data->IDPERAN }}" class="btn btn-info"> UBAH </a>
+                        <a href="bukuhapus{{ $data->IDPERAN }}" class="btn btn-info"> HAPUS </a>
                     </td>
                     <?php $absen++ ?>
                 </tr>
@@ -41,7 +41,7 @@
     </div> 
     <a href="/pengurus" class="btn btn-primary">Kembali</a>
     <a href="/tambahBuku" class="btn btn-primary ">Tambah</a>
-    <a href="/bukuterhapus" class="btn btn-primary ">Data Buku dihapus</a>
+    <a href="/bukuterhapus" class="btn btn-primary ">Data Peran dihapus</a>
 </div>
 
     

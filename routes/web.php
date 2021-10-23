@@ -2,9 +2,10 @@
 use App\Models\Santri;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\PeranController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PengurusController;
-use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,3 +133,6 @@ Route::get('/kembalibuku{IDBUKU}', [BukuController::class, 'kembalikan'] );
 
 //Untuk Mengembalikan RIwayat Data Buku
 Route::get('/del{IDBUKU}', [BukuController::class, 'permanen'] );
+
+//menamilkan data peran
+Route::get('/peran', [PeranController::class, 'tampilkan'] );

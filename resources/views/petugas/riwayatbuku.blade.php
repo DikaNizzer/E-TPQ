@@ -4,14 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3 text-center mb-2 mt-2">
-            <h2 class="heading-section">DAFTAR BUKU</h2>
+            <h2 class="heading-section">DAFTAR BUKU TELAH DIHAPUS</h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
             <div class="table-wrap">
-                <a href="/tambahBuku" class="btn btn-primary ">Tambah</a>
                 <table class="table">
                 <thead class="thead-primary table-primary">
                 <tr >
@@ -29,8 +28,8 @@
                     <td>{{$data->BUKU}}</td>
                     <td>{{$data->KETERANGAN}}</td>
                     <td>
-                        <a href="bukuubah{{ $data->IDBUKU }}" class="btn btn-info"> UBAH </a>
-                        <a href="bukuhapus{{ $data->IDBUKU }}" class="btn btn-info"> HAPUS </a>
+                        <a href="kembalibuku{{ $data->IDBUKU }}" class="btn btn-info"> Kembalikan Data </a>
+                        <a href="del{{ $data->IDBUKU }}" class="btn btn-danger"> HAPUS PERMANEN </a>
                     </td>
                     <?php $absen++ ?>
                 </tr>
@@ -41,8 +40,6 @@
         </div>
     </div> 
     <a href="/pengurus" class="btn btn-primary">Kembali</a>
-    <a href="/tambahBuku" class="btn btn-primary ">Tambah</a>
-    <a href="/bukuterhapus" class="btn btn-primary ">Data Buku dihapus</a>
 </div>
 
     

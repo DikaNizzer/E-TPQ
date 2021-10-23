@@ -114,3 +114,21 @@ Route::get('/buku', [BukuController::class, 'dataBuku'] );
 
 //menambah data buku
 Route::post('/buku/store', [BukuController::class, 'tambahBuku'] );
+
+//menampilkan detail data Buku unytuk diubah
+Route::get('/bukuubah{IDBUKU}', [BukuController::class, 'ubah']);
+
+//Menyimpan Data Buku Baru
+Route::post('/buku/update', [BukuController::class, 'update'] );
+
+//Untuk menghapus(soft delete data Buku)
+Route::get('/bukuhapus{IDBUKU}', [BukuController::class, 'hapus'] );
+
+//Untuk Menampilkan RIwayat Data Santri
+Route::get('/bukuterhapus', [BukuController::class, 'riwayat'] );
+
+//Untuk Mengembalikan RIwayat Data Buku
+Route::get('/kembalibuku{IDBUKU}', [BukuController::class, 'kembalikan'] );
+
+//Untuk Mengembalikan RIwayat Data Buku
+Route::get('/del{IDBUKU}', [BukuController::class, 'permanen'] );

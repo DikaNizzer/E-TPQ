@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Santri;
+// use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
+
 
 // panggil model Santri
-use App\Models\Santri;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class SantriController extends Controller
 {
@@ -24,64 +27,64 @@ class SantriController extends Controller
 
     //yang dikiri nama kolom yang di kanan request nama dari form
    // method untuk insert data ke table santri
-   public function store(Request $request)
-   {
-       // insert data ke table Santri
-       DB::table('santri')->insert([
-           'IDSANTRI' => $request->id,
-           'PASSWORD' => $request->pass,
-           'NAMASATRI' => $request->nama,
-           'TAGGALLHR' => $request->lahir,
-           'NAMAORTU' => $request->ortu,
-           'ALAMATORTU' => $request->alamat,
-           'GENDER' => $request->jk,
-           'EMAIL' => $request->email,
-           'HP' => $request->hp,
-           'TANGGALMASUK' => $request->masuk,
-           'KOTALHR' => $request->tempatLahir,
-           'foto' => $request->foto]
-       );
+    public function store(Request $request)
+    {
+        // insert data ke table Santri
+        DB::table('santri')->insert([
+            'IDSANTRI' => $request->id,
+            'PASSWORD' => $request->pass,
+            'NAMASATRI' => $request->nama,
+            'TAGGALLHR' => $request->lahir,
+            'NAMAORTU' => $request->ortu,
+            'ALAMATORTU' => $request->alamat,
+            'GENDER' => $request->jk,
+            'EMAIL' => $request->email,
+            'HP' => $request->hp,
+            'TANGGALMASUK' => $request->masuk,
+            'KOTALHR' => $request->tempatLahir,
+            'foto' => $request->foto]
+        );
 
-       // alihkan halaman ke halaman santri
-       return redirect('/tabelsantri');
-   }
+        // alihkan halaman ke halaman santri
+        return redirect('/tabelsantri');
+    }
 
-   public function detail($IDSANTRI){ 
-   // mengambil data santri berdasarkan id yang dipilih
-   $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
-   
-   // passing data santri yang didapat ke view detail
-   return view('petugas.detail',['santri' => $santri]);
-   }
+    public function detail($IDSANTRI){ 
+    // mengambil data santri berdasarkan id yang dipilih
+    $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+    
+    // passing data santri yang didapat ke view detail
+    return view('petugas.detail',['santri' => $santri]);
+    }
 
-   public function edit($IDSANTRI){ 
-       // mengambil data santri berdasarkan id yang dipilih
-       $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
-       
-       // passing data santri yang didapat ke view detail
-       return view('petugas.edit',['santri' => $santri]);
-   }
+    public function edit($IDSANTRI){ 
+        // mengambil data santri berdasarkan id yang dipilih
+        $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+        
+        // passing data santri yang didapat ke view detail
+        return view('petugas.edit',['santri' => $santri]);
+    }
 
-   public function update(Request $request)
-   {
-       // update data ke table Santri
-       DB::table('santri')->where('IDSANTRI',$request->id)->update([
-           'PASSWORD' => $request->pass,
-           'NAMASATRI' => $request->nama,
-           'TAGGALLHR' => $request->lahir,
-           'NAMAORTU' => $request->ortu,
-           'ALAMATORTU' => $request->alamat,
-           'GENDER' => $request->jk,
-           'EMAIL' => $request->email,
-           'HP' => $request->hp,
-           'TANGGALMASUK' => $request->masuk,
-           'KOTALHR' => $request->tempatLahir,
-           'foto' => $request->foto]
-       );
+    public function update(Request $request)
+    {
+        // update data ke table Santri
+        DB::table('santri')->where('IDSANTRI',$request->id)->update([
+            'PASSWORD' => $request->pass,
+            'NAMASATRI' => $request->nama,
+            'TAGGALLHR' => $request->lahir,
+            'NAMAORTU' => $request->ortu,
+            'ALAMATORTU' => $request->alamat,
+            'GENDER' => $request->jk,
+            'EMAIL' => $request->email,
+            'HP' => $request->hp,
+            'TANGGALMASUK' => $request->masuk,
+            'KOTALHR' => $request->tempatLahir,
+            'foto' => $request->foto]
+        );
 
-       // alihkan halaman ke halaman santri
-       return redirect('/tabelsantri');
-   }
+        // alihkan halaman ke halaman santri
+        return redirect('/tabelsantri');
+    }
 
 
     public function tabel(){
@@ -130,4 +133,28 @@ class SantriController extends Controller
         
         return redirect('santriterhapus');
     }
+
+    public function cetak($IDSANTRI){ 
+        // mengambil data santri berdasarkan id yang dipilih
+        // $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+        $santri = Santri::find($IDSANTRI);
+        
+        // passing data santri yang didapat ke view detail
+        // return view('petugas.detail',['santri' => $santri]);
+        $pdf = PDF::loadview('petugas.santriPdf',['santri'=>$santri]);
+    	// return $pdf->download('Data-Santri.pdf');
+        return $pdf->stream();
+        }
+
+        public function cetakk(){ 
+            // mengambil data santri berdasarkan id yang dipilih
+            // $santri = DB::table('santri')->get(); 
+            $santri = Santri::all();
+            
+            // passing data santri yang didapat ke view detail
+            // return view('petugas.detail',['santri' => $santri]);
+            $pdf = PDF::loadview('petugas.tabelcetak',['santri'=>$santri]);
+            // return $pdf->download('Data-Santri.pdf')
+            return $pdf->stream();
+            }
 };

@@ -61,6 +61,12 @@ Route::post('/santri/store', [SantriController::class, 'store'] );
 //menampilkan Detail Santri
 Route::get('/detail{IDSANTRI}', [SantriController::class, 'detail'] );
 
+//Cetak detail santri
+Route::get('/cetak{IDSANTRI}', [SantriController::class, 'cetak'] );
+
+//Cetak detail santri
+Route::get('/cetak', [SantriController::class, 'cetakk'] );
+
 //menampilkan Detail Santri yang mau di update
 Route::get('/edit{IDSANTRI}', [SantriController::class, 'edit'] );
 

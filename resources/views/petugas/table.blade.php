@@ -4,6 +4,8 @@
 
     {{-- <section class="ftco-section"> --}}
 		<div class="container">
+			<a href="/pengurus" class="btn btn-primary">Kembali</a>
+			<a href="/cetak" class="btn btn-primary">Cetak</a>
 			<div class="row justify-content-center">
 				<div class="col-md-3 text-center mb-2 mt-2">
 					<h2 class="heading-section">TABLE JUMLAH SANTRI </h2>
@@ -35,6 +37,7 @@
 								<a href="/detail{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Data</a>
                                 <a href="/edit{{ $data->IDSANTRI }}" class="btn btn-primary">Edit Data</a>
 								<a href="/santrihapus{{ $data->IDSANTRI }}" class="btn btn-danger">Hapus Data</a>
+								<a href="/cetak{{ $data->IDSANTRI }}" class="btn btn-primary"> Print Data </a>
                             </td>
 						</tr>
 						</tbody>
@@ -44,6 +47,7 @@
 				</div>
 			</div>
             <a href="/pengurus" class="btn btn-primary">Kembali</a>
+			<a href="/cetak" class="btn btn-primary">Kembali</a>
 		</div>
 
         

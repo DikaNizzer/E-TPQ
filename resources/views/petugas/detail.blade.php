@@ -19,6 +19,10 @@
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="Absen">Id Santri : </label>
+                                    <p class="kotak">{{ $san->IDSANTRI }}</p>
+                                </div>
+                                <div class="form-group">
                                     <label for="Absen">Nama : </label>
                                     <p class="kotak">{{ $san->NAMASATRI }}</p>
                                 </div>
@@ -45,7 +49,7 @@
                                             <input type="radio" name="gender" value="P">
                                             <span>P </span> 
                                         </label>
-                                    
+                                        <a href="/cetak{{ $san->IDSANTRI }}" class="btnRegister"> Print Data </a>
                                     </div>
                                 </div>
                             </div>
@@ -65,6 +69,10 @@
                                 <div class="form-group">
                                     <label for="Absen">Tempat Lahir : </label>
                                     <p class="kotak">{{ $san->KOTALHR }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Absen">Password : </label>
+                                    <p class="kotak">{{ $san->PASSWORD }}</p>
                                 </div>
                                 <input type="submit" class="btnRegister"  value="Tambah Perkembangan"/>
                             </div>

@@ -82,8 +82,8 @@
                     <td>{{$data->created_at}}</td>
                     <td>{{ $data->AKTIF }}</td>
                     <td>
-                        <a href="peranubah{{ $data->IDPERAN }}" class="btn btn-info"> UBAH </a>
-                        <a href="peranhapus{{ $data->IDPERAN }}" class="btn btn-info"> HAPUS </a>
+                        <a href="kembaliperan{{ $data->IDPERAN }}" class="btn btn-info"> Kembalikan Data</a>
+                        <a href="dpr{{ $data->IDPERAN }}" class="btn btn-info"> Hapus Permanen </a>
                     </td>
                     <?php $absen++ ?>
                 </tr>
@@ -93,9 +93,7 @@
             </div>
         </div>
     </div> 
-    <a href="/pengurus" class="btn btn-primary">Kembali</a>
-    <a href="#" data-target="#peran" data-toggle="modal" class="btn btn-primary">Tambah</a>
-    <a href="/peranterhapus" class="btn btn-primary ">Data Peran dihapus</a>
+    <a href="/peran" class="btn btn-primary">Kembali</a>
 </div>
 
     

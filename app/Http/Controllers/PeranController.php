@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -24,11 +25,66 @@ class PeranController extends Controller
         // insert data ke table buku
         DB::table('peran')->insert([
             'IDPERAN' => $request->id,
-            'PERAN' => $request->peran
+            'PERAN' => $request->peran,
+            'AKTIF' => $request->status
         ]);
 
         // alihkan halaman ke halaman santri
         return redirect('/peran');
+    }
+
+    public function ubah($IDPERAN){
+
+        //Ambil data sesuai id santri
+        $peran = DB::table("peran")->where('IDPERAN',$IDPERAN)->get();
+        
+        //Passing data dsb
+        return view('petugas.ubahperan',['peran' => $peran]);
+    }
+
+    public function update(Request $request)
+    {
+        // update data ke table peran
+        DB::table('peran')->where('IDPERAN',$request->idperan)->update([
+            'PERAN' => $request->namaperan,
+            'AKTIF' => $request->status]
+        );
+ 
+        // alihkan halaman ke halaman peran
+        return redirect('/peran');
+    }
+
+    public function hapus($IDPERAN)
+    {
+        $peran = Peran::find($IDPERAN);
+        $peran->delete();
+        
+        return redirect('/peran');
+    }
+
+    // menampilkan data peran yang sudah dihapus
+    public function riwayat()
+    {
+        $peran = Peran::onlyTrashed()->get();
+        return view('petugas.riwayatperan', ['peran' => $peran]);
+    }
+
+    public function kembalikan($IDPERAN)
+    {
+        $peran = Peran::onlyTrashed()->where('IDPERAN',$IDPERAN);
+        $peran->restore();
+        
+        return redirect('peran');
+    }
+
+        // hapus permanen
+    public function permanen($IDPERAN)
+    {
+        // hapus permanen data guru
+        $peran = Peran::onlyTrashed()->where('IDPERAN',$IDPERAN);
+        $peran->forceDelete();
+        
+        return redirect('peranterhapus');
     }
 
 }

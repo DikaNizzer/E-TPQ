@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Peran extends Model
 {
@@ -16,4 +17,7 @@ class Peran extends Model
     {
     	return $this->belongsToMany('App\Models\Pengurus');
     }
+
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
 }

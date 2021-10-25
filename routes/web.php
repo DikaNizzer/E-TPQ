@@ -142,3 +142,21 @@ Route::get('/peran', [PeranController::class, 'tampilkan'] );
 
 //Menyimpan Data Peran Baru
 Route::post('/peran/store', [PeranController::class, 'tambahperan'] );
+
+// menampilkan detail data Buku unytuk diubah
+Route::get('/peranubah{IDPERAN}', [PeranController::class, 'ubah']);
+
+//Menyimpan Data peran baru
+Route::post('/peran/update', [PeranController::class, 'update'] );
+
+//Untuk menghapus(soft delete data peran)
+Route::get('/peranhapus{IDPERAN}', [PeranController::class, 'hapus'] );
+
+//Untuk Menampilkan RIwayat Data Peran
+Route::get('/peranterhapus', [PeranController::class, 'riwayat'] );
+
+//Untuk Mengembalikan RIwayat Data Peran
+Route::get('/kembaliperan{IDPERAN}', [PeranController::class, 'kembalikan'] );
+
+//Untuk Mengembalikan RIwayat Data Peran
+Route::get('/dpr{IDPERAN}', [PeranController::class, 'permanen'] );

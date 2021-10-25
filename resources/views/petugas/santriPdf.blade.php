@@ -34,7 +34,9 @@
     <div class="container register">
             <div class="row">
                 <div class="col-md-3 register-left">
-                    <img src="images/{{ $santri->foto}}" width="250px">
+                    <img src="images/{{ $santri->foto}}" width="150px">
+                    <img src="{{ public_path("images/".$santri->foto) }}" alt="" style="width: 150px; height: 150px;">
+                    <img src="{{asset('images/'.$santri->foto)}}">
                     <h3>Assalamualaikum</h3>
                     <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
                         yang memusuhimu akan seperti teman yang setia.</p>

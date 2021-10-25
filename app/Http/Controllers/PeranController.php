@@ -18,4 +18,17 @@ class PeranController extends Controller
             'peran' => $peran
         ]);
     }
+
+    public function tambahperan (Request $request)
+    {
+        // insert data ke table buku
+        DB::table('peran')->insert([
+            'IDPERAN' => $request->id,
+            'PERAN' => $request->peran
+        ]);
+
+        // alihkan halaman ke halaman santri
+        return redirect('/peran');
+    }
+
 }

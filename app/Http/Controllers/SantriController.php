@@ -135,26 +135,12 @@ class SantriController extends Controller
     }
 
     public function cetak($IDSANTRI){ 
-        // mengambil data santri berdasarkan id yang dipilih
-        // $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
+
         $santri = Santri::find($IDSANTRI);
-        
-        // passing data santri yang didapat ke view detail
-        // return view('petugas.detail',['santri' => $santri]);
-        $pdf = PDF::loadview('petugas.santriPdf',['santri'=>$santri]);
-    	// return $pdf->download('Data-Santri.pdf');
-        return $pdf->stream();
+
+        $pdf = PDF::loadView('petugas.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif']);
+
+        return $pdf->download('Data-Santri.pdf');
         }
 
-        public function cetakk(){ 
-            // mengambil data santri berdasarkan id yang dipilih
-            // $santri = DB::table('santri')->get(); 
-            $santri = Santri::all();
-            
-            // passing data santri yang didapat ke view detail
-            // return view('petugas.detail',['santri' => $santri]);
-            $pdf = PDF::loadview('petugas.tabelcetak',['santri'=>$santri]);
-            // return $pdf->download('Data-Santri.pdf')
-            return $pdf->stream();
-            }
 };

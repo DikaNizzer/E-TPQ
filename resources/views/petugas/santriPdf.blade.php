@@ -29,12 +29,12 @@
         <script src="js/modernizer.js"></script>
 </head>
 <body>
-    @foreach ($santri as $san)
+
     <div class="bg">
     <div class="container register">
             <div class="row">
                 <div class="col-md-3 register-left">
-                    <img src="images/{{ $san->foto}}" width="250px">
+                    <img src="images/{{ $santri->foto}}" width="250px">
                     <h3>Assalamualaikum</h3>
                     <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
                         yang memusuhimu akan seperti teman yang setia.</p>
@@ -48,23 +48,23 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="Absen">Id Santri : </label>
-                                        <p class="kotak">{{ $san->IDSANTRI }}</p>
+                                        <p class="kotak">{{ $santri->IDSANTRI }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Nama : </label>
-                                        <p class="kotak">{{ $san->NAMASATRI }}</p>
+                                        <p class="kotak">{{ $santri->NAMASATRI }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Tanggal Lahir : </label>
-                                        <p class="kotak">{{ $san->TAGGALLHR }}</p>
+                                        <p class="kotak">{{ $santri->TAGGALLHR }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Nama Orang Tua : </label>
-                                        <p class="kotak">{{ $san->NAMAORTU }}</p>
+                                        <p class="kotak">{{ $santri->NAMAORTU }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Alamat Orang Tua : </label>
-                                        <p class="kotak">{{ $san->ALAMATORTU }}</p>
+                                        <p class="kotak">{{ $santri->ALAMATORTU }}</p>
                                     </div>
                                     <div class="form-group">
                                         <div class="maxl">
@@ -77,44 +77,41 @@
                                                 <input type="radio" name="gender" value="P">
                                                 <span>P </span> 
                                             </label>
-                                            <a href="/cetak{{ $san->IDSANTRI }}" class="btnRegister"> Print Data </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="Absen">Email : </label>
-                                        <p class="kotak">{{ $san->EMAIL }}</p>
+                                        <p class="kotak">{{ $santri->EMAIL }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Nomor Hp : </label>
-                                        <p class="kotak">{{ $san->HP }}</p>
+                                        <p class="kotak">{{ $santri->HP }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Tanggal Msuk : </label>
-                                        <p class="kotak">{{ $san->TANGGALMASUK }}</p>
+                                        <p class="kotak">{{ $santri->TANGGALMASUK }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Tempat Lahir : </label>
-                                        <p class="kotak">{{ $san->KOTALHR }}</p>
+                                        <p class="kotak">{{ $santri->KOTALHR }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="Absen">Password : </label>
-                                        <p class="kotak">{{ $san->PASSWORD }}</p>
+                                        <p class="kotak">{{ $santri->PASSWORD }}</p>
                                     </div>
-                                    <input type="submit" class="btnRegister"  value="Tambah Perkembangan"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="/tabelsantri" class="btn btn-primary">Kembali</a>
         </div> 
     </div>
     
     
-                @endforeach
-    
+                {{-- @endforeach --}}
+
 </body>
 </html>

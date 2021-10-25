@@ -64,9 +64,6 @@ Route::get('/detail{IDSANTRI}', [SantriController::class, 'detail'] );
 //Cetak detail santri
 Route::get('/cetak{IDSANTRI}', [SantriController::class, 'cetak'] );
 
-//Cetak detail santri
-Route::get('/cetak', [SantriController::class, 'cetakk'] );
-
 //menampilkan Detail Santri yang mau di update
 Route::get('/edit{IDSANTRI}', [SantriController::class, 'edit'] );
 
@@ -142,3 +139,6 @@ Route::get('/del{IDBUKU}', [BukuController::class, 'permanen'] );
 
 //menamilkan data peran
 Route::get('/peran', [PeranController::class, 'tampilkan'] );
+
+//Menyimpan Data Peran Baru
+Route::post('/peran/store', [PeranController::class, 'tambahperan'] );

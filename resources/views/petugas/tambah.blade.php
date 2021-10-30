@@ -12,7 +12,7 @@
                         <p><strong>Q.S Fusshilat: 34</strong></p>
                 </div>
                 <div class="col-md-9 register-right">
-                    <form action="/santri/store" method="post">
+                    <form action="/santri/store" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -29,7 +29,8 @@
                                         <input type="text" class="form-control" placeholder="Nama Lengkap" value="" name="nama" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Tanggal Lahir" value="" name="lahir"/>
+                                        <label for="foto" class="form-label">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" placeholder="Tanggal Lahir" value="" name="lahir"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Nama Orang Tua" value="" name="ortu"/>
@@ -57,19 +58,24 @@
                                         <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="jk"/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email" value="" name="email"/>
+                                        <input type="email" class="form-control" placeholder="Email" value="" name="email"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Nomor Hp" value="" name="hp"/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Tanggal Masuk" value="" name="masuk"/>
+                                        <label for="foto" class="form-label">Tanggal Masuk</label>
+                                        <input type="date" class="form-control" placeholder="Tanggal Masuk" value="" name="masuk"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Tempat Lahir" value="" name="tempatLahir"/>
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Upload Foto" value="" name="foto"/>
+                                    </div> --}}
+                                    <div class="form-group">
+                                        <label for="foto" class="form-label">Upload Foto</label>
+                                        <input class="form-control" type="file" id="foto" name="foto" >
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Tambah Data"/>
                                 </div>

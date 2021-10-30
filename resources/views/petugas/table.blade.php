@@ -28,7 +28,7 @@
 						<tbody>
 						<tr>
 							<th scope="row" class="scope" >{{ $data->IDSANTRI }}</th>
-							<td> <img src="images/{{ $data->foto }}" width="150px"></td>
+							<td> <img src="storage/{{ $data->foto }}" width="150px"></td>
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>{{ $data->TANGGALMASUK }}</td>
 							<td>

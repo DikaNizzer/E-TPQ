@@ -29,6 +29,8 @@ class SantriController extends Controller
    // method untuk insert data ke table santri
     public function store(Request $request)
     {
+
+        
         // insert data ke table Santri
         DB::table('santri')->insert([
             'IDSANTRI' => $request->id,
@@ -42,7 +44,7 @@ class SantriController extends Controller
             'HP' => $request->hp,
             'TANGGALMASUK' => $request->masuk,
             'KOTALHR' => $request->tempatLahir,
-            'foto' => $request->foto]
+            'foto' => $request->file('foto')->store('folder-foto')]
         );
 
         // alihkan halaman ke halaman santri

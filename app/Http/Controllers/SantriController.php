@@ -69,6 +69,11 @@ class SantriController extends Controller
 
     public function update(Request $request)
     {
+        if($request->file('foto')){
+            $fotobaru = $request->file('foto')->store('folder-foto');
+        }else{
+            $fotobaru = $request->fotolama;
+        }
         // update data ke table Santri
         DB::table('santri')->where('IDSANTRI',$request->id)->update([
             'PASSWORD' => $request->pass,
@@ -81,7 +86,9 @@ class SantriController extends Controller
             'HP' => $request->hp,
             'TANGGALMASUK' => $request->masuk,
             'KOTALHR' => $request->tempatLahir,
-            'foto' => $request->foto]
+            'foto' => $fotobaru
+            ]
+            
         );
 
         // alihkan halaman ke halaman santri

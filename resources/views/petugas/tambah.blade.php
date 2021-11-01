@@ -41,14 +41,14 @@
                                     <div class="form-group">
                                         <div class="maxl">
                                             
-                                            <label class="radio inline"> 
+                                            {{-- <label class="radio inline"> 
                                                 <input type="radio" name="gender" value="L" checked>
                                                 <span> L </span> 
                                             </label>
                                             <label class="radio inline"> 
                                                 <input type="radio" name="gender" value="P">
                                                 <span>P </span> 
-                                            </label>
+                                            </label> --}}
                                         
                                         </div>
                                     </div>
@@ -74,6 +74,7 @@
                                         <input type="text" class="form-control" placeholder="Upload Foto" value="" name="foto"/>
                                     </div> --}}
                                     <div class="form-group">
+                                        {{-- <img class="img-preview img-fluid"> --}}
                                         <label for="foto" class="form-label">Upload Foto</label>
                                         <input class="form-control" type="file" id="foto" name="foto" >
                                     </div>
@@ -86,7 +87,24 @@
                 </div>
             </div>
         </div>
+        <img class="img-preview img-fluid">
     </div>
 
 
+    {{-- <script>
+
+        function previewImage(){
+            const image = document.querySelector('#foto');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent){
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+    </script> --}}
 @endsection

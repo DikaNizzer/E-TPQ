@@ -27,91 +27,84 @@
     
         <!-- Modernizer for Portfolio -->
         <script src="js/modernizer.js"></script>
+
 </head>
-<body>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-wrap">
+            <p><center> DATA SANTRI </center></p><br><br>
+            
+            <table class="table">
+            <thead class="thead-primary table-primary">
+                
 
-    <div class="bg">
-    <div class="container register">
-            <div class="row">
-                <div class="col-md-3 register-left">
-                    <img src="images/{{ $santri->foto}}" width="250px">
-                    <h3>Assalamualaikum</h3>
-                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
-                        yang memusuhimu akan seperti teman yang setia.</p>
-                        <p><strong>Q.S Fusshilat: 34</strong></p>
-                </div>
-                <div class="col-md-9 register-right">
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Data Diri Santri</h3>
-                            <div class="row register-form">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="Absen">Id Santri : </label>
-                                        <p class="kotak">{{ $santri->IDSANTRI }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Nama : </label>
-                                        <p class="kotak">{{ $santri->NAMASATRI }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Tanggal Lahir : </label>
-                                        <p class="kotak">{{ $santri->TAGGALLHR }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Nama Orang Tua : </label>
-                                        <p class="kotak">{{ $santri->NAMAORTU }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Alamat Orang Tua : </label>
-                                        <p class="kotak">{{ $santri->ALAMATORTU }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="maxl">
-                                            
-                                            <label class="radio inline"> 
-                                                <input type="radio" name="gender" value="L" checked>
-                                                <span> L </span> 
-                                            </label>
-                                            <label class="radio inline"> 
-                                                <input type="radio" name="gender" value="P">
-                                                <span>P </span> 
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="Absen">Email : </label>
-                                        <p class="kotak">{{ $santri->EMAIL }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Nomor Hp : </label>
-                                        <p class="kotak">{{ $santri->HP }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Tanggal Msuk : </label>
-                                        <p class="kotak">{{ $santri->TANGGALMASUK }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Tempat Lahir : </label>
-                                        <p class="kotak">{{ $santri->KOTALHR }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Absen">Password : </label>
-                                        <p class="kotak">{{ $santri->PASSWORD }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
+                    <tr>
+                        <td rowspan="9"><img src="images/{{ $santri->foto}}" width="250px"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> ID Santri </td>
+                        <td> : {{ $santri->IDSANTRI }} </td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Nama </td>
+                        <td> : {{ $santri->NAMASATRI }}</td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Tanggal Lahir </td>
+                        <td> : {{ $santri->TAGGALLHR }}</td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Nama Orang Tua </td>
+                        <td> : {{ $santri->NAMAORTU }} </td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Alamat Orang Tua </td>
+                        <td> : {{ $santri->ALAMATORTU }}</td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Email </td>
+                        <td> : {{ $santri->EMAIL }}</td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Nomor Hp </td>
+                        <td> : {{ $santri->HP }}</td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Tempat Lahir </td>
+                        <td> : {{ $santri->KOTALHR }}</td>
+                    </tr>
+        
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Tanggal Masuk </td>
+                        <td> : {{ $santri->TANGGALMASUK }}</td>
+                    </tr>
+            </thead>
+            
+            </table>
+        </div>
     </div>
-    
-    
-                {{-- @endforeach --}}
-
-</body>
+</div>
 </html>

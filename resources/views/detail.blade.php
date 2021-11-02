@@ -55,12 +55,12 @@
                                             <p class="kotak">{{ $data->GENDER }}</p>
                                         </div>
                                     </div>
+                                    <a href="data" class="btn btn-primary mt-15px"> Kembali </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <br><br>
-                    <a href="data" class="btn btn-primary mt-15px"> Kembali </a>
                 </div>
             </div> 
         </div>

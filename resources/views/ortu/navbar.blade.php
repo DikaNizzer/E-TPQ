@@ -37,7 +37,7 @@
 								<a class="dropdown-item" href="#">Al - Quran</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Pengajar</a></li>
+						<li class="nav-item"><a class="nav-link" href="data">Pengajar</a></li>
 						{{-- <li class="nav-item"><a class="nav-link" href="#">Pengajar</a></li> --}}
 						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>
 						<ul></ul>

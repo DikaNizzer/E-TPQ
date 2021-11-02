@@ -47,7 +47,6 @@
                 </div>
             </div>
         </div>
-        <a href="/" class="btn btn-primary">Kembali</a>
     </div>
 
 

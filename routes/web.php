@@ -105,9 +105,12 @@ Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'ubah']);
 Route::post('/pengurusupdate', [PengurusController::class, 'update'] );
 
 //
-Route::get('/kelasIqra', function () {
-    return view('kelasIqra');
-});
+// Route::get('/kelasIqra', function () {
+//     return view('kelasIqra');
+// });
+
+//kelasIqra
+Route::get('/kelasIqra', [BukuController::class, 'indexBuku'] );
 
 Route::get('/tambahBuku', function () {
     return view('petugas.tambahBuku');

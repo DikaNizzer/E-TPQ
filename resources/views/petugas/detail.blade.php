@@ -76,12 +76,13 @@
                                 </div>
                                 <input type="submit" class="btnRegister"  value="Tambah Perkembangan"/>
                             </div>
+                            <br>
+                            <a href="data" class="btn btn-primary mt-15px"> Kembali </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="/tabelsantri" class="btn btn-primary">Kembali</a>
     </div> 
 </div>
 

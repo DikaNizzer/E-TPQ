@@ -6,7 +6,7 @@
 <div class="container register">
         <div class="row">
             <div class="col-md-3 register-left">
-                <img src="images/{{ $data->foto}}" width="250px">
+                <img src="storage/{{ $data->foto }}" width="250px">
                 <h3>Assalamualaikum</h3>
                 <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
                     yang memusuhimu akan seperti teman yang setia.</p>

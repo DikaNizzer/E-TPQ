@@ -88,4 +88,15 @@ class BukuController extends Controller
         
         return redirect('bukuterhapus');
     }
+
+    public function indexBuku(){
+
+        //ambil data dari table buku
+        $buku = DB::table('buku')->whereNull('deleted_at')->get();
+
+        // mengirim data ke view buku
+        return view('/kelasIqra', [
+            'buku' => $buku
+        ]);
+    }
 }

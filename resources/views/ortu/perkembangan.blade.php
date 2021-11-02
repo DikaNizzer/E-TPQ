@@ -31,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            <a href="/santri" class="btn btn-primary">Kembali</a>
         </div>
         </div>
     </div>

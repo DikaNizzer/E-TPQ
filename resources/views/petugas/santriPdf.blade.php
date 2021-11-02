@@ -39,7 +39,7 @@
             <thead class="thead-primary table-primary">
                 
                     <tr>
-                        <td rowspan="9"><img src="images/{{ $santri->foto}}" width="250px"></td>
+                        <td rowspan="9"><img src="storage/{{ $santri->foto}}" width="250px"></td>
                         <td> </td>
                         <td> </td>
                         <td> ID Santri </td>

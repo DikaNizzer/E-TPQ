@@ -4,7 +4,7 @@
 	
 	<div class="all-title-box">
 		<div class="container text-center">
-			<h1>Teachers<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+			<h1>Kelas IQRA'<span class="m_1">kelas diperuntukkan bagi pemula</span></h1>
 		</div>
 	</div>
 	
@@ -14,54 +14,31 @@
 
 				<div class="container-fluid mt-3">
 					<div class="row">
-						<div class="col-lg-3 col-sm-6">
-							<div class="card gradient-1">
-								<div class="card-body">
-									<h3 class="card-title text-white">Products Sold</h3>
-									<div class="d-inline-block">
-										<h2 class="text-white">4565</h2>
-										<p class="text-white mb-0">Jan - March 2019</p>
-									</div>
-									<span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+
+						@foreach ($buku as $item)
+							
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="our-team">
+								<div class="team-img">
+									{{-- <img src="images/team-02.png">
+									<div class="social">
+										<ul>
+											<li><a href="#" class="fa fa-facebook"></a></li>
+											<li><a href="#" class="fa fa-twitter"></a></li>
+											<li><a href="#" class="fa fa-linkedin"></a></li>
+											<li><a href="#" class="fa fa-skype"></a></li>
+										</ul> --}}
+									{{-- </div> --}}
+
+								</div>
+								<div class="team-content">
+									<h4 class="title"> {{ $item->BUKU }} </h4>
+									<h3> {{ $item->KETERANGAN }} </h3>
+									{{-- <span class="post">Web Designer</span> --}}
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card gradient-2">
-								<div class="card-body">
-									<h3 class="card-title text-white">Net Profit</h3>
-									<div class="d-inline-block">
-										<h2 class="text-white">$ 8541</h2>
-										<p class="text-white mb-0">Jan - March 2019</p>
-									</div>
-									<span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card gradient-3">
-								<div class="card-body">
-									<h3 class="card-title text-white">New Customers</h3>
-									<div class="d-inline-block">
-										<h2 class="text-white">4565</h2>
-										<p class="text-white mb-0">Jan - March 2019</p>
-									</div>
-									<span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6">
-							<div class="card gradient-4">
-								<div class="card-body">
-									<h3 class="card-title text-white">Customer Satisfaction</h3>
-									<div class="d-inline-block">
-										<h2 class="text-white">99%</h2>
-										<p class="text-white mb-0">Jan - March 2019</p>
-									</div>
-									<span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -69,3 +46,4 @@
 	</div>
 	
 	@endsection
+

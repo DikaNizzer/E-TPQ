@@ -28,6 +28,7 @@
         <!-- Modernizer for Portfolio -->
         <script src="js/modernizer.js"></script>
 
+
 </head>
 <div class="row">
     <div class="col-md-12">
@@ -37,7 +38,6 @@
             <table class="table">
             <thead class="thead-primary table-primary">
                 
-
                     <tr>
                         <td rowspan="9"><img src="images/{{ $santri->foto}}" width="250px"></td>
                         <td> </td>
@@ -107,4 +107,5 @@
         </div>
     </div>
 </div>
+
 </html>

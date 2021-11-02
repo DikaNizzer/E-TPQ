@@ -6,18 +6,18 @@
     <div class="container register">
             <div class="row">
                 <div class="col-md-3 register-left">
-                    <img src="images/{{ $san->foto}}" alt=""/>
+                    <img src="storage/{{ $san->foto }}" alt=""/>
                     <h3>Assalamualaikum</h3>
                     <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
                         yang memusuhimu akan seperti teman yang setia.</p>
                         <p><strong>Q.S Fusshilat: 34</strong></p>
                 </div>
                 <div class="col-md-9 register-right">
-                    <form action="/santriupdate" method="post">
+                    <form action="/santriupdate" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Data Diri Santri</h3>
+                            <h3 class="register-heading">Edit Data Diri Santri</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     {{-- <div class="form-group"> --}}
@@ -44,7 +44,7 @@
                                         <label for="alamat">Alamat : </label>
                                         <input type="text" class="form-control"  value="{{ $san->ALAMATORTU }}" name="alamat"/>
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <div class="maxl">
                                             
                                             <label class="radio inline"> 
@@ -57,7 +57,7 @@
                                             </label>
                                         
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -70,15 +70,16 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="hp">Nomor Hp : </label>
-                                        <input type="text" class="form-control" {{ $san->HP }} value="{{ $san->HP }}" name="hp"/>
+                                        <input type="text" class="form-control" value="{{ $san->HP }}" name="hp"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="masuk">Tanggal Masuk : </label>
                                         <input type="date" class="form-control" value="{{ $san->TANGGALMASUK }}" name="masuk"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="foto">Nama Foto : </label>
-                                        <input type="text" class="form-control"  value="{{ $san->foto }}" name="foto"/>
+                                        <label for="foto" class="form-label">Upload Foto</label>
+                                        <input type="hidden" class="form-control" value="{{ $san->foto }}" name="fotolama"/>
+                                        <input class="form-control" type="file" id="foto" name="foto" >
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Edit Data"/>
                                 </div>

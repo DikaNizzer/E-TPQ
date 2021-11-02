@@ -39,7 +39,12 @@
 						<form role="form" class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" placeholder="Name" type="text">
+									<input class="form-control" placeholder="Id Pengururs " type="text" name="id">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="nama" placeholder="Nama" type="nama">
 								</div>
 							</div>
 							<div class="form-group">
@@ -49,13 +54,27 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="mobile" placeholder="Id" type="email">
+									<input class="form-control" id="hp" placeholder="Hp" type="hp">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="password" placeholder="Password" type="password">
+									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="jk">
 								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="pass" placeholder="Password" type="pass">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for = "location" > Pilih Peran:</label>
+									<select name="Peran" class="form-control"  id="Select" multiple>
+								   {{-- @foreach ($locations as $location) --}}
+										  <option value="Contoh 1">Contoh 1</option>
+										  <option value="Contoh 2">Contoh 2</option>
+									{{-- @endforeach  --}}
+									</select>
 							</div>
 							<div class="row">							
 								<div class="col-sm-10">

@@ -147,8 +147,9 @@ class SantriController extends Controller
 
         $santri = Santri::find($IDSANTRI);
 
-        $pdf = PDF::loadView('petugas.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif']);
-
+        $pdf = PDF::loadView('petugas.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif', 
+                                                                                        'enable_remote' => true,
+                                                                                        'chroot'  => public_path('storage')]);
         return $pdf->download('Data-Santri.pdf');
         }
 

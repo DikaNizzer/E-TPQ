@@ -28,9 +28,15 @@
         <!-- Modernizer for Portfolio -->
         <script src="js/modernizer.js"></script>
 
+        <style>
+            .garis_tepi {
+                border: 2px solid blue;
+            }
+
+        </style>
 
 </head>
-<div class="row">
+<div class="row garis_tepi">
     <div class="col-md-12">
         <div class="table-wrap">
             <p><center> DATA SANTRI </center></p><br><br>
@@ -39,7 +45,7 @@
             <thead class="thead-primary table-primary">
                 
                     <tr>
-                        <td rowspan="9"><img src="storage/{{ $santri->foto}}" width="250px"></td>
+                        <td rowspan="9"><img src="storage/{{ $santri->foto }}" width="250px"></td>
                         <td> </td>
                         <td> </td>
                         <td> ID Santri </td>
@@ -52,7 +58,14 @@
                         <td> Nama </td>
                         <td> : {{ $santri->NAMASATRI }}</td>
                     </tr>
-        
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> Password </td>
+                        <td> : {{ $santri->PASSWORD }}</td>
+                    </tr>
+
                     <tr>
                         <td> </td>
                         <td> </td>

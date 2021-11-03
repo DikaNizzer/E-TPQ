@@ -39,13 +39,16 @@
 <div class="row garis_tepi">
     <div class="col-md-12">
         <div class="table-wrap">
+            <div class="container">
+                <img src="storage/logo.jpg" style="margin:5px">
+            </div>
             <p><center> DATA SANTRI </center></p><br><br>
             
             <table class="table">
             <thead class="thead-primary table-primary">
                 
                     <tr>
-                        <td rowspan="9"><img src="storage/{{ $santri->foto }}" width="250px"></td>
+                        <td rowspan="10"><img src="storage/{{ $santri->foto }}" width="250px"></td>
                         <td> </td>
                         <td> </td>
                         <td> ID Santri </td>

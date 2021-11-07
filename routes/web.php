@@ -18,9 +18,11 @@ use App\Http\Controllers\PengurusController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+//halaman Index
+Route::get('/', [PeranController::class, 'tampil'] );
 
 //cek koneksi database
 Route::get('/test-koneksi-database', function() {
@@ -53,7 +55,7 @@ Route::get('/pengurus', [PengurusController::class, 'index'] );
 
 Route::get('/tambah', function () {
     return view('petugas/tambah');
-}); 
+});
 
 //Menyimpan Data Santri Baru
 Route::post('/santri/store', [SantriController::class, 'store'] );
@@ -86,8 +88,8 @@ Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 //Untuk Mengembalikan RIwayat Data Santri
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 
-// //menampilkan Data Pengurus
-// Route::get('/kelasIqra', [PengurusController::class, 'pengurus'] );
+// Membuat Data Pengurus
+Route::post('/buatpengurus', [PengurusController::class, 'buat'] );
 
 //menampilkan data pengurus dalam tabel
 Route::get('/data', [PengurusController::class, 'pengurus'] );

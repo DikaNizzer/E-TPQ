@@ -11,9 +11,20 @@ class Pengurus extends Model
 
     protected $primaryKey = 'IDPENGURUS';
     protected $table = "pengurus";
- 
+
+    protected $fillable = [
+        'IDPENGURUS',
+        'NAMA',
+        'EMAIL',
+        'HP',
+        'GENDER',
+        'PASSWORD',
+        'AKTIF'
+
+    ];
+
     public function peran()
     {
-    	return $this->belongsToMany('App\Models\Peran');
+    	return $this->belongsToMany('App\Models\Peran')->withTimestamps();
     }
 }

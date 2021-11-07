@@ -37,7 +37,7 @@ class PeranController extends Controller
 
         //Ambil data sesuai id santri
         $peran = DB::table("peran")->where('IDPERAN',$IDPERAN)->get();
-        
+
         //Passing data dsb
         return view('petugas.ubahperan',['peran' => $peran]);
     }
@@ -49,7 +49,7 @@ class PeranController extends Controller
             'PERAN' => $request->namaperan,
             'AKTIF' => $request->status]
         );
- 
+
         // alihkan halaman ke halaman peran
         return redirect('/peran');
     }
@@ -58,7 +58,7 @@ class PeranController extends Controller
     {
         $peran = Peran::find($IDPERAN);
         $peran->delete();
-        
+
         return redirect('/peran');
     }
 
@@ -73,7 +73,7 @@ class PeranController extends Controller
     {
         $peran = Peran::onlyTrashed()->where('IDPERAN',$IDPERAN);
         $peran->restore();
-        
+
         return redirect('peran');
     }
 
@@ -83,8 +83,20 @@ class PeranController extends Controller
         // hapus permanen data guru
         $peran = Peran::onlyTrashed()->where('IDPERAN',$IDPERAN);
         $peran->forceDelete();
-        
+
         return redirect('peranterhapus');
+    }
+
+    //Menampilkan peran di form buat akun petugas
+    public function tampil(){
+
+        //ambil data dari table buku
+        $peran = DB::table('peran')->get();
+
+        // mengirim data ke view buku
+        return view('index', [
+            'peran2' => $peran
+        ]);
     }
 
 }

@@ -40,7 +40,7 @@ class PengurusController extends Controller
 
         //Ambil data sesuai id santri
         $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
-        
+
         //Passing data dsb
         return view('detail',['pengurus' => $pengurus]);
 
@@ -50,7 +50,7 @@ class PengurusController extends Controller
 
         //Ambil data sesuai id santri
         $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
-        
+
         //Passing data dsb
         return view('petugas.detailpengurus',['pengurus' => $pengurus]);
     }
@@ -59,7 +59,7 @@ class PengurusController extends Controller
 
         //Ambil data sesuai id santri
         $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
-        
+
         //Passing data dsb
         return view('petugas.ubahpengurus',['pengurus' => $pengurus]);
     }
@@ -73,9 +73,23 @@ class PengurusController extends Controller
             'EMAIL' => $request->email,
             'HP' => $request->hp]
         );
- 
+
         // alihkan halaman ke halaman santri
         return redirect('/pengurus');
     }
-    
+
+    public function buat(Request $request){
+
+        // $pengurus = $request->all();
+        // dd($pengurus);
+
+        $pengurus = Pengurus::create($request->all());
+        // $pengurus->peran()->attach($request->input('peran'));
+
+        $pengurus = Pengurus::findOrFail($request->IDPENGURUS);
+        $pengurus->peran()->attach($request->peran);
+
+        return redirect('/');
+
+    }
 }

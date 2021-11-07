@@ -12,10 +12,10 @@ class Peran extends Model
 
     protected $primaryKey = 'IDPERAN';
     protected $table = "peran";
- 
+
     public function pengurus()
     {
-    	return $this->belongsToMany('App\Models\Pengurus');
+    	return $this->belongsToMany('App\Models\Pengurus')->withTimestamps();
     }
 
     use SoftDeletes;

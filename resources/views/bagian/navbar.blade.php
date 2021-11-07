@@ -36,50 +36,60 @@
 						</form>
 					</div>
 					<div class="tab-pane" id="Registration">
-						<form role="form" class="form-horizontal">
+						<form action="buatpengurus" method="post" role="form" class="form-horizontal">
+                            {{ csrf_field() }}
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" placeholder="Id Pengururs " type="text" name="id">
+									<input class="form-control" placeholder="Id Pengurus " type="text" name="IDPENGURUS">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="nama" placeholder="Nama" type="nama">
+									<input class="form-control" id="nama" placeholder="Nama" type="text" name="NAMA">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="email" placeholder="Email" type="email">
+									<input class="form-control" id="email" placeholder="Email" type="email" name="EMAIL">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="hp" placeholder="Hp" type="hp">
+									<input class="form-control" id="hp" placeholder="Hp" type="text" name="HP">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="jk">
+									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="text" name="GENDER">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="pass" placeholder="Password" type="pass">
+									<input class="form-control" id="pass" placeholder="Password" type="password" name="PASSWORD">
 								</div>
 							</div>
-							<div class="form-group">
+                            <div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="status" placeholder="Status" type="password" name="AKTIF">
+								</div>
+							</div>
+							<div class="form">
 								<label for = "location" > Pilih Peran:</label>
-									<select name="Peran" class="form-control"  id="Select" multiple>
-								   {{-- @foreach ($locations as $location) --}}
-										  <option value="Contoh 1">Contoh 1</option>
-										  <option value="Contoh 2">Contoh 2</option>
-									{{-- @endforeach  --}}
+									<select name="peran[]" multiple class="form-control"  id="Select" >
+                                        <option selected> Pilih Peran </option>
+								   @foreach ($peran2 as $data)
+										  <option value="{{ $data->IDPERAN }}"> {{ $data->PERAN }}</option>
+									@endforeach
 									</select>
 							</div>
-							<div class="row">							
+
+
+
+							<div class="row">
 								<div class="col-sm-10">
 									{{-- <button type="button" class="btn btn-light btn-radius btn-brd grd1"> --}}
-										<a href="buat" class="btn btn-light btn-radius btn-brd grd1">Simpan &amp; Lanjutkan</a>
+                                        <input type="submit" class="btn btn-light btn-radius btn-brd grd1"  value="Tambah Data"/>
+										{{-- <a href="buatpengurus" class="btn btn-light btn-radius btn-brd grd1">Simpan &amp; Lanjutkan</a> --}}
 									{{-- </button> --}}
 									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
 										Cancel</button>
@@ -151,7 +161,7 @@
 									<input class="form-control" id="password" placeholder="Password" type="password">
 								</div>
 							</div>
-							<div class="row">							
+							<div class="row">
 								<div class="col-sm-10">
 									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
 										Simpan &amp; Lanjutkan
@@ -204,7 +214,7 @@
 								</div>
 							</form>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -212,15 +222,15 @@
 		</div>
 
     <!-- LOADER -->
-	<div id="preloader">
+	{{-- <div id="preloader">
 		<div class="loader-container">
 			<div class="progress-br float shadow">
 				<div class="progress__item"></div>
 			</div>
 		</div>
-	</div>
-	<!-- END LOADER -->	
-	
+	</div> --}}
+	<!-- END LOADER -->
+
 	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">

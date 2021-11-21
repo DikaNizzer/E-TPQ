@@ -40,37 +40,43 @@
                             {{ csrf_field() }}
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" placeholder="Id Pengurus " type="text" name="IDPENGURUS">
+									<input class="form-control @error('IDPENGURUS') is-invalid @enderror" placeholder="Id Pengurus"
+                                    type="text" name="IDPENGURUS" required value="{{ old('IDPENGURUS') }}">
+                                    @error('IDPENGURUS')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="nama" placeholder="Nama" type="text" name="NAMA">
+									<input class="form-control" id="nama" placeholder="Nama" type="text" name="NAMA" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="email" placeholder="Email" type="email" name="EMAIL">
+									<input class="form-control" id="email" placeholder="Email" type="email" name="EMAIL" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="hp" placeholder="Hp" type="text" name="HP">
+									<input class="form-control" id="hp" placeholder="Hp" type="text" name="HP" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="text" name="GENDER">
+									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="text" name="GENDER" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="pass" placeholder="Password" type="password" name="PASSWORD">
+									<input class="form-control" id="pass" placeholder="Password" type="password" name="PASSWORD" required>
 								</div>
 							</div>
                             <div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="status" placeholder="Status" type="password" name="AKTIF">
+									<input class="form-control" id="status" placeholder="Status" type="password" name="AKTIF" required>
 								</div>
 							</div>
 							<div class="form">

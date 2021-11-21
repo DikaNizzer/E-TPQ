@@ -12,7 +12,7 @@ class PengurusController extends Controller
 {
     public function index(){
 
-        //ambil data dari table santri
+        //ambil data dari table pengurus
         $pengurus = DB::table('pengurus')->get();
 
         // mengirim data ke view santri
@@ -82,12 +82,24 @@ class PengurusController extends Controller
 
         // $pengurus = $request->all();
         // dd($pengurus);
+        $validatedData = $request->validate([
+            'IDPENGURUS' => 'required|unique:pengurus',
+            'NAMA' =>['required', 'max:255'],
+            'EMAIL' => 'required|email:dns|max:30|unique:pengurus',
+            'HP' => ['required', 'max:15'],
+            'GENDER' => ['required', 'max:1'],
+            'PASSWORD' => ['required', 'min:5'],
+            'AKTIF' => ['required', 'max:1'],
+        ]);
 
-        $pengurus = Pengurus::create($request->all());
-        // $pengurus->peran()->attach($request->input('peran'));
+        // Pengurus::create($validatedData);
+        $validatedData['PASSWORD'] = bcrypt($validatedData['PASSWORD']);
+
+        $pengurus = Pengurus::create($validatedData);
 
         $pengurus = Pengurus::findOrFail($request->IDPENGURUS);
         $pengurus->peran()->attach($request->peran);
+        $request->session()->flash('success', 'Registrasi Berhasil !, Silahkan Login');
 
         return redirect('/');
 

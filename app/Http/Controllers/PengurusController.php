@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Peran;
 use App\Models\Santri;
 use App\Models\Pengurus;
-use App\Models\Peran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class PengurusController extends Controller
 {
@@ -93,7 +95,7 @@ class PengurusController extends Controller
         ]);
 
         // Pengurus::create($validatedData);
-        $validatedData['PASSWORD'] = bcrypt($validatedData['PASSWORD']);
+        $validatedData['PASSWORD'] = Hash::make($validatedData['PASSWORD']);
 
         $pengurus = Pengurus::create($validatedData);
 
@@ -104,4 +106,23 @@ class PengurusController extends Controller
         return redirect('/');
 
     }
+
+    public function authenticate(Request $request){
+
+        $credentials = $request->validate([
+            'EMAIL' => ['required', 'email:dns'],
+            'PASSWORD' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/pengurus');
+        }
+
+        return back()->with('logerror', 'Login Gagal');
+
+
+    }
+
 }

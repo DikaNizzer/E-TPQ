@@ -15,12 +15,21 @@
                         <div class="dtab">
                             <div class="container">
 
+                                {{-- KAlo Nerhasil Buat AKun --}}
                                 @if(session()->has('success'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         {{ session('success') }}
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
-                                    @endif
+                                @endif
+
+                                {{-- KAlo gagal saat Login --}}
+                                @if(session()->has('logerror'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ session('logerror') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
                                 <div class="row">
 
 

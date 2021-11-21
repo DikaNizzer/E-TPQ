@@ -9,19 +9,21 @@ class Pengurus extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'IDPENGURUS';
+
     protected $table = "pengurus";
+    protected $primaryKey = 'IDPENGURUS';
 
-    protected $fillable = [
-        'IDPENGURUS',
-        'NAMA',
-        'EMAIL',
-        'HP',
-        'GENDER',
-        'PASSWORD',
-        'AKTIF'
+    // protected $fillable = [
+    //     'IDPENGURUS',
+    //     'NAMA',
+    //     'EMAIL',
+    //     'HP',
+    //     'GENDER',
+    //     'PASSWORD',
+    //     'AKTIF'
 
-    ];
+    // ];
+    protected $guarded = [];
 
     public function peran()
     {

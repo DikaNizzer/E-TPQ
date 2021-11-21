@@ -30,7 +30,7 @@ class SantriController extends Controller
     public function store(Request $request)
     {
 
-        
+
         // insert data ke table Santri
         DB::table('santri')->insert([
             'IDSANTRI' => $request->id,
@@ -51,18 +51,18 @@ class SantriController extends Controller
         return redirect('/tabelsantri');
     }
 
-    public function detail($IDSANTRI){ 
+    public function detail($IDSANTRI){
     // mengambil data santri berdasarkan id yang dipilih
-    $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
-    
+    $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get();
+
     // passing data santri yang didapat ke view detail
     return view('petugas.detail',['santri' => $santri]);
     }
 
-    public function edit($IDSANTRI){ 
+    public function edit($IDSANTRI){
         // mengambil data santri berdasarkan id yang dipilih
-        $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get(); 
-        
+        $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get();
+
         // passing data santri yang didapat ke view detail
         return view('petugas.edit',['santri' => $santri]);
     }
@@ -88,7 +88,7 @@ class SantriController extends Controller
             'KOTALHR' => $request->tempatLahir,
             'foto' => $fotobaru
             ]
-            
+
         );
 
         // alihkan halaman ke halaman santri
@@ -99,8 +99,8 @@ class SantriController extends Controller
     public function tabel(){
 
         //ambil data dari table santri
-        $santri = DB::table('santri')->get();
-        $santri = DB::table('santri')->whereNull('deleted_at')->get();
+        // $santri = DB::table('santri')->get();
+        $santri = DB::table('santri')->whereNull('deleted_at')->paginate(2);
 
         // mengirim data ke view santri
         return view('petugas/table', [
@@ -113,7 +113,7 @@ class SantriController extends Controller
     {
         $santri = Santri::find($IDSANTRI);
         $santri->delete();
-        
+
         return redirect('/tabelsantri');
     }
 
@@ -129,7 +129,7 @@ class SantriController extends Controller
     {
         $santri = Santri::onlyTrashed()->where('IDSANTRI',$IDSANTRI);
         $santri->restore();
-        
+
         return redirect('tabelsantri');
     }
 
@@ -139,15 +139,15 @@ class SantriController extends Controller
         // hapus permanen data guru
         $santri = Santri::onlyTrashed()->where('IDSANTRI',$IDSANTRI);
         $santri->forceDelete();
-        
+
         return redirect('santriterhapus');
     }
 
-    public function cetak($IDSANTRI){ 
+    public function cetak($IDSANTRI){
 
         $santri = Santri::find($IDSANTRI);
 
-        $pdf = PDF::loadView('petugas.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif', 
+        $pdf = PDF::loadView('petugas.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif',
                                                                                         'enable_remote' => true,
                                                                                         'chroot'  => public_path('storage')]);
         return $pdf->download('Data-Santri.pdf');

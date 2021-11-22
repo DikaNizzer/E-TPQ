@@ -50,9 +50,6 @@ Route::get('/perkembangan', function () {
 //halaman Tabel Santri
 Route::get('/tabelsantri', [SantriController::class, 'tabel'] );
 
-//halaman pengurus
-Route::get('/pengurus', [PengurusController::class, 'index'] );
-
 Route::get('/tambah', function () {
     return view('petugas/tambah');
 });
@@ -87,6 +84,12 @@ Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 
 //Untuk Mengembalikan RIwayat Data Santri
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
+
+// Login Pengurus
+Route::post('/logpetugas', [PengurusController::class, 'postLogin'] );
+
+//halaman pengurus
+Route::get('/pengurus', [PengurusController::class, 'index'] );
 
 // Membuat Data Pengurus
 Route::post('/buatpengurus', [PengurusController::class, 'buat'] );

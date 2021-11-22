@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'pengurus', //awalnya users
     ],
 
     /*
@@ -38,7 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'pengurus',
+        ],
+
+        'pengurus' => [
+            'driver' => 'session',
+            'provider' => 'pengurus',
         ],
     ],
 
@@ -62,7 +67,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Pengurus::class, //'model' => App\Models\User::class,
+        ],
+
+        'pengurus' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pengurus::class,
         ],
 
         // 'users' => [
@@ -88,7 +98,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'pengurus',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

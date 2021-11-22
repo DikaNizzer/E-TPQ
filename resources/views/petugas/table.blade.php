@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="table-wrap">
-                        
+
 						<table class="table">
 						<thead class="thead-primary table-primary">
 						<tr >
@@ -43,11 +43,16 @@
 					</div>
 				</div>
 			</div>
-            <a href="/pengurus" class="btn btn-primary">Kembali</a>
+                <a href="/pengurus" class="btn btn-primary">Kembali</a>
+
+            <div class="d-flex justify-content-end">
+                {{ $santri->links() }}
+            </div>
+
 			<br><br><br><br>
 		</div>
 
-        
+
 	{{-- </section> --}}
 
     @endsection

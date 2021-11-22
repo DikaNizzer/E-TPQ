@@ -14,7 +14,37 @@
                     <div id="home" class="first-section" style="background-image:url('images/bgsantri.jpg');">
                         <div class="dtab">
                             <div class="container">
+
+                                {{-- KAlo Nerhasil Buat AKun --}}
+                                @if(session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('success') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+
+                                {{-- KAlo gagal Buat AKun --}}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <b>Gagal Membuat AKun Karena :</b>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                        <b>Silahkan Coba Lagi</b>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+
+                                {{-- KAlo gagal saat Login --}}
+                                @if(session()->has('logerror'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <b>{{ session('logerror') }}, Silahkan coba lagi !</b>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
                                 <div class="row">
+
+
                                     <div class="col-md-12 col-sm-12 text-right">
                                         <div class="big-tagline">
                                             <h2><strong>TPQ Digital</strong> Pembelajaran Islam Secara Digital</h2>
@@ -26,7 +56,7 @@
                                                 <a href="#tentang" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
-                                </div><!-- end row -->            
+                                </div><!-- end row -->
                             </div><!-- end container -->
                         </div>
                     </div><!-- end section -->
@@ -45,7 +75,7 @@
                                                 <a href="#tentang" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
-                                </div><!-- end row -->            
+                                </div><!-- end row -->
                             </div><!-- end container -->
                         </div>
                     </div><!-- end section -->
@@ -64,7 +94,7 @@
                                                 <a href="#tentang" class="hover-btn-new"><span>Informasi</span></a>
                                         </div>
                                     </div>
-                                </div><!-- end row -->            
+                                </div><!-- end row -->
                             </div><!-- end container -->
                         </div>
                     </div><!-- end section -->
@@ -74,7 +104,7 @@
                     <span class="fa fa-angle-left" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-    
+
                 <!-- Right Control -->
                 <a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class="fa fa-angle-right" aria-hidden="true"></span>
@@ -83,7 +113,7 @@
             </div>
         </div>
 
-        
+
         <div id="overviews" class="section lb">
             <div class="container">
                 <div class="section-title row text-center">
@@ -92,14 +122,14 @@
                         <p class="lead"><strong>TPQ Digital</strong> merupakan sebuah Platform online sebagai sarana pengembangan para santri dan santriwati untuk terus belajar dalam mengembangkan minat dan bakat dalam mendalami Qur'an</p>
                     </div>
                 </div><!-- end title -->
-            
+
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                         <div class="post-media wow fadeIn">
                             <img src="images/quran.jpg" alt="" class="img-fluid img-rounded">
                         </div><!-- end media -->
                     </div><!-- end col -->
-                    
+
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                         <div class="message-box">
                             <h2>TAHFIDZ AL-QUR'AN</h2>
@@ -110,42 +140,42 @@
                                 ingin dicapai oleh seorang hafidz adalah mewujudkan
                                 derajat kemuliaan diri seseorang terhadap agamanya melalui
                                 pemeliharaan kitab suci.</p>
-        
+
                             {{-- <a href="#" class="hover-btn-new orange"><span>Learn More</span></a> --}}
                         </div><!-- end messagebox -->
                     </div><!-- end col -->
-                    
+
                 </div><!-- end row -->
-        
-        
-        
+
+
+
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                         <div class="message-box">
                             {{-- <h4>2018 BEST SmartEDU education school</h4> --}}
                             <h2>HAFIDZ AL-QUR'AN</h2>
                             <p>Orang yang mampu menghafal 100.000 hadis secara matan dan sanad.ini gelar di buat pada awalan nama bagi orang yg hafal 100.000 hadis.</p>
-        
-                            <p>Rasulullah SAW bersabda 
+
+                            <p>Rasulullah SAW bersabda
                                 "Penghafal Al-Quran akan datang pada hari kiamat, kemudian akan berkata, 'Ya Tuhanku, berikan lah perhiasan (kepada orang yang membaca al-Quran'), kemudian orang itu dipakaikan mahkota karomah (kemuliaan). Sesudah itu Al-Quran memohon kembali, 'Ya Tuhanku ridhailah dia', kemudian Allah meridhainya. Dan diperintahkan kepada orang itu, baca lah (Al-Quran) dan terus lah naik lah (ke surga). Lantas, derajatnya (di surga) pun terus bertambah. pada setiap ayat (yang dibacanya) terdapat satu kebaikan."
                                 - hadits riwayat Tirmidzi
                                 </p>
-        
+
                             {{-- <a href="#" class="hover-btn-new orange"><span>Learn More</span></a> --}}
                         </div><!-- end messagebox -->
                     </div><!-- end col -->
-                    
+
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                         <div class="post-media wow fadeIn">
                             <img src="images/hafidz.jpeg" alt="" class="img-fluid img-rounded">
                         </div><!-- end media -->
                     </div><!-- end col -->
                 </div>
-                
+
             </div><!-- end container -->
         </div><!-- end section -->
-        
-        
+
+
         <div class="hmv-box">
             <div class="container">
                 <div class="section-title row text-center">

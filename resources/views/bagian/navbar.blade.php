@@ -16,20 +16,28 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div class="tab-pane active" id="Login">
-						<form role="form" class="form-horizontal">
+						<form action="/logpetugas" method="post" class="form-horizontal">
+                            @csrf
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="email1" placeholder="Nama" type="text">
+									<input class="form-control" name="EMAIL"
+                                    id="email" placeholder="Email" type="email" required>
 								</div>
+                                {{-- @error('EMAIL')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror --}}
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="exampleInputPassword1" placeholder="Id" type="email">
+									<input class="form-control" name="PASSWORD" id="password" placeholder="Password"
+                                    type="password" required >
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-10">
-										<a href="/pengurus" class="btn btn-light btn-radius btn-brd grd1">Masuk</a>
+                                        <button class="btn btn-light btn-radius btn-brd grd1" type="submit">Masuk</button>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>
 							</div>
@@ -40,37 +48,43 @@
                             {{ csrf_field() }}
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" placeholder="Id Pengurus " type="text" name="IDPENGURUS">
+									<input class="form-control @error('IDPENGURUS') is-invalid @enderror" placeholder="Id Pengurus"
+                                    type="text" name="IDPENGURUS" required value="{{ old('IDPENGURUS') }}">
+                                    @error('IDPENGURUS')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="nama" placeholder="Nama" type="text" name="NAMA">
+									<input class="form-control" id="nama" placeholder="Nama" type="text" name="NAMA" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="email" placeholder="Email" type="email" name="EMAIL">
+									<input class="form-control" id="email" placeholder="Email" type="email" name="EMAIL" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="hp" placeholder="Hp" type="text" name="HP">
+									<input class="form-control" id="hp" placeholder="Hp" type="text" name="HP" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="text" name="GENDER">
+									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="text" name="GENDER" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="pass" placeholder="Password" type="password" name="PASSWORD">
+									<input class="form-control" id="pass" placeholder="Password" type="password" name="PASSWORD" required>
 								</div>
 							</div>
                             <div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="status" placeholder="Status" type="password" name="AKTIF">
+									<input class="form-control" id="status" placeholder="Status" type="password" name="AKTIF" required>
 								</div>
 							</div>
 							<div class="form">
@@ -222,13 +236,13 @@
 		</div>
 
     <!-- LOADER -->
-	{{-- <div id="preloader">
+	<div id="preloader">
 		<div class="loader-container">
 			<div class="progress-br float shadow">
 				<div class="progress__item"></div>
 			</div>
 		</div>
-	</div> --}}
+	</div>
 	<!-- END LOADER -->
 
 	<!-- Start header -->

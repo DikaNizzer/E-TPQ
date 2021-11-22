@@ -23,10 +23,22 @@
                                     </div>
                                 @endif
 
+                                {{-- KAlo gagal Buat AKun --}}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <b>Gagal Membuat AKun Karena :</b>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                        <b>Silahkan Coba Lagi</b>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+
                                 {{-- KAlo gagal saat Login --}}
                                 @if(session()->has('logerror'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        {{ session('logerror') }}
+                                        <b>{{ session('logerror') }}, Silahkan coba lagi !</b>
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 @endif

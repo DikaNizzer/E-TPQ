@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
 class PengurusController extends Controller
 {
     public function index(){
@@ -82,8 +83,7 @@ class PengurusController extends Controller
 
     public function buat(Request $request){
 
-        // $pengurus = $request->all();
-        // dd($pengurus);
+
         $validatedData = $request->validate([
             'IDPENGURUS' => 'required|unique:pengurus',
             'NAMA' =>['required', 'max:255'],
@@ -94,9 +94,14 @@ class PengurusController extends Controller
             'AKTIF' => ['required', 'max:1'],
         ]);
 
-        // Pengurus::create($validatedData);
-        $validatedData['PASSWORD'] = Hash::make($validatedData['PASSWORD']);
 
+        // if(empty($validatedData)){
+        //     $request->session()->flash('buaterror', 'Gagal Membuat AKun');
+        // };
+        // $validatedData['PASSWORD'] = Hash::make($validatedData['PASSWORD']); ->Enkripsi menggunakan Has
+        // $validatedData['PASSWORD'] =  bcrypt($validatedData['PASSWORD']);  ->Enkripsi menggunakan Bcrypt
+        //enkripsi password
+        $validatedData['PASSWORD'] =  password_hash($validatedData['PASSWORD'], PASSWORD_DEFAULT);
         $pengurus = Pengurus::create($validatedData);
 
         $pengurus = Pengurus::findOrFail($request->IDPENGURUS);
@@ -116,12 +121,42 @@ class PengurusController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
             return redirect()->intended('/pengurus');
         }
 
         return back()->with('logerror', 'Login Gagal');
+    }
 
+        public function postLogin(Request $request)
+    {
+
+        // Validate the form data
+        // $this->validate($request, [
+        // 'EMAIL' => 'required|email',
+        // 'PASSWORD' => 'required'
+        // ]);
+
+        $pengurus = Pengurus::where('EMAIL', $request->EMAIL)->first();
+
+        if( password_verify($request->PASSWORD, $pengurus->PASSWORD) ){
+            if(Auth::loginUsingId($pengurus->IDPENGURUS)){
+                $request->session()->regenerate();
+                return redirect('/pengurus');
+            }
+        }else{
+            return back()->with('logerror', 'Login Gagal');
+        }
+
+
+        // if (empty($pengurus)) {
+        //     // abort(404);
+        //     return ("error truss");
+        // }
+
+        // if(Auth::loginUsingId($pengurus->IDPENGURUS)){
+        //     $request->session()->regenerate();
+        //     return redirect('/pengurus');
+        // }
 
     }
 

@@ -86,7 +86,7 @@ Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 
 // Login Pengurus
-Route::post('/logpetugas', [PengurusController::class, 'authenticate'] );
+Route::post('/logpetugas', [PengurusController::class, 'postLogin'] );
 
 //halaman pengurus
 Route::get('/pengurus', [PengurusController::class, 'index'] );

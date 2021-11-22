@@ -1,9 +1,5 @@
 <?php
 
-use App\Models\Pengurus;
-use Illuminate\Foundation\Auth\User;
-
-
 return [
 
     /*
@@ -19,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'pengurus',
+        'passwords' => 'pengurus', //awalnya users
     ],
 
     /*
@@ -44,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'pengurus',
         ],
+
+        'pengurus' => [
+            'driver' => 'session',
+            'provider' => 'pengurus',
+        ],
     ],
 
     /*
@@ -64,15 +65,20 @@ return [
     */
 
     'providers' => [
-        // 'pengurus' => [
-        //     'driver' => 'eloquent',
-        //     'model' => App\Models\Pengurus::class,
-        // ],
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pengurus::class, //'model' => App\Models\User::class,
+        ],
 
         'pengurus' => [
-            'driver' => 'database',
-            'table' => 'pengurus',
+            'driver' => 'eloquent',
+            'model' => App\Models\Pengurus::class,
         ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
 
     /*
@@ -91,7 +97,7 @@ return [
     */
 
     'passwords' => [
-        'pengurus' => [
+        'users' => [
             'provider' => 'pengurus',
             'table' => 'password_resets',
             'expire' => 60,

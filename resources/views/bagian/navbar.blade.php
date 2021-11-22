@@ -37,7 +37,6 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-10">
-										{{-- <a href="/pengurus" class="btn btn-light btn-radius btn-brd grd1">Masuk</a> --}}
                                         <button class="btn btn-light btn-radius btn-brd grd1" type="submit">Masuk</button>
 									<a class="for-pwd" href="javascript:;">Lupa password?</a>
 								</div>

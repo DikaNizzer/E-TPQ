@@ -92,7 +92,7 @@
 									<select name="peran[]" multiple class="form-control"  id="Select" >
                                         <option selected> Pilih Peran </option>
 								   @foreach ($peran2 as $data)
-										  <option value="{{ $data->IDPERAN }}"> {{ $data->PERAN }}</option>
+										  <option value="{{ $data->IDPERAN }}"> {{ $data->PERAN }} </option>
 									@endforeach
 									</select>
 							</div>

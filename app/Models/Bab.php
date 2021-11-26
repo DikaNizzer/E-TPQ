@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Buku extends Model
+class Bab extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $primaryKey = 'IDBUKU';
-    protected $table = "buku";
+    protected $primaryKey = 'IDBAB';
+    protected $table = "bab";
     protected $dates = ['deleted_at'];
 
-    public function bab(){
-        return $this->hasMany('App\Models\Bab');
+    public function buku(){
+        return $this->belongsTo('App\Models\Buku');
     }
 }

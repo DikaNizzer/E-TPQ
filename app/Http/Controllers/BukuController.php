@@ -37,7 +37,7 @@ class BukuController extends Controller
 
         //Ambil data sesuai id santri
         $buku = DB::table("buku")->where('IDBUKU',$IDBUKU)->get();
-        
+
         //Passing data dsb
         return view('petugas.ubahbuku',['buku' => $buku]);
     }
@@ -49,7 +49,7 @@ class BukuController extends Controller
             'BUKU' => $request->namabuku,
             'KETERANGAN' => $request->ketbuku]
         );
- 
+
         // alihkan halaman ke halaman santri
         return redirect('/buku');
     }
@@ -59,7 +59,7 @@ class BukuController extends Controller
     {
         $buku = Buku::find($IDBUKU);
         $buku->delete();
-        
+
         return redirect('/buku');
     }
 
@@ -75,7 +75,7 @@ class BukuController extends Controller
     {
         $buku = Buku::onlyTrashed()->where('IDBUKU',$IDBUKU);
         $buku->restore();
-        
+
         return redirect('buku');
     }
 
@@ -85,7 +85,7 @@ class BukuController extends Controller
         // hapus permanen data guru
         $buku = Buku::onlyTrashed()->where('IDBUKU',$IDBUKU);
         $buku->forceDelete();
-        
+
         return redirect('bukuterhapus');
     }
 
@@ -98,5 +98,10 @@ class BukuController extends Controller
         return view('/kelasIqra', [
             'buku' => $buku
         ]);
+    }
+
+    public function bab($IDBUKU){
+        $buku = Buku::find($IDBUKU);
+        return view('petugas.bab',['buku' => $buku]);
     }
 }

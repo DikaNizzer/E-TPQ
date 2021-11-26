@@ -69,9 +69,9 @@ Route::get('/edit{IDSANTRI}', [SantriController::class, 'edit'] );
 //Menyimpan Data Santri Baru
 Route::post('/santriupdate', [SantriController::class, 'update'] );
 
-Route::get('/coba', function () {
-    return view('coba');
-});
+// Route::get('/coba', function () {
+//     return view('coba');
+// });
 
 //Untuk menghapus(soft delete data Santri)
 Route::get('/santrihapus{IDSANTRI}', [SantriController::class, 'hapus'] );
@@ -168,3 +168,6 @@ Route::get('/kembaliperan{IDPERAN}', [PeranController::class, 'kembalikan'] );
 
 //Untuk Mengembalikan RIwayat Data Peran
 Route::get('/dpr{IDPERAN}', [PeranController::class, 'permanen'] );
+
+//untuk menampilkan detailBAB di buku
+Route::get('/bab{IDBUKU}', [BukuController::class, 'bab'] );

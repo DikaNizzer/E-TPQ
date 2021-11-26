@@ -113,7 +113,6 @@ class PengurusController extends Controller
     }
 
     public function authenticate(Request $request){
-
         $credentials = $request->validate([
             'EMAIL' => ['required', 'email:dns'],
             'PASSWORD' => ['required'],
@@ -130,12 +129,6 @@ class PengurusController extends Controller
         public function postLogin(Request $request)
     {
 
-        // Validate the form data
-        // $this->validate($request, [
-        // 'EMAIL' => 'required|email',
-        // 'PASSWORD' => 'required'
-        // ]);
-
         $pengurus = Pengurus::where('EMAIL', $request->EMAIL)->first();
 
         if( password_verify($request->PASSWORD, $pengurus->PASSWORD) ){
@@ -146,18 +139,6 @@ class PengurusController extends Controller
         }else{
             return back()->with('logerror', 'Login Gagal');
         }
-
-
-        // if (empty($pengurus)) {
-        //     // abort(404);
-        //     return ("error truss");
-        // }
-
-        // if(Auth::loginUsingId($pengurus->IDPENGURUS)){
-        //     $request->session()->regenerate();
-        //     return redirect('/pengurus');
-        // }
-
     }
 
 }

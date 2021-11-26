@@ -28,6 +28,7 @@
                     <td>{{$data->BUKU}}</td>
                     <td>{{$data->KETERANGAN}}</td>
                     <td>
+                        <a href="bab{{ $data->IDBUKU }}" class="btn btn-info"> Detail Bab </a>
                         <a href="bukuubah{{ $data->IDBUKU }}" class="btn btn-info"> UBAH </a>
                         <a href="bukuhapus{{ $data->IDBUKU }}" class="btn btn-info"> HAPUS </a>
                     </td>
@@ -38,11 +39,11 @@
                 </table>
             </div>
         </div>
-    </div> 
+    </div>
     <a href="/pengurus" class="btn btn-primary">Kembali</a>
     <a href="/tambahBuku" class="btn btn-primary ">Tambah</a>
     <a href="/bukuterhapus" class="btn btn-primary ">Data Buku dihapus</a>
 </div>
 
-    
+
 @endsection

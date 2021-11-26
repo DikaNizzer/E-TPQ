@@ -8,7 +8,7 @@
             <div class="col-md-3 register-left">
                 <img src="storage/{{ $san->foto }}" width="250px">
                 <h3>Assalamualaikum</h3>
-                <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
+                <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga
                     yang memusuhimu akan seperti teman yang setia.</p>
                     <p><strong>Q.S Fusshilat: 34</strong></p>
             </div>
@@ -40,14 +40,14 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="maxl">
-                                        
-                                        <label class="radio inline"> 
+
+                                        <label class="radio inline">
                                             <input type="radio" name="gender" value="L" checked>
-                                            <span> L </span> 
+                                            <span> L </span>
                                         </label>
-                                        <label class="radio inline"> 
+                                        <label class="radio inline">
                                             <input type="radio" name="gender" value="P">
-                                            <span>P </span> 
+                                            <span>P </span>
                                         </label>
                                         <a href="/cetak{{ $san->IDSANTRI }}" class="btnRegister"> Print Data </a>
                                     </div>
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </div>
 
 

@@ -84,7 +84,7 @@
 							</div>
                             <div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="status" placeholder="Status" type="password" name="AKTIF" required>
+									<input class="form-control" id="status" placeholder="Status" type="text" name="AKTIF" required>
 								</div>
 							</div>
 							<div class="form">

@@ -31,4 +31,9 @@ class Pengurus extends Authenticatable
     {
     	return $this->belongsToMany('App\Models\Peran')->withTimestamps();
     }
+
+    public function kemajuan()
+    {
+    	return $this->belongsToMany('App\Models\Kemajuan')->withTimestamps();
+    }
 }

@@ -126,6 +126,7 @@ class PengurusController extends Controller
         return back()->with('logerror', 'Login Gagal');
     }
 
+
         public function postLogin(Request $request)
     {
 
@@ -135,6 +136,7 @@ class PengurusController extends Controller
             if(Auth::loginUsingId($pengurus->IDPENGURUS)){
                 $request->session()->regenerate();
                 return redirect('/pengurus');
+
             }
         }else{
             return back()->with('logerror', 'Login Gagal');

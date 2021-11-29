@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 use App\Models\Santri;
 // use Barryvdh\DomPDF\PDF;
-use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 // panggil model Santri
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SantriController extends Controller
 {
-    public function index(){
+    public function index($IDSANTRI){
 
         //ambil data dari table santri
-        $santri = DB::table('santri')->get();
+        $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get();
 
 
         // mengirim data ke view santri
@@ -31,10 +32,11 @@ class SantriController extends Controller
     {
 
 
+        $validatedpass=  password_hash($request->pass, PASSWORD_DEFAULT);
         // insert data ke table Santri
         DB::table('santri')->insert([
             'IDSANTRI' => $request->id,
-            'PASSWORD' => $request->pass,
+            'PASSWORD' => $validatedpass,
             'NAMASATRI' => $request->nama,
             'TAGGALLHR' => $request->lahir,
             'NAMAORTU' => $request->ortu,
@@ -151,6 +153,24 @@ class SantriController extends Controller
                                                                                         'enable_remote' => true,
                                                                                         'chroot'  => public_path('storage')]);
         return $pdf->download('Data-Santri.pdf');
+        }
+
+
+        public function postLogin(Request $request)
+        {
+
+            $santri = Santri::where('EMAIL', $request->EMAIL)->first();
+            $id = $santri['IDSANTRI'];
+
+            if( password_verify($request->PASSWORD, $santri->PASSWORD) ){
+                if(Auth::loginUsingId($santri->IDSANTRI)){
+                    $request->session()->regenerate();
+                    return redirect('/santri'.$id);
+
+                }
+            }else{
+                return back()->with('logerror', 'Login Gagal');
+            }
         }
 
 };

@@ -41,31 +41,24 @@
 
 <div class="container" style="height:80%">
 
+    @foreach ($kemajuan as $maju)
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                TimeStemp Kemajuan
+                Tanggal : {{ $maju->TANGGAL }}
             </div>
             <div class="card-body">
-                <h5 class="card-title">Siapa Nama Pengurus Yang Menulis </h5>
-                <p class="card-text">Ringkasan Dari Kemajuan </p>
-                <a href="#" data-toggle="modal" data-target="#buku" class="btn btn-primary">Buku Yang Telah Di Baca</a>
-            </div>
-        </div>
-    </div>
+                {{-- @foreach ($maju->pengurus as $pengurus )
+                <h5 class="card-title">Petugas Yang Menilai : {{ $pengurus->NAMA }} </h5>
+                @endforeach --}}
 
-    <div class="container mt-4">
-        <div class="card">
-            <div class="card-header">
-                Jumat, 28 September 2021
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Pak Ardy </h5>
-                <p class="card-text">SUdah Membacaa.. </p>
+                <p class="card-text">{{ $maju->keterangan }} </p>
+                <p class="card-text">Dengan Nilai : {{ $maju->nilai }} </p>
                 <a href="#" data-toggle="modal" data-target="#buku" class="btn btn-primary">Buku Yang Telah Di Baca</a>
             </div>
         </div>
     </div>
+    @endforeach
 
     <a href="santri" class="btn btn-primary mt-5">Kembali</a>
 </div>

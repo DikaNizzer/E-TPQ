@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeranController;
 use App\Http\Controllers\SantriController;
+use App\Http\Controllers\KemajuanController;
 use App\Http\Controllers\PengurusController;
 
 /*
@@ -36,16 +37,22 @@ Route::get('/test-koneksi-database', function() {
 	}
 });
 //halaman data santri yang dilihat Santri
-Route::get('/santri', [SantriController::class, 'index'] );
+Route::get('/santri{IDSANTRI}', [SantriController::class, 'index'] );
 
 //halaman data santri yang dilihat ortu
 Route::get('/ortu', [SantriController::class, 'index'] );
 
-//halaman perkembangan yang dilihat ortu
-Route::get('/perkembangan', function () {
-    return view('ortu.perkembangan');
-});
+// //halaman perkembangan yang dilihat ortu
+// Route::get('/perkembangan', function () {
+//     return view('ortu.perkembangan');
+// });
 
+
+// Login Pengurus
+Route::post('/logsantri', [SantriController::class, 'postLogin'] );
+
+// Lihat Perkembangan Santri
+Route::get('/perkembangan{IDSANTRI}', [KemajuanController::class, 'santri'] );
 
 //halaman Tabel Santri
 Route::get('/tabelsantri', [SantriController::class, 'tabel'] );
@@ -171,3 +178,9 @@ Route::get('/dpr{IDPERAN}', [PeranController::class, 'permanen'] );
 
 //untuk menampilkan detailBAB di buku
 Route::get('/bab{IDBUKU}', [BukuController::class, 'bab'] );
+
+//untuk menampilkan riwayat perkembangan santri
+Route::get('/kemajuan{IDSANTRI}', [KemajuanController::class, 'index'] );
+
+// Membuat Data Perkembangan
+Route::post('/buatkemajuan', [KemajuanController::class, 'buat'] );

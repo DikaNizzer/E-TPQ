@@ -17,4 +17,8 @@ class Bab extends Model
     public function buku(){
         return $this->belongsTo('App\Models\Buku');
     }
+
+    public function kemajuan(){
+        return $this->belongsToMany('App\Models\Kemajuan')->withTimestamps();
+    }
 }

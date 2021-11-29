@@ -14,4 +14,9 @@ class Santri extends Model
     protected $primaryKey = 'IDSANTRI';
     protected $table = "santri";
     protected $dates = ['deleted_at'];
+
+    public function kemajuan()
+    {
+    	return $this->belongsToMany('App\Models\Kemajuan')->withTimestamps();
+    }
 }

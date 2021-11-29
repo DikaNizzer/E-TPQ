@@ -11,7 +11,7 @@
     <p> Email : {{ $data->EMAIL }} </p>
     <p> No HP : {{ $data->HP }} </p>
     <hr class="my-2">
-    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
+    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga
         yang memusuhimu akan seperti teman yang setia.</p>
         <p><strong>Q.S Fusshilat: 34</strong></p>
     <a class="btn btn-primary btn-lg" href="/ubah{{ $data->IDPENGURUS }}" role="button">Ubah Data</a>

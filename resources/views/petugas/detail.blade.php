@@ -2,6 +2,79 @@
 @section('container')
 
     @foreach ($santri as $san)
+
+<!-- Modal -->
+<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header tit-up">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Tambah Perkembangan</h4>
+          </div>
+          <div class="modal-body customer-box">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                  <li><a class="active" href="#Login" data-toggle="tab">Tambah</a></li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                  <div class="tab-pane active" id="Login">
+                      <form action="/buatkemajuan" method="post" class="form-horizontal">
+                          @csrf
+                          <div class="form-group">
+                              <div class="col-sm-12">
+                                  <label for="kemajuan">Id Kemajuan</label>
+                                  <input class="form-control" name="IDKEMAJUAN"  placeholder="01" type="number" required>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-sm-12">
+                                <label for="id">Id Santri</label>
+                                  <input class="form-control" name="IDSANTRI" id="id" value="{{ $san->IDSANTRI }}"type="text"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                              <label for="pengurus">Id Pengurus</label>
+                                <input class="form-control" name="IDPENGURUS"  placeholder="01" type="text" required >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                              <label for="status">Status</label>
+                                <input class="form-control" name="STATUS"  placeholder="N(Naik), T(Tetap), M(Mundur)"
+                                type="text" required >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                              <label for="keterangan">Keterangan</label>
+                                <input class="form-control" name="keterangan"  placeholder="Sudah Membaca"
+                                type="text" required >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                              <label for="nilai">Nilai</label>
+                                <input class="form-control" name="nilai"  placeholder="0 - 100"
+                                type="number" required >
+                            </div>
+                        </div>
+                          <div class="row">
+                              <div class="col-sm-10">
+                                      {{-- <button class="btn btn-light btn-radius btn-brd grd1" type="submit">Masuk</button> --}}
+                                      <input type="submit" class="btn btn-light btn-radius btn-brd grd1"  value="Tambah Data"/>
+                                  {{-- <a class="for-pwd" href="javascript:;">Lupa password?</a> --}}
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
 <div class="bg">
 <div class="container register">
         <div class="row">
@@ -74,7 +147,9 @@
                                     <label for="Absen">Password : </label>
                                     <p class="kotak">{{ $san->PASSWORD }}</p>
                                 </div>
-                                <input type="submit" class="btnRegister"  value="Tambah Perkembangan"/>
+                                {{-- <input type="submit" class="btnRegister"  value="Tambah Perkembangan"/> --}}
+                                <button type="button" href="#" data-toggle="modal" data-target="#tambah" class="btnRegister"> Tambah Perkembangan </button>
+                                <a href="/kemajuan{{ $san->IDSANTRI }}"><button type="button"  class="btnRegister"> Lihat Riwayat Perkembangan </button></a>
                             </div>
                             <br>
                             <a href="tabelsantri" class="btn btn-primary mt-15px"> Kembali </a>

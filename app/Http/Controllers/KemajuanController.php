@@ -11,6 +11,20 @@ use App\Http\Controllers\Controller;
 
 class KemajuanController extends Controller
 {
+
+    public function tampil(){
+        //ambil data dari table santri
+        $santri = DB::table('santri')->get();
+        $kemajuan = DB::table("kemajuan")->get();
+        $kemajuan = $kemajuan->count();
+
+        // mengirim data ke view Kemajuan
+        return view('petugas.tabkemajuan', [
+            'kemajuan' => $kemajuan,
+            'santri' => $santri
+        ]);
+    }
+
     public function index($IDSANTRI){
 
         $kemajuan = DB::table("kemajuan")->where('IDSANTRI',$IDSANTRI)->get();
@@ -26,7 +40,7 @@ class KemajuanController extends Controller
     public function buat(Request $request){
 
         DB::table('kemajuan')->insert([
-            'IDKEMAJUAN' => $request->IDKEMAJUAN,
+            // 'IDKEMAJUAN' => $request->IDKEMAJUAN,
             'IDSANTRI' => $request->IDSANTRI,
             'IDPENGURUS' => $request->IDPENGURUS,
             'STATUS' => $request->STATUS,
@@ -34,8 +48,8 @@ class KemajuanController extends Controller
             'nilai' => $request->nilai,
         ]);
 
-        $var = 'kemajuan'.$request['IDSANTRI'];
-        return redirect($var);
+        // $var = 'kemajuan'.$request['IDSANTRI'];
+        return redirect('/Kemajuan');
 
     }
 

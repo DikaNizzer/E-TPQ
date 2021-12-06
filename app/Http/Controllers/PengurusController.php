@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Hash;
 
 class PengurusController extends Controller
 {
-    public function index(){
+
+
+    public function index($IDPENGURUS){
 
         //ambil data dari table pengurus
-        $pengurus = DB::table('pengurus')->get();
+        $pengurus = DB::table('pengurus')->where('IDPENGURUS',$IDPENGURUS)->get();
 
         // mengirim data ke view santri
         return view('petugas/pengurus', [
@@ -26,14 +28,6 @@ class PengurusController extends Controller
 
     // fungsi untuk mengakses data pengurus
     public function pengurus(){
-
-        //ambil data dari table pengurus
-        // $pengurus = DB::table('pengurus')->get();
-
-        // // mengirim data ke view santri
-        // return view('data', [
-        //     'pengurus' => $pengurus
-        // ]);
 
         $pengurus = Pengurus::get();
     	return view('data', ['pengurus' => $pengurus]);
@@ -131,11 +125,12 @@ class PengurusController extends Controller
     {
 
         $pengurus = Pengurus::where('EMAIL', $request->EMAIL)->first();
+        $id = $pengurus['IDPENGURUS'];
 
         if( password_verify($request->PASSWORD, $pengurus->PASSWORD) ){
             if(Auth::loginUsingId($pengurus->IDPENGURUS)){
                 $request->session()->regenerate();
-                return redirect('/pengurus');
+                return redirect('/pengurus'.$id);
 
             }
         }else{

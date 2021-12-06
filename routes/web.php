@@ -40,7 +40,7 @@ Route::get('/test-koneksi-database', function() {
 Route::get('/santri{IDSANTRI}', [SantriController::class, 'index'] );
 
 //halaman data santri yang dilihat ortu
-Route::get('/ortu', [SantriController::class, 'index'] );
+Route::get('/ortu{IDSANTRI}', [SantriController::class, 'index'] );
 
 // //halaman perkembangan yang dilihat ortu
 // Route::get('/perkembangan', function () {
@@ -96,7 +96,7 @@ Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 Route::post('/logpetugas', [PengurusController::class, 'postLogin'] );
 
 //halaman pengurus
-Route::get('/pengurus', [PengurusController::class, 'index'] );
+Route::get('/pengurus{IDPENGURUS}', [PengurusController::class, 'index'] );
 
 // Membuat Data Pengurus
 Route::post('/buatpengurus', [PengurusController::class, 'buat'] );
@@ -115,6 +115,9 @@ Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'ubah']);
 
 //Menyimpan Data Santri Baru
 Route::post('/pengurusupdate', [PengurusController::class, 'update'] );
+
+//Menampilkan tbel santri dan menu kemajuan
+Route::get('/Kemajuan', [KemajuanController::class, 'tampil'] );
 
 //
 // Route::get('/kelasIqra', function () {

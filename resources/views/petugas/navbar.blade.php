@@ -1,5 +1,5 @@
 
-	
+
     <!-- LOADER -->
 	<div id="preloader">
 		<div class="loader-container">
@@ -8,8 +8,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- END LOADER -->	
-	
+	<!-- END LOADER -->
+
 	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,9 +44,11 @@
 								<a class="dropdown-item" href="santriterhapus">Data Santri Dihapus</a>
 							</div>
 						</li>
+                        <li class="nav-item "><a class="nav-link" href="/Kemajuan">Kemajuan</a></li>
 						<li class="nav-item "><a class="nav-link" href="/buku">Buku</a></li>
 						<li class="nav-item "><a class="nav-link" href="/peran">Peran</a></li>
 						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>
+
 						<ul></ul>
 						<ul></ul>
 					</ul>

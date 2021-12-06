@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-3 text-center mb-2 mt-2">
-					<h2 class="heading-section">TABLE PERKEMBANGAN SANTRI </h2>
+					<h2 class="heading-section"> PERKEMBANGAN {{ $santri->NAMASATRI }} </h2>
 				</div>
 			</div>
 
@@ -18,7 +18,7 @@
 						<thead class="thead-primary table-primary">
 						<tr >
 							<th>ID Kemajuan  </th>
-							<th>Nama Santri </th>
+							{{-- <th>Nama Santri </th> --}}
 							<th>Tanggal</th>
 							<th>Status</th>
 							<th>Nilai</th>
@@ -31,7 +31,7 @@
 						<tr>
 							<th scope="row" class="scope" >{{ $maju->IDKEMAJUAN }}</th>
                             {{-- @foreach ($maju->santri as $santri ) --}}
-                                <td>{{ $santri->NAMASATRI }} </td>
+                                {{-- <td>{{ $santri->NAMASATRI }} </td> --}}
                             {{-- @endforeach --}}
 
 							<td>{{ $maju->TANGGAL }}</td>

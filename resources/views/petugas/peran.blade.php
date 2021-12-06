@@ -23,19 +23,19 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <label for="idperan">Id Peran : </label>
-                                <input class="form-control" id="id" placeholder="(1, 2, ...)" type="text" name="id">
+                                <input class="form-control" id="id" placeholder="(1, 2, ...)" type="text" name="IDPERAN">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <label for="peran">Sebagai : </label>
-                                <input class="form-control" id="peran" placeholder="(pengajar)" type="text" name="peran">
+                                <input class="form-control" id="peran" placeholder="(pengajar)" type="text" name="PERAN">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <label for="status">Status</label>
-                                <input class="form-control" id="status" placeholder="(1=aktif, 0=nonaktif)" type="number" name="status">
+                                <input class="form-control" id="status" placeholder="(1=aktif, 0=nonaktif)" type="number" name="AKTIF">
                             </div>
                         </div>
                         <div class="row">
@@ -45,12 +45,12 @@
                         </div>
                     </form>
                 </div>
-                
             </div>
         </div>
     </div>
     </div>
 </div>
+
 
 
 <div class="container">
@@ -59,6 +59,26 @@
             <h2 class="heading-section">DAFTAR PERAN</h2>
         </div>
     </div>
+
+    {{-- KAlo Nerhasil Buat AKun --}}
+    @if(session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+{{-- KAlo gagal Buat AKun --}}
+@if ($errors->any())
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <b>Gagal Membuat AKun Karena :</b>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+        <b>Silahkan Coba Lagi</b>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 
     <div class="row">
         <div class="col-md-12">

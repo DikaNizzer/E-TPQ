@@ -22,12 +22,22 @@ class PeranController extends Controller
 
     public function tambahperan (Request $request)
     {
-        // insert data ke table buku
-        DB::table('peran')->insert([
-            'IDPERAN' => $request->id,
-            'PERAN' => $request->peran,
-            'AKTIF' => $request->status
+        $validatedData = $request->validate([
+            'IDPERAN' => 'required|unique:peran',
+            'PERAN' =>['required', 'max:20'],
+            'AKTIF' => 'required|max:1'
         ]);
+
+        $peran = Peran::create($validatedData);
+
+        $request->session()->flash('success', 'Peran berhasil ditambah !');
+
+        // insert data ke table buku
+        // DB::table('peran')->insert([
+        //     'IDPERAN' => $request->id,
+        //     'PERAN' => $request->peran,
+        //     'AKTIF' => $request->status
+        // ]);
 
         // alihkan halaman ke halaman santri
         return redirect('/peran');

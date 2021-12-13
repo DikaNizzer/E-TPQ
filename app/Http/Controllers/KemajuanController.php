@@ -15,13 +15,15 @@ class KemajuanController extends Controller
     public function tampil(){
         //ambil data dari table santri
         $santri = DB::table('santri')->get();
+        $pengurus = DB::table('pengurus')->get();
         $kemajuan = DB::table("kemajuan")->get();
         $kemajuan = $kemajuan->count();
 
         // mengirim data ke view Kemajuan
         return view('petugas.tabkemajuan', [
             'kemajuan' => $kemajuan,
-            'santri' => $santri
+            'santri' => $santri,
+            'pengurus' => $pengurus
         ]);
     }
 
@@ -38,6 +40,7 @@ class KemajuanController extends Controller
     }
 
     public function buat(Request $request){
+
 
         DB::table('kemajuan')->insert([
             // 'IDKEMAJUAN' => $request->IDKEMAJUAN,
@@ -61,7 +64,7 @@ class KemajuanController extends Controller
         // $petugas = Pengurus::findOrFail($id);
 
         // mengirim data ke view Kemajuan
-        return view('ortu.perkembangan', [
+        return view('santri.perkembangan', [
             'kemajuan' => $kemajuan,
             // 'petugas' => $petugas
         ]);

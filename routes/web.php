@@ -3,6 +3,7 @@ use App\Models\Santri;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\OrtuController;
 use App\Http\Controllers\PeranController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\KemajuanController;
@@ -187,3 +188,13 @@ Route::get('/kemajuan{IDSANTRI}', [KemajuanController::class, 'index'] );
 
 // Membuat Data Perkembangan
 Route::post('/buatkemajuan', [KemajuanController::class, 'buat'] );
+
+
+//LOGIN ORANG TUA
+Route::post('/logortu', [OrtuController::class, 'postLogin'] );
+
+//halaman data santri yang dilihat Ortu
+Route::get('/ortu{IDSANTRI}', [OrtuController::class, 'index'] );
+
+// Lihat Perkembangan Santri
+Route::get('/ortuliat{IDSANTRI}', [OrtuController::class, 'santri'] );

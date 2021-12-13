@@ -7,7 +7,7 @@
                 <div class="col-md-3 register-left">
                     <img src="images/santri.png" alt=""/>
                     <h3>Assalamualaikum</h3>
-                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
+                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga
                         yang memusuhimu akan seperti teman yang setia.</p>
                         <p><strong>Q.S Fusshilat: 34</strong></p>
                 </div>
@@ -16,59 +16,70 @@
                         {{ csrf_field() }}
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            {{-- KAlo gagal Buat Data Santri --}}
+                            @if ($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <b>Gagal Membuat AKun Karena :</b>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                                <b>Silahkan Coba Lagi</b>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            @endif
                             <h3 class="register-heading">Data Diri Santri</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="ID Santri" value="" name="id"/>
+                                        <input type="text" class="form-control" placeholder="ID Santri" value="" name="IDSANTRI" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Password" value="" name="pass"/>
+                                        <input type="text" class="form-control" placeholder="Password" value="" name="PASSWORD"required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="" name="nama" />
+                                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="" name="NAMASATRI" required/>
                                     </div>
                                     <div class="form-group">
                                         <label for="foto" class="form-label">Tanggal Lahir</label>
-                                        <input type="date" class="form-control" placeholder="Tanggal Lahir" value="" name="lahir"/>
+                                        <input type="date" class="form-control" placeholder="Tanggal Lahir" value="" name="TAGGALLHR"required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nama Orang Tua" value="" name="ortu"/>
+                                        <input type="text" class="form-control" placeholder="Nama Orang Tua" value="" name="NAMAORTU" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Alamat Orang Tua" value="" name="alamat"/>
+                                        <input type="text" class="form-control" placeholder="Alamat Orang Tua" value="" name="ALAMATORTU" required/>
                                     </div>
                                     <div class="form-group">
                                         <div class="maxl">
-                                            
-                                            {{-- <label class="radio inline"> 
+
+                                            {{-- <label class="radio inline">
                                                 <input type="radio" name="gender" value="L" checked>
-                                                <span> L </span> 
+                                                <span> L </span>
                                             </label>
-                                            <label class="radio inline"> 
+                                            <label class="radio inline">
                                                 <input type="radio" name="gender" value="P">
-                                                <span>P </span> 
+                                                <span>P </span>
                                             </label> --}}
-                                        
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="jk"/>
+                                        <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="GENDER" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" value="" name="email"/>
+                                        <input type="email" class="form-control" placeholder="Email" value="" name="EMAIL" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nomor Hp" value="" name="hp"/>
+                                        <input type="text" class="form-control" placeholder="Nomor Hp" value="" name="HP" required/>
                                     </div>
                                     <div class="form-group">
                                         <label for="foto" class="form-label">Tanggal Masuk</label>
-                                        <input type="date" class="form-control" placeholder="Tanggal Masuk" value="" name="masuk"/>
+                                        <input type="date" class="form-control" placeholder="Tanggal Masuk" value="" name="TANGGALMASUK" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Tempat Lahir" value="" name="tempatLahir"/>
+                                        <input type="text" class="form-control" placeholder="Tempat Lahir" value="" name="KOTALHR" required/>
                                     </div>
                                     {{-- <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Upload Foto" value="" name="foto"/>

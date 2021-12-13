@@ -6,6 +6,12 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-3 text-center mb-2 mt-2">
+                    @if(session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('success') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                        @endif
 					<h2 class="heading-section">TABLE JUMLAH SANTRI </h2>
 				</div>
 			</div>
@@ -29,7 +35,7 @@
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>
 								<a href="/kemajuan{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Kemajuan</a>
-                                <a href="#" data-toggle="modal" data-target="#tambah" onclick="idsan('{{ $data->IDSANTRI }}')" class="btn btn-primary">Tambah Kemajuan</a>
+                                <a href="#" data-toggle="modal" data-target="#tambah" onclick="idsan('{{ $data->NAMASATRI }}','{{ $data->IDSANTRI }}')" class="btn btn-primary">Tambah Kemajuan</a>
 								{{-- <a href="/santrihapus{{ $data->IDSANTRI }}" class="btn btn-danger">Hapus Data</a> --}}
                             </td>
 						</tr>
@@ -80,23 +86,36 @@
                           </div> --}}
                           <div class="form-group">
                               <div class="col-sm-12">
-                                <label for="id">Id Santri</label>
-                                  <input class="form-control" name="IDSANTRI" id="hasilid" type="text"  readonly >
+                                <label for="id">Nama Santri</label>
+                                  <input class="form-control" name="IDSANTRI" id="nama" type="text"  readonly >
                               </div>
                           </div>
                           <div class="form-group">
                             <div class="col-sm-12">
-                              <label for="pengurus">Id Pengurus</label>
-                                <input class="form-control" name="IDPENGURUS"  placeholder="01" type="text" required >
+                                <input class="form-control" name="IDSANTRI" id="hasilid" type="hidden"  readonly >
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                              <label for="status">Status</label>
-                                <input class="form-control" name="STATUS"  placeholder="N(Naik), T(Tetap), M(Mundur)"
-                                type="text" required >
-                            </div>
+                        <div class="form">
+                            <label for = "location" > Nama Pengurus:</label>
+                                <select name="IDPENGURUS" multiple class="form-control"  id="Select" >
+                                    <option selected> Pilih Nama </option>
+                               @foreach ($pengurus as $admin)
+                                      <option value="{{ $admin->IDPENGURUS }}"> {{ $admin->NAMA }} </option>
+                                @endforeach
+                                </select>
                         </div>
+                        <div class="form">
+                            <label for = "location" > Status</label>
+                                <select name="STATUS" multiple class="form-control"  id="Select" >
+                                    <option selected> Status </option>
+
+                                      <option value="N"> Naik </option>
+                                      <option value="T"> Tetap </option>
+                                      <option value="M"> Mundur </option>
+
+                                </select>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-12">
                               <label for="keterangan">Keterangan</label>
@@ -127,7 +146,8 @@
   </div>
 
   <script>
-    function idsan(id){
+    function idsan(nama,id){
+    document.querySelector("#nama").placeholder = nama;
     document.querySelector("#hasilid").value = id;
     }
     </script>

@@ -36,7 +36,7 @@
     <body class="host_version">
 
         {{-- ini untuk navbar --}}
-        @include('ortu.navbar')
+        @include('santri.navbar')
 
         {{-- ini untuk isi --}}
         @yield('container')

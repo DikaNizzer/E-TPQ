@@ -21,7 +21,7 @@ class SantriController extends Controller
 
 
         // mengirim data ke view santri
-        return view('ortu/santri2', [
+        return view('santri/santri2', [
             'santri' => $santri
         ]);
     }
@@ -30,25 +30,37 @@ class SantriController extends Controller
    // method untuk insert data ke table santri
     public function store(Request $request)
     {
+        // dd($request);
+        $validatedData = $request->validate([
+            'IDSANTRI' => 'required|unique:santri',
+            'NAMASATRI' =>['required', 'max:255'],
+            // 'EMAIL' => 'required|email:dns|max:30',
+            'HP' => ['required', 'max:15'],
+            'GENDER' => ['required', 'max:1'],
+            'PASSWORD' => ['required', 'min:5'],
+            'NAMAORTU' => ['required', 'max:255'],
+            'ALAMATORTU' => ['required', 'max:255'],
+            'KOTALHR' => ['required', 'max:255'],
+        ]);
 
-
-        $validatedpass=  password_hash($request->pass, PASSWORD_DEFAULT);
+        $validatedpass=  password_hash($request->PASSWORD, PASSWORD_DEFAULT);
         // insert data ke table Santri
         DB::table('santri')->insert([
-            'IDSANTRI' => $request->id,
+            'IDSANTRI' => $request->IDSANTRI,
             'PASSWORD' => $validatedpass,
-            'NAMASATRI' => $request->nama,
-            'TAGGALLHR' => $request->lahir,
-            'NAMAORTU' => $request->ortu,
-            'ALAMATORTU' => $request->alamat,
-            'GENDER' => $request->jk,
-            'EMAIL' => $request->email,
-            'HP' => $request->hp,
-            'TANGGALMASUK' => $request->masuk,
-            'KOTALHR' => $request->tempatLahir,
+            'NAMASATRI' => $request->NAMASATRI,
+            'TAGGALLHR' => $request->TAGGALLHR,
+            'NAMAORTU' => $request->NAMAORTU,
+            'ALAMATORTU' => $request->ALAMATORTU,
+            'GENDER' => $request->GENDER,
+            'EMAIL' => $request->EMAIL,
+            'HP' => $request->HP,
+            'TANGGALMASUK' => $request->TANGGALMASUK,
+            'KOTALHR' => $request->KOTALHR,
             'foto' => $request->file('foto')->store('folder-foto')]
         );
 
+        $request->session()->flash('success', 'Registrasi Berhasil !, Silahkan Cek Kebenaran Data');
         // alihkan halaman ke halaman santri
         return redirect('/tabelsantri');
     }
@@ -156,17 +168,16 @@ class SantriController extends Controller
         }
 
 
+
         public function postLogin(Request $request)
         {
 
             $santri = Santri::where('EMAIL', $request->EMAIL)->first();
-            $id = $santri['IDSANTRI'];
 
-            if( password_verify($request->PASSWORD, $santri->PASSWORD) ){
+            if(password_verify($request->PASSWORD, $santri->PASSWORD)){
                 if(Auth::loginUsingId($santri->IDSANTRI)){
                     $request->session()->regenerate();
-                    return redirect('/santri'.$id);
-
+                    return redirect('/santri'.$santri->IDSANTRI);
                 }
             }else{
                 return back()->with('logerror', 'Login Gagal');

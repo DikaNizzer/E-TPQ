@@ -6,6 +6,12 @@
  <!-- Page Content  -->
  <div class="jumbotron">
     <h1 class="display-4"> Selamat Datang! </h1>
+    @if(session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('success') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                        @endif
     <p class="lead">ASSALAMUALAIKUM, {{ $data->NAMA }} </p>
     <hr class="my-4">
     <p> Email : {{ $data->EMAIL }} </p>

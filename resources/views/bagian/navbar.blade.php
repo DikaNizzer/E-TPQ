@@ -5,7 +5,7 @@
 		<div class="modal-content">
 			<div class="modal-header tit-up">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Login Petugas</h4>
+				<h4 class="modal-title">Login Pengurus</h4>
 			</div>
 			<div class="modal-body customer-box">
 				<!-- Nav tabs -->
@@ -23,11 +23,6 @@
 									<input class="form-control" name="EMAIL"
                                     id="email" placeholder="Email" type="email" required>
 								</div>
-                                {{-- @error('EMAIL')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror --}}
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
@@ -129,7 +124,7 @@
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
 					<li><a class="active" href="#Loginsantri" data-toggle="tab">Login</a></li>
-					<li><a href="#Registrationsantri" data-toggle="tab">Buat Akun</a></li>
+					{{-- <li><a href="#Registrationsantri" data-toggle="tab">Buat Akun</a></li> --}}
 				</ul>
 				<!-- Tab panes -->
 				<div class="tab-content">
@@ -155,7 +150,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="tab-pane" id="Registrationsantri">
+					{{-- <div class="tab-pane" id="Registrationsantri">
 						<form role="form" class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-12">
@@ -187,7 +182,7 @@
 								</div>
 							</div>
 						</form>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</div>
@@ -280,7 +275,7 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Login </a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#login" >Login Petugas</a>
+								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#login" >Login Pengurus</a>
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginsantri">Login Santri</a>
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginortu">Login Orang Tua</a>
 							</div>

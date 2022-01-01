@@ -122,21 +122,27 @@ class PengurusController extends Controller
     }
 
 
-        public function postLogin(Request $request)
-    {
+        public function postLogin(Request $request){
 
         $pengurus = Pengurus::where('EMAIL', $request->EMAIL)->first();
-        $id = $pengurus['IDPENGURUS'];
-
-        if( password_verify($request->PASSWORD, $pengurus->PASSWORD) ){
-            if(Auth::loginUsingId($pengurus->IDPENGURUS)){
-                $request->session()->regenerate();
-                return redirect('/pengurus'.$id);
-
-            }
-        }else{
+        if($pengurus == null){
             return back()->with('logerror', 'Login Gagal');
+        }else{
+
+            $id = $pengurus['IDPENGURUS'];
+            if( password_verify($request->PASSWORD, $pengurus->PASSWORD) ){
+                if(Auth::loginUsingId($pengurus->IDPENGURUS)){
+                    $request->session()->regenerate();
+                    return redirect('/pengurus'.$id);
+
+                }
+            }else{
+                return back()->with('logerror', 'Login Gagal');
+            }
+
         }
+
+
     }
 
 }

@@ -169,19 +169,26 @@ class SantriController extends Controller
 
 
 
-        public function postLogin(Request $request)
-        {
+        public function postLogin(Request $request){
 
             $santri = Santri::where('EMAIL', $request->EMAIL)->first();
 
-            if(password_verify($request->PASSWORD, $santri->PASSWORD)){
-                if(Auth::loginUsingId($santri->IDSANTRI)){
-                    $request->session()->regenerate();
-                    return redirect('/santri'.$santri->IDSANTRI);
-                }
-            }else{
+            if($santri == null){
                 return back()->with('logerror', 'Login Gagal');
+            }else{
+                if(password_verify($request->PASSWORD, $santri->PASSWORD)){
+                    if(Auth::loginUsingId($santri->IDSANTRI)){
+                        // $request->session()->regenerate();
+                        $request->session()->put('santri', $santri['IDSANTRI']);
+                        return redirect('/santri'.$santri->IDSANTRI);
+
+                    }
+                }else{
+                    return back()->with('logerror', 'Login Gagal');
+                }
             }
+
+
         }
 
 };

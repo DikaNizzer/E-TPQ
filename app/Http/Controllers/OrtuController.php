@@ -17,16 +17,18 @@ class OrtuController extends Controller
 
             $santri = Santri::where('EMAIL', $request->EMAIL)->first();
             // $santri = DB::table('santri')->where('EMAIL', $request->EMAIL)->get();
-            $id = $santri->IDSANTRI;
 
-            if( password_verify($request->PASSWORD, $santri->PASSWORD) ){
-                if(Auth::loginUsingId($santri->IDSANTRI)){
-                    $request->session()->regenerate();
-                    return redirect('/ortu'.$id);
-
-                }
-            }else{
+            if($santri == null){
                 return back()->with('logerror', 'Login Gagal');
+            }else{
+                if(password_verify($request->PASSWORD, $santri->PASSWORD)){
+                    if(Auth::loginUsingId($santri->IDSANTRI)){
+                        $request->session()->regenerate();
+                        return redirect('/ortu'.$santri->IDSANTRI);
+                    }
+                }else{
+                    return back()->with('logerror', 'Login Gagal');
+                }
             }
         }
 

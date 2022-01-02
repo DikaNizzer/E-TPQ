@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 <div class="container">
@@ -24,7 +24,7 @@
                 <tbody>
                 <tr>
                     <?php $absen =1 ?>
-                    <th scope="row" class="scope" >{{ $data->IDBUKU }}</th>
+                    <th scope="row" class="scope" >{{ $loop->iteration }}</th>
                     <td>{{$data->BUKU}}</td>
                     <td>{{$data->KETERANGAN}}</td>
                     <td>

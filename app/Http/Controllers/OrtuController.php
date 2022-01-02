@@ -39,7 +39,7 @@ class OrtuController extends Controller
 
 
             // mengirim data ke view santri
-            return view('ortu/santri2', [
+            return view('ortuu/santri2', [
                 'santri' => $santri
             ]);
         }
@@ -52,7 +52,7 @@ class OrtuController extends Controller
             // $petugas = Pengurus::findOrFail($id);
 
             // mengirim data ke view Kemajuan
-            return view('ortu.perkembangan', [
+            return view('ortuu.perkembangan', [
                 'kemajuan' => $kemajuan,
                 // 'petugas' => $petugas
             ]);

@@ -43,17 +43,6 @@
                             {{ csrf_field() }}
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control @error('IDPENGURUS') is-invalid @enderror" placeholder="Id Pengurus"
-                                    type="text" name="IDPENGURUS" required value="{{ old('IDPENGURUS') }}">
-                                    @error('IDPENGURUS')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
 									<input class="form-control" id="nama" placeholder="Nama" type="text" name="NAMA" required>
 								</div>
 							</div>
@@ -69,8 +58,13 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="jk" placeholder="Jenis Kelamin" type="text" name="GENDER" required>
+                                    <select class="form-select col-sm-12" aria-label="Default select example" name="GENDER">
+                                        <option selected>Jenis Kelamin</option>
+                                        <option value="M">Laki - Laki </option>
+                                        <option value="F">Perempuan</option>
+                                    </select>
 								</div>
+                                <br>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
@@ -79,8 +73,13 @@
 							</div>
                             <div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="status" placeholder="Status" type="text" name="AKTIF" required>
+                                    <select class="form-select col-sm-12" aria-label="Default select example" name="AKTIF">
+                                        <option selected>Pilih Status</option>
+                                        <option value="1">Aktif </option>
+                                        <option value="0">non - AKtif</option>
+                                      </select>
 								</div>
+                                <br>
 							</div>
 							<div class="form">
 								<label for = "location" > Pilih Peran:</label>
@@ -96,10 +95,7 @@
 
 							<div class="row">
 								<div class="col-sm-10">
-									{{-- <button type="button" class="btn btn-light btn-radius btn-brd grd1"> --}}
                                         <input type="submit" class="btn btn-light btn-radius btn-brd grd1"  value="Tambah Data"/>
-										{{-- <a href="buatpengurus" class="btn btn-light btn-radius btn-brd grd1">Simpan &amp; Lanjutkan</a> --}}
-									{{-- </button> --}}
 									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
 										Cancel</button>
 								</div>

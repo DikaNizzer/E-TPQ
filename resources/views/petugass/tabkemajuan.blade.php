@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 
@@ -31,7 +31,7 @@
                         @foreach ($santri as $data)
 						<tbody>
 						<tr>
-							<th scope="row" class="scope" >{{ $data->IDSANTRI }}</th>
+							<th scope="row" class="scope" >{{ $loop->iteration }}</th>
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>
 								<a href="/kemajuan{{ $data->IDSANTRI }}" class="btn btn-primary">Detail Kemajuan</a>

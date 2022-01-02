@@ -15,7 +15,7 @@ class PeranController extends Controller
         $peran = DB::table('peran')->whereNull('deleted_at')->get();
 
         // mengirim data ke view buku
-        return view('petugas.peran', [
+        return view('petugass.peran', [
             'peran' => $peran
         ]);
     }
@@ -23,7 +23,6 @@ class PeranController extends Controller
     public function tambahperan (Request $request)
     {
         $validatedData = $request->validate([
-            'IDPERAN' => 'required|unique:peran',
             'PERAN' =>['required', 'max:20'],
             'AKTIF' => 'required|max:1'
         ]);
@@ -32,14 +31,6 @@ class PeranController extends Controller
 
         $request->session()->flash('success', 'Peran berhasil ditambah !');
 
-        // insert data ke table buku
-        // DB::table('peran')->insert([
-        //     'IDPERAN' => $request->id,
-        //     'PERAN' => $request->peran,
-        //     'AKTIF' => $request->status
-        // ]);
-
-        // alihkan halaman ke halaman santri
         return redirect('/peran');
     }
 
@@ -49,7 +40,7 @@ class PeranController extends Controller
         $peran = DB::table("peran")->where('IDPERAN',$IDPERAN)->get();
 
         //Passing data dsb
-        return view('petugas.ubahperan',['peran' => $peran]);
+        return view('petugass.ubahperan',['peran' => $peran]);
     }
 
     public function update(Request $request)
@@ -76,7 +67,7 @@ class PeranController extends Controller
     public function riwayat()
     {
         $peran = Peran::onlyTrashed()->get();
-        return view('petugas.riwayatperan', ['peran' => $peran]);
+        return view('petugass.riwayatperan', ['peran' => $peran]);
     }
 
     public function kembalikan($IDPERAN)

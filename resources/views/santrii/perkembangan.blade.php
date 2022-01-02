@@ -36,7 +36,7 @@
     </div>
 
 
-@extends('santri.main')
+@extends('santrii.main')
 @section('container')
 
 <div class="container" style="height:80%">

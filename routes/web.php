@@ -59,7 +59,7 @@ Route::get('/perkembangan{IDSANTRI}', [KemajuanController::class, 'santri'] );
 Route::get('/tabelsantri', [SantriController::class, 'tabel'] );
 
 Route::get('/tambah', function () {
-    return view('petugas/tambah');
+    return view('petugass/tambah');
 });
 
 //Menyimpan Data Santri Baru

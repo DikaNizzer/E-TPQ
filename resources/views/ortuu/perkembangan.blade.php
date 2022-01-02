@@ -36,7 +36,7 @@
     </div>
 
 
-@extends('ortu.main')
+@extends('ortuu.main')
 @section('container')
 
 <div class="container" style="height:80%">

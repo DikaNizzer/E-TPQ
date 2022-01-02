@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 <div class="bg">
@@ -7,7 +7,7 @@
                 <div class="col-md-3 register-left">
                     <img src="images/santri.png" alt=""/>
                     <h3>Assalamualaikum</h3>
-                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
+                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga
                         yang memusuhimu akan seperti teman yang setia.</p>
                         <p><strong>Q.S Fusshilat: 34</strong></p>
                 </div>
@@ -25,7 +25,7 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Nama Buku" value="" name="namabuku"/>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">

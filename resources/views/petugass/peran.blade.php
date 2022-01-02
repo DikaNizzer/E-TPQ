@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 <!-- Modal PERAN -->
@@ -20,12 +20,7 @@
                 <div class="tab-pane active" id="Loginortu">
                     <form role="form" class="form-horizontal" action="/peran/store" method="post">
                         {{ csrf_field() }}
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <label for="idperan">Id Peran : </label>
-                                <input class="form-control" id="id" placeholder="(1, 2, ...)" type="text" name="IDPERAN">
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <label for="peran">Sebagai : </label>
@@ -35,8 +30,16 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <label for="status">Status</label>
-                                <input class="form-control" id="status" placeholder="(1=aktif, 0=nonaktif)" type="number" name="AKTIF">
+                                {{-- <input class="form-control" id="status" placeholder="(1=aktif, 0=nonaktif)" type="number" name="AKTIF"> --}}
+
+                                <select class="form-select col-sm-12" aria-label="Default select example" name="AKTIF">
+                                    <option selected>Pilih Status</option>
+                                    <option value="1">Aktif</option>
+                                    <option value="0">Non AKtif</option>
+                                  </select>
                             </div>
+
+
                         </div>
                         <div class="row">
                             <div class="col-sm-10">
@@ -97,26 +100,32 @@
                 <tbody>
                 <tr>
                     <?php $absen =1 ?>
-                    <th scope="row" class="scope" >{{ $data->IDPERAN }}</th>
+                    <th scope="row" class="scope" >{{ $loop->iteration }}</th>
                     <td>{{$data->PERAN}}</td>
                     <td>{{$data->created_at}}</td>
-                    <td>{{ $data->AKTIF }}</td>
+
+                        @if ( $data->AKTIF == 0)
+                        <td> Non Aktif</td>
+                        @elseif ( $data->AKTIF == 1)
+                        <td>Aktif</td>
+                        @endif
+
                     <td>
                         <a href="peranubah{{ $data->IDPERAN }}" class="btn btn-info"> UBAH </a>
                         <a href="peranhapus{{ $data->IDPERAN }}" class="btn btn-info"> HAPUS </a>
                     </td>
-                    <?php $absen++ ?>
+                    <?php $absen++; ?>
                 </tr>
                 </tbody>
                 @endforeach
                 </table>
             </div>
         </div>
-    </div> 
+    </div>
     <a href="/pengurus" class="btn btn-primary">Kembali</a>
     <a href="#" data-target="#peran" data-toggle="modal" class="btn btn-primary">Tambah</a>
     <a href="/peranterhapus" class="btn btn-primary ">Data Peran dihapus</a>
 </div>
 
-    
+
 @endsection

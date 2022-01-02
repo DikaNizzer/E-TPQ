@@ -20,7 +20,7 @@ class KemajuanController extends Controller
         $kemajuan = $kemajuan->count();
 
         // mengirim data ke view Kemajuan
-        return view('petugas.tabkemajuan', [
+        return view('petugass.tabkemajuan', [
             'kemajuan' => $kemajuan,
             'santri' => $santri,
             'pengurus' => $pengurus
@@ -33,7 +33,7 @@ class KemajuanController extends Controller
         $santri = Santri::findOrFail($IDSANTRI);
 
         // mengirim data ke view Kemajuan
-        return view('petugas.kemajuan', [
+        return view('petugass.kemajuan', [
             'kemajuan' => $kemajuan,
             'santri' => $santri
         ]);
@@ -64,7 +64,7 @@ class KemajuanController extends Controller
         // $petugas = Pengurus::findOrFail($id);
 
         // mengirim data ke view Kemajuan
-        return view('santri.perkembangan', [
+        return view('santrii.perkembangan', [
             'kemajuan' => $kemajuan,
             // 'petugas' => $petugas
         ]);

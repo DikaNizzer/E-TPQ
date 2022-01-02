@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 @foreach ($pengurus as $data)

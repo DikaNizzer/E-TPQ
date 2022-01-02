@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 {{-- @foreach ($buku as $book ) --}}
 <div class="container">
@@ -21,7 +21,7 @@
                 <tbody>
                     @foreach ($buku->bab as $bab )
                     <tr>
-                        <th scope="row">{{ $bab->IDBAB }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $bab->BAB }}</td>
                         <td>{{ $bab->JUDUL }}</td>
                         <td>{{ $buku->KETERANGAN }}</td>

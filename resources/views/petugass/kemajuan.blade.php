@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 
@@ -17,7 +17,7 @@
 						<table class="table">
 						<thead class="thead-primary table-primary">
 						<tr >
-							<th>ID Kemajuan  </th>
+							<th>No Kemajuan  </th>
 							{{-- <th>Nama Santri </th> --}}
 							<th>Tanggal</th>
 							<th>Status</th>
@@ -29,7 +29,7 @@
                         @foreach ($kemajuan as $maju)
 						<tbody>
 						<tr>
-							<th scope="row" class="scope" >{{ $maju->IDKEMAJUAN }}</th>
+							<th scope="row" class="scope" >{{ $loop->iteration }}</th>
                             {{-- @foreach ($maju->santri as $santri ) --}}
                                 {{-- <td>{{ $santri->NAMASATRI }} </td> --}}
                             {{-- @endforeach --}}

@@ -1,4 +1,4 @@
-@extends('ortu.main')
+@extends('ortuu.main')
 @section('container')
 
     @foreach ($santri as $data)

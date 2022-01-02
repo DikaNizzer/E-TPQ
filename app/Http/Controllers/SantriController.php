@@ -21,7 +21,7 @@ class SantriController extends Controller
 
 
         // mengirim data ke view santri
-        return view('santri/santri2', [
+        return view('santrii/santri2', [
             'santri' => $santri
         ]);
     }
@@ -70,7 +70,7 @@ class SantriController extends Controller
     $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get();
 
     // passing data santri yang didapat ke view detail
-    return view('petugas.detail',['santri' => $santri]);
+    return view('petugass.detail',['santri' => $santri]);
     }
 
     public function edit($IDSANTRI){
@@ -78,7 +78,7 @@ class SantriController extends Controller
         $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get();
 
         // passing data santri yang didapat ke view detail
-        return view('petugas.edit',['santri' => $santri]);
+        return view('petugass.edit',['santri' => $santri]);
     }
 
     public function update(Request $request)
@@ -117,7 +117,7 @@ class SantriController extends Controller
         $santri = DB::table('santri')->whereNull('deleted_at')->paginate(2);
 
         // mengirim data ke view santri
-        return view('petugas/table', [
+        return view('petugass/table', [
             'santri' => $santri
         ]);
     }
@@ -135,7 +135,7 @@ class SantriController extends Controller
     public function riwayat()
     {
         $santri = Santri::onlyTrashed()->get();
-        return view('petugas.riwayat', ['santri' => $santri]);
+        return view('petugass.riwayat', ['santri' => $santri]);
     }
 
     // restore data guru yang dihapus
@@ -161,7 +161,7 @@ class SantriController extends Controller
 
         $santri = Santri::find($IDSANTRI);
 
-        $pdf = PDF::loadView('petugas.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif',
+        $pdf = PDF::loadView('petugass.santriPdf', ['santri' => $santri])->setOptions(['defaultFont' => 'sans-serif',
                                                                                         'enable_remote' => true,
                                                                                         'chroot'  => public_path('storage')]);
         return $pdf->download('Data-Santri.pdf');

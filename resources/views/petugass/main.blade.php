@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -16,10 +14,9 @@
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
         <!-- Site CSS -->
         <link rel="stylesheet" href="style.css">
         <!-- ALL VERSION CSS -->
@@ -38,14 +35,14 @@
     <body class="host_version">
 
         {{-- ini untuk navbar --}}
-        @include('santri.navbar')
+        @include('petugass.navbar')
 
         {{-- ini untuk isi --}}
         @yield('container')
 
 
 
-        <div class="copyrights">
+        <div class="copyrights" id="footer">
             <div class="container">
                 <div class="footer-distributed">
                     <div class="footer-center">
@@ -70,6 +67,10 @@
 			visibleItems: 4
 		});
 	</script>
+
+      {{-- JS BOOTSTRAP 5 --}}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
     </body>
 </html>

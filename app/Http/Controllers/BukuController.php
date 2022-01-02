@@ -15,7 +15,7 @@ class BukuController extends Controller
         $buku = DB::table('buku')->whereNull('deleted_at')->get();
 
         // mengirim data ke view buku
-        return view('petugas/buku', [
+        return view('petugass/buku', [
             'buku' => $buku
         ]);
     }
@@ -39,7 +39,7 @@ class BukuController extends Controller
         $buku = DB::table("buku")->where('IDBUKU',$IDBUKU)->get();
 
         //Passing data dsb
-        return view('petugas.ubahbuku',['buku' => $buku]);
+        return view('petugass.ubahbuku',['buku' => $buku]);
     }
 
     public function update(Request $request)
@@ -67,7 +67,7 @@ class BukuController extends Controller
     public function riwayat()
     {
         $buku = Buku::onlyTrashed()->get();
-        return view('petugas.riwayatbuku', ['buku' => $buku]);
+        return view('petugass.riwayatbuku', ['buku' => $buku]);
     }
 
     // restore data guru yang dihapus
@@ -102,6 +102,6 @@ class BukuController extends Controller
 
     public function bab($IDBUKU){
         $buku = Buku::find($IDBUKU);
-        return view('petugas.bab',['buku' => $buku]);
+        return view('petugass.bab',['buku' => $buku]);
     }
 }

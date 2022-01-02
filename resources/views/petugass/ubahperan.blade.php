@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 @foreach ($peran as $data)
 <div class="bg">
@@ -7,7 +7,7 @@
                 <div class="col-md-3 register-left">
                     <img src="images/santri.png" alt=""/>
                     <h3>Assalamualaikum</h3>
-                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga 
+                    <p>Kebaikan tidak sama dengan kejahatan. Tolaklah kejahatan itu dengan cara yang lebih baik sehingga
                         yang memusuhimu akan seperti teman yang setia.</p>
                         <p><strong>Q.S Fusshilat: 34</strong></p>
                 </div>
@@ -27,12 +27,18 @@
                                         <label for="namaperan">Nama Peran : </label>
                                         <input type="text" class="form-control" placeholder="Nama Peran" value="{{ $data->PERAN }}" name="namaperan"/>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="status">Status : </label>
-                                        <input type="text" class="form-control" placeholder="0=non-aktif, 1=aktif" value="{{ $data->AKTIF }}" name="status" />
+                                        <label for="status">Status : </label><br>
+                                        {{-- <input type="text" class="form-control" placeholder="0=non-aktif, 1=aktif" value="{{ $data->AKTIF }}" name="status" /> --}}
+
+                                        <select class="form-select col-md-6" aria-label="Default select example" name="status">
+                                            <option selected>Pilih Status</option>
+                                            <option value="1">Aktif</option>
+                                            <option value="0">Non AKtif</option>
+                                          </select>
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Ubah Data"/>
                                 </div>
@@ -41,7 +47,7 @@
                     </div>
                 </form>
                 </div>
-                <a href="/buku" class="btn btn-primary">Kembali</a>
+                <a href="/peran" class="btn btn-primary">Kembali</a>
             </div>
         </div>
     </div>

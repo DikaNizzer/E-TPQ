@@ -1,10 +1,10 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3 text-center mb-2 mt-2">
-            <h2 class="heading-section">DAFTAR PERAN DIHAPUS</h2>
+            <h2 class="heading-section">DAFTAR BUKU TELAH DIHAPUS</h2>
         </div>
     </div>
 
@@ -15,23 +15,21 @@
                 <thead class="thead-primary table-primary">
                 <tr >
                     <th>No</th>
-                    <th>Nama Peran</th>
-                    <th>Waktu DiBuat</th>
-                    <th>Status</th>
+                    <th>Nama Buku</th>
+                    <th>Keterangan</th>
                     <th>Aksi</th>
                     </tr>
                 </thead>
-                @foreach ($peran as $data)
+                @foreach ($buku as $data)
                 <tbody>
                 <tr>
                     <?php $absen =1 ?>
-                    <th scope="row" class="scope" >{{ $data->IDPERAN }}</th>
-                    <td>{{$data->PERAN}}</td>
-                    <td>{{$data->created_at}}</td>
-                    <td>{{ $data->AKTIF }}</td>
+                    <th scope="row" class="scope" >{{ $loop->iteration }}</th>
+                    <td>{{$data->BUKU}}</td>
+                    <td>{{$data->KETERANGAN}}</td>
                     <td>
-                        <a href="kembaliperan{{ $data->IDPERAN }}" class="btn btn-info"> Kembalikan Data</a>
-                        <a href="dpr{{ $data->IDPERAN }}" class="btn btn-danger"> Hapus Permanen </a>
+                        <a href="kembalibuku{{ $data->IDBUKU }}" class="btn btn-info"> Kembalikan Data </a>
+                        <a href="del{{ $data->IDBUKU }}" class="btn btn-danger"> HAPUS PERMANEN </a>
                     </td>
                     <?php $absen++ ?>
                 </tr>
@@ -40,9 +38,9 @@
                 </table>
             </div>
         </div>
-    </div> 
-    <a href="/peran" class="btn btn-primary">Kembali</a>
+    </div>
+    <a href="/pengurus" class="btn btn-primary">Kembali</a>
 </div>
 
-    
+
 @endsection

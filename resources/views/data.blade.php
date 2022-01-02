@@ -98,7 +98,7 @@
                     <tbody>
                     <tr>
                         <?php $absen =1 ?>
-                        <th scope="row" class="scope" > {{ $urus->IDPENGURUS }} </th>
+                        <th scope="row" class="scope" > {{ $loop->iteration }} </th>
                         <td>{{ $urus->NAMA }}</td>
                         <td>{{ $urus->EMAIL }}</td>
                         <td>{{ $urus->HP }}</td>

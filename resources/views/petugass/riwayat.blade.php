@@ -1,4 +1,4 @@
-@extends('petugas.main')
+@extends('petugass.main')
 @section('container')
 
 
@@ -14,7 +14,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="table-wrap">
-                        
+
 						<table class="table">
 						<thead class="thead-primary table-primary">
 						<tr >
@@ -28,7 +28,7 @@
                         @foreach ($santri as $data)
 						<tbody>
 						<tr>
-							<th scope="row" class="scope" >{{ $data->IDSANTRI }}</th>
+							<th scope="row" class="scope" >{{ $loop->iteration }}</th>
 							<td> <img src="storage/{{ $data->foto }}" width="150px"></td>
 							<td>{{ $data->NAMASATRI }}</td>
 							<td>{{ $data->TANGGALMASUK }}</td>

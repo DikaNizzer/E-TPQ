@@ -21,7 +21,7 @@ class PengurusController extends Controller
         $pengurus = DB::table('pengurus')->where('IDPENGURUS',$IDPENGURUS)->get();
 
         // mengirim data ke view santri
-        return view('petugas/pengurus', [
+        return view('petugass/pengurus', [
             'pengurus' => $pengurus
         ]);
     }
@@ -37,9 +37,10 @@ class PengurusController extends Controller
 
         //Ambil data sesuai id santri
         $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
+        $peran = DB::table('peran')->get();
 
         //Passing data dsb
-        return view('detail',['pengurus' => $pengurus]);
+        return view('detail',['pengurus' => $pengurus, 'peran2' => $peran]);
 
     }
 
@@ -49,7 +50,7 @@ class PengurusController extends Controller
         $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
 
         //Passing data dsb
-        return view('petugas.detailpengurus',['pengurus' => $pengurus]);
+        return view('petugass.detailpengurus',['pengurus' => $pengurus]);
     }
 
     public function ubah($IDPENGURUS){
@@ -58,7 +59,7 @@ class PengurusController extends Controller
         $pengurus = DB::table("pengurus")->where('IDPENGURUS',$IDPENGURUS)->get();
 
         //Passing data dsb
-        return view('petugas.ubahpengurus',['pengurus' => $pengurus]);
+        return view('petugass.ubahpengurus',['pengurus' => $pengurus]);
     }
 
     public function update(Request $request)
@@ -79,7 +80,6 @@ class PengurusController extends Controller
 
 
         $validatedData = $request->validate([
-            'IDPENGURUS' => 'required|unique:pengurus',
             'NAMA' =>['required', 'max:255'],
             'EMAIL' => 'required|email:dns|max:30|unique:pengurus',
             'HP' => ['required', 'max:15'],
@@ -88,17 +88,14 @@ class PengurusController extends Controller
             'AKTIF' => ['required', 'max:1'],
         ]);
 
-
-        // if(empty($validatedData)){
-        //     $request->session()->flash('buaterror', 'Gagal Membuat AKun');
-        // };
-        // $validatedData['PASSWORD'] = Hash::make($validatedData['PASSWORD']); ->Enkripsi menggunakan Has
-        // $validatedData['PASSWORD'] =  bcrypt($validatedData['PASSWORD']);  ->Enkripsi menggunakan Bcrypt
-        //enkripsi password
         $validatedData['PASSWORD'] =  password_hash($validatedData['PASSWORD'], PASSWORD_DEFAULT);
         $pengurus = Pengurus::create($validatedData);
 
-        $pengurus = Pengurus::findOrFail($request->IDPENGURUS);
+        $idpengurus = DB::table('pengurus')->where('NAMA',$request->NAMA)->get();
+        foreach ($idpengurus as $id) {
+            $id->IDPENGURUS;
+        }
+        $pengurus = Pengurus::findOrFail($id->IDPENGURUS);
         $pengurus->peran()->attach($request->peran);
         $request->session()->flash('success', 'Registrasi Berhasil !, Silahkan Login');
 

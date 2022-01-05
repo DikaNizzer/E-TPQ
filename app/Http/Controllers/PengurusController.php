@@ -15,15 +15,11 @@ class PengurusController extends Controller
 {
 
 
-    public function index($IDPENGURUS){
+    public function index(){
 
-        //ambil data dari table pengurus
-        $pengurus = DB::table('pengurus')->where('IDPENGURUS',$IDPENGURUS)->get();
 
         // mengirim data ke view santri
-        return view('petugass/pengurus', [
-            'pengurus' => $pengurus
-        ]);
+        return view('petugass/pengurus');
     }
 
     // fungsi untuk mengakses data pengurus
@@ -126,11 +122,10 @@ class PengurusController extends Controller
             return back()->with('logerror', 'Login Gagal');
         }else{
 
-            $id = $pengurus['IDPENGURUS'];
             if( password_verify($request->PASSWORD, $pengurus->PASSWORD) ){
                 if(Auth::loginUsingId($pengurus->IDPENGURUS)){
-                    $request->session()->regenerate();
-                    return redirect('/pengurus'.$id);
+                    $request->session(['user' => $pengurus])->regenerate();
+                    return redirect('/pengurus');
 
                 }
             }else{
@@ -140,6 +135,17 @@ class PengurusController extends Controller
         }
 
 
+    }
+
+    public function logout(){
+
+        Auth::logout();
+
+        request()->session()->invalidate();
+
+        request()->session()->regenerateToken();
+
+        return redirect('/');
     }
 
 }

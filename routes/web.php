@@ -97,7 +97,7 @@ Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 Route::post('/logpetugas', [PengurusController::class, 'postLogin'] );
 
 //halaman pengurus
-Route::get('/pengurus{IDPENGURUS}', [PengurusController::class, 'index'] );
+Route::get('/pengurus', [PengurusController::class, 'index'] );
 
 // Membuat Data Pengurus
 Route::post('/buatpengurus', [PengurusController::class, 'buat'] );
@@ -116,6 +116,9 @@ Route::get('/ubah{IDPENGURUS}', [PengurusController::class, 'ubah']);
 
 //Menyimpan Data Santri Baru
 Route::post('/pengurusupdate', [PengurusController::class, 'update'] );
+
+//LOGOUT
+Route::get('/logoutpetug', [PengurusController::class, 'logout']);
 
 //Menampilkan tbel santri dan menu kemajuan
 Route::get('/Kemajuan', [KemajuanController::class, 'tampil'] );

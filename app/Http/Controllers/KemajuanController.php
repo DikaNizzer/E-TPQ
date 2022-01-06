@@ -69,4 +69,47 @@ class KemajuanController extends Controller
             // 'petugas' => $petugas
         ]);
     }
+
+    public function edit($IDSANTRI){
+        // mengambil data santri berdasarkan id yang dipilih
+        $kemajuan = DB::table('kemajuan')->where('IDSANTRI',$IDSANTRI)->get();
+
+        // passing data santri yang didapat ke view detail
+        return view('petugass.editKemajuan',['kemajuan' => $kemajuan]);
+    }
+
+    public function update(Request $request)
+    {
+        // update data ke table Santri
+        DB::table('kemajuan')->where('IDSANTRI',$request->id)->update([
+            'STATUS' => $request->status,
+            'keterangan' => $request->keterangan,
+            'nilai' => $request->nilai,
+            ]
+
+        );
+
+        // alihkan halaman ke halaman santri
+        return redirect('/kemajuan');
+    }
+
+    public function tabel(){
+
+        //ambil data dari table santri
+        // $santri = DB::table('santri')->get();
+        $santri = DB::table('kemajuan')->whereNull('deleted_at')->paginate(2);
+
+        // mengirim data ke view santri
+        return view('petugass/kemajuan', [
+            'kemajuan' => $santri
+        ]);
+    }
+
+    public function hapus($IDKEMAJUAN)
+    {
+        $kemajuan = Santri::find($IDKEMAJUAN);
+        $kemajuan->delete();
+
+        return redirect('/kemajuan');
+    }
 }

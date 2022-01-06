@@ -43,18 +43,20 @@
 
     @foreach ($kemajuan as $maju)
     <div class="container mt-4">
+        <center><h2> Daftar Buku Bacaan</h2></center>
         <div class="card">
             <div class="card-header">
-                Tanggal : {{ $maju->TANGGAL }}
+                <p class="card-text"><h2>{{ $maju->keterangan }}</h2>
+                 <div style='text-align:right;'> {{ $maju->TANGGAL }} </div></p>
             </div>
             <div class="card-body">
                 {{-- @foreach ($maju->pengurus as $pengurus )
                 <h5 class="card-title">Petugas Yang Menilai : {{ $pengurus->NAMA }} </h5>
                 @endforeach --}}
 
-                <p class="card-text">{{ $maju->keterangan }} </p>
-                <p class="card-text">Dengan Nilai : {{ $maju->nilai }} </p>
-                <a href="#" data-toggle="modal" data-target="#buku" class="btn btn-primary">Buku Yang Telah Di Baca</a>
+                {{-- <p class="card-text">{{ $maju->keterangan }} </p> --}}
+                <p class="card-text"><h3> Nilai : {{ $maju->nilai }} </h3>
+                    <div style='text-align:right;'><a href="#" data-toggle="modal" data-target="#buku" class="btn btn-primary">Buku Yang Telah Di Baca</a></div></p>
             </div>
         </div>
     </div>

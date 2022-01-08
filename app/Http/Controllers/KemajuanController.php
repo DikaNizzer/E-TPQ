@@ -12,10 +12,21 @@ use App\Http\Controllers\Controller;
 class KemajuanController extends Controller
 {
 
+
     public function tampil(){
+        $koneksi = mysqli_connect("localhost", "root", "", "tpaa");
+        $query = "SELECT * FROM bab";
+        $hasil = mysqli_query($koneksi, $query); //membuat query mysql
+        $data = [];
+
+        while($sql = mysqli_fetch_assoc($hasil) ) { //mengambil data di mysql
+            $data[] = $sql;
+        }
+
         //ambil data dari table santri
         $santri = DB::table('santri')->get();
-        $pengurus = DB::table('pengurus')->get();
+        // $bab = DB::table('bab')->get();
+
         $kemajuan = DB::table("kemajuan")->get();
         $kemajuan = $kemajuan->count();
 
@@ -23,7 +34,7 @@ class KemajuanController extends Controller
         return view('petugass.tabkemajuan', [
             'kemajuan' => $kemajuan,
             'santri' => $santri,
-            'pengurus' => $pengurus
+            'bab' => $data
         ]);
     }
 
@@ -41,7 +52,6 @@ class KemajuanController extends Controller
 
     public function buat(Request $request){
 
-
         DB::table('kemajuan')->insert([
             // 'IDKEMAJUAN' => $request->IDKEMAJUAN,
             'IDSANTRI' => $request->IDSANTRI,
@@ -51,21 +61,55 @@ class KemajuanController extends Controller
             'nilai' => $request->nilai,
         ]);
 
+        $koneksi = mysqli_connect("localhost", "root", "", "tpaa");
+        $query = "SELECT IDKEMAJUAN from kemajuan ORDER BY IDKEMAJUAN DESC LIMIT 1";
+        $hasil = mysqli_query($koneksi, $query); //membuat query mysql
+        $data = [];
+
+        while($sql = mysqli_fetch_assoc($hasil) ) { //mengambil data di mysql
+            $data[] = $sql;
+        }
+
+        foreach($data as $id)
+            $idterbaru = $id['IDKEMAJUAN'];
+
+
+
+
+
+        DB::table('bab_kemajuan')->insert([
+            // 'IDKEMAJUAN' => $request->IDKEMAJUAN,
+            'kemajuan_IDKEMAJUAN' => $idterbaru,
+            'bab_IDBAB' => $request->bab_IDBAB
+        ]);
+
         // $var = 'kemajuan'.$request['IDSANTRI'];
         return redirect('/Kemajuan');
 
     }
 
     public function santri($IDSANTRI){
+        $koneksi = mysqli_connect("localhost", "root", "", "tpaa");
+        $query = "SELECT * from kemajuan join bab_kemajuan
+        on (kemajuan.IDKEMAJUAN = bab_kemajuan.kemajuan_IDKEMAJUAN)
+        join bab
+        on (bab_kemajuan.bab_IDBAB = bab.IDBAB)
+        join pengurus
+        on kemajuan.IDPENGURUS = pengurus.IDPENGURUS
+        where IDSANTRI = $IDSANTRI";
+        $hasil = mysqli_query($koneksi, $query); //membuat query mysql
+        $data = [];
 
-        // $kemajuan = DB::table("kemajuan")->where('IDSANTRI',$IDSANTRI)->get();
+        while($sql = mysqli_fetch_assoc($hasil) ) { //mengambil data di mysql
+            $data[] = $sql;
+        }
+
+
         $kemajuan = Kemajuan::where('IDSANTRI',$IDSANTRI)->get();
-        // $id = $kemajuan['IDPENGURUS'];
-        // $petugas = Pengurus::findOrFail($id);
 
         // mengirim data ke view Kemajuan
         return view('santrii.perkembangan', [
-            'kemajuan' => $kemajuan,
+            'kemajuan' => $data,
             // 'petugas' => $petugas
         ]);
     }

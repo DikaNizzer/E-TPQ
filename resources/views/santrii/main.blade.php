@@ -45,6 +45,7 @@
 
 
 
+        <br><br>
         <div class="copyrights">
             <div class="container">
                 <div class="footer-distributed">

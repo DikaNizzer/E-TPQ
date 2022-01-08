@@ -2,6 +2,7 @@
 use App\Models\Santri;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BabController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\OrtuController;
 use App\Http\Controllers\PeranController;
@@ -38,10 +39,10 @@ Route::get('/test-koneksi-database', function() {
 	}
 });
 //halaman data santri yang dilihat Santri
-Route::get('/santri{IDSANTRI}', [SantriController::class, 'index'] );
+Route::get('/santri', [SantriController::class, 'index'] );
 
-//halaman data santri yang dilihat ortu
-Route::get('/ortu{IDSANTRI}', [SantriController::class, 'index'] );
+// //halaman data santri yang dilihat ortu
+// Route::get('/ortu{IDSANTRI}', [SantriController::class, 'index'] );
 
 // //halaman perkembangan yang dilihat ortu
 // Route::get('/perkembangan', function () {
@@ -93,6 +94,9 @@ Route::get('/kembalikan{IDSANTRI}', [SantriController::class, 'kembalikan'] );
 //Untuk Mengembalikan RIwayat Data Santri
 Route::get('/permanen{IDSANTRI}', [SantriController::class, 'permanen'] );
 
+//LOGOUT
+Route::get('/logoutsan', [SantriController::class, 'logout']);
+
 // Login Pengurus
 Route::post('/logpetugas', [PengurusController::class, 'postLogin'] );
 
@@ -132,7 +136,7 @@ Route::get('/Kemajuan', [KemajuanController::class, 'tampil'] );
 Route::get('/kelasIqra', [BukuController::class, 'indexBuku'] );
 
 Route::get('/tambahBuku', function () {
-    return view('petugas.tambahBuku');
+    return view('petugass.tambahBuku');
 });
 
 //menamilkan data buku
@@ -197,7 +201,13 @@ Route::post('/buatkemajuan', [KemajuanController::class, 'buat'] );
 Route::post('/logortu', [OrtuController::class, 'postLogin'] );
 
 //halaman data santri yang dilihat Ortu
-Route::get('/ortu{IDSANTRI}', [OrtuController::class, 'index'] );
+Route::get('/ortu', [OrtuController::class, 'index'] );
 
 // Lihat Perkembangan Santri
 Route::get('/ortuliat{IDSANTRI}', [OrtuController::class, 'santri'] );
+
+//LOGOUT
+Route::get('/logoutortu', [OrtuController::class, 'logout']);
+
+// Membuat Data Bab
+Route::post('/buatbab', [BabController::class, 'tambahBab'] );

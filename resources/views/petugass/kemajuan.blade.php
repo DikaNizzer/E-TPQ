@@ -23,7 +23,7 @@
 							<th>Status</th>
 							<th>Nilai</th>
                             <th>Keterangan</th>
-                            <th>Menu</th>
+
 							</tr>
 						</thead>
                         @foreach ($kemajuan as $maju)
@@ -35,13 +35,17 @@
                             {{-- @endforeach --}}
 
 							<td>{{ $maju->TANGGAL }}</td>
-							<td>{{ $maju->STATUS }}</td>
+
+                                @if ( $maju->STATUS == "N")
+                                <td> Naik</td>
+                                @elseif ( $maju->STATUS == "T")
+                                <td>Tetap</td>
+                                @elseif ( $maju->STATUS == "M")
+                                <td>Mundur</td>
+                                @endif
                             <td>{{ $maju->nilai }}</td>
 							<td>{{ $maju->keterangan }}</td>
-							<td>
-                                <a href="/edit{{ $maju->IDSANTRI }}" class="btn btn-primary">Edit kemajuan</a>
-								<a href="/santrihapus{{ $maju->IDSANTRI }}" class="btn btn-danger">Hapus kemajuan</a>
-                            </td>
+
 						</tr>
 						</tbody>
                         @endforeach
@@ -49,7 +53,7 @@
 					</div>
 				</div>
 			</div>
-                <a href="/detail{{ $santri->IDSANTRI }}" class="btn btn-primary">Kembali</a>
+                <a href="/Kemajuan" class="btn btn-primary">Kembali</a>
 
             {{-- <div class="d-flex justify-content-end">
                 {{ $santri->links() }}

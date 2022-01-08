@@ -87,7 +87,7 @@
                           <div class="form-group">
                               <div class="col-sm-12">
                                 <label for="id">Nama Santri</label>
-                                  <input class="form-control" name="IDSANTRI" id="nama" type="text"  readonly >
+                                  <input class="form-control" name="nama" id="nama" type="text"  readonly >
                               </div>
                           </div>
                           <div class="form-group">
@@ -95,15 +95,11 @@
                                 <input class="form-control" name="IDSANTRI" id="hasilid" type="hidden"  readonly >
                             </div>
                         </div>
-                        <div class="form">
-                            <label for = "location" > Nama Pengurus:</label>
-                                <select name="IDPENGURUS" multiple class="form-control"  id="Select" >
-                                    <option selected> Pilih Nama </option>
-                               @foreach ($pengurus as $admin)
-                                      <option value="{{ $admin->IDPENGURUS }}"> {{ $admin->NAMA }} </option>
-                                @endforeach
-                                </select>
-                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-12">
+                              <input class="form-control" name="IDPENGURUS" value="{{ Auth::user()->IDPENGURUS }}" id="hasilid" type="hidden"  readonly >
+                          </div>
+                      </div>
                         <div class="form">
                             <label for = "location" > Status</label>
                                 <select name="STATUS" multiple class="form-control"  id="Select" >
@@ -114,6 +110,21 @@
                                       <option value="M"> Mundur </option>
 
                                 </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "location" > Bab</label>
+                            <div class="col-sm-12">
+                                <select class="form-select col-sm-12" aria-label="Default select example" name="bab_IDBAB">
+                                    <option selected>Pilih Bab Yang Di baca</option>
+                                    @foreach ($bab as $buku )
+                                        <option value="{{ $buku['IDBAB'] }}">{{ $buku['JUDUL'] }} </option>
+                                    @endforeach
+
+
+                                </select>
+                            </div>
+                            <br>
                         </div>
 
                         <div class="form-group">

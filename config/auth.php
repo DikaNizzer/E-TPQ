@@ -45,6 +45,11 @@ return [
             'driver' => 'session',
             'provider' => 'pengurus',
         ],
+
+        'websantri' => [
+            'driver' => 'session',
+            'provider' => 'santris',
+        ],
     ],
 
     /*
@@ -75,10 +80,10 @@ return [
             'model' => App\Models\Pengurus::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'santris' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Santri::class,
+        ],
     ],
 
     /*

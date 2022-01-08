@@ -41,14 +41,19 @@
                                 <div class="form-group">
                                     <div class="maxl">
 
+                                        <label for="Absen">Jenis Kelamin : </label>
+                                        @if ($san->GENDER == 'M')
                                         <label class="radio inline">
                                             <input type="radio" name="gender" value="L" checked>
-                                            <span> L </span>
+                                            <span> Laki - Laki </span>
                                         </label>
+                                        @else
                                         <label class="radio inline">
-                                            <input type="radio" name="gender" value="P">
-                                            <span>P </span>
+                                            <input type="radio" name="gender" value="P" checked>
+                                            <span>Perempuan </span>
                                         </label>
+
+                                        @endif
                                         <a href="/cetak{{ $san->IDSANTRI }}" class="btnRegister"> Print Data </a>
                                     </div>
                                 </div>
@@ -70,10 +75,7 @@
                                     <label for="Absen">Tempat Lahir : </label>
                                     <p class="kotak">{{ $san->KOTALHR }}</p>
                                 </div>
-                                <div class="form-group">
-                                    <label for="Absen">Password : </label>
-                                    <p class="kotak">{{ $san->PASSWORD }}</p>
-                                </div>
+
                                 <a href="/kemajuan{{ $san->IDSANTRI }}"><button type="button"  class="btnRegister"> Lihat Riwayat Perkembangan </button></a>
                             </div>
                             <br>

@@ -28,7 +28,11 @@
                     <th scope="row" class="scope" >{{ $loop->iteration }}</th>
                     <td>{{$data->PERAN}}</td>
                     <td>{{$data->created_at}}</td>
-                    <td>{{ $data->AKTIF }}</td>
+                        @if ( $data->AKTIF == 0)
+                        <td> Non Aktif</td>
+                        @elseif ( $data->AKTIF == 1)
+                        <td>Aktif</td>
+                        @endif
                     <td>
                         <a href="kembaliperan{{ $data->IDPERAN }}" class="btn btn-info"> Kembalikan Data</a>
                         <a href="dpr{{ $data->IDPERAN }}" class="btn btn-danger"> Hapus Permanen </a>

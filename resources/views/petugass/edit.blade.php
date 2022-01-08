@@ -44,26 +44,13 @@
                                         <label for="alamat">Alamat : </label>
                                         <input type="text" class="form-control"  value="{{ $san->ALAMATORTU }}" name="alamat"/>
                                     </div>
-                                    {{-- <div class="form-group">
-                                        <div class="maxl">
 
-                                            <label class="radio inline">
-                                                <input type="radio" name="gender" value="L" checked>
-                                                <span> L </span>
-                                            </label>
-                                            <label class="radio inline">
-                                                <input type="radio" name="gender" value="P">
-                                                <span>P </span>
-                                            </label>
-
-                                        </div>
-                                    </div> --}}
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="jk">Jenis Kelamin : </label>
                                         <input type="text" class="form-control"  value="{{ $san->GENDER }}" name="jk"/>
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group">
                                         <label for="email">Email : </label>
                                         <input type="text" class="form-control"  value="{{ $san->EMAIL }}"name="email"/>
@@ -80,6 +67,18 @@
                                         <label for="foto" class="form-label">Upload Foto</label>
                                         <input type="hidden" class="form-control" value="{{ $san->foto }}" name="fotolama"/>
                                         <input class="form-control" type="file" id="foto" name="foto" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="foto" class="form-label">Jenis Kelamin</label>
+                                        {{-- <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="GENDER" required/> --}}
+
+                                        <div class="col-sm-12">
+                                            <select class="form-select col-sm-12" aria-label="Default select example" name="jk">
+                                                <option selected>Jenis Kelamin</option>
+                                                <option value="M">Laki - Laki </option>
+                                                <option value="F">Perempuan</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Edit Data"/>
                                 </div>

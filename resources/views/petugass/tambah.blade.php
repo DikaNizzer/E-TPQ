@@ -30,9 +30,7 @@
                             <h3 class="register-heading">Data Diri Santri</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="ID Santri" value="" name="IDSANTRI" required/>
-                                    </div>
+
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Password" value="" name="PASSWORD"required />
                                     </div>
@@ -50,24 +48,19 @@
                                         <input type="text" class="form-control" placeholder="Alamat Orang Tua" value="" name="ALAMATORTU" required/>
                                     </div>
                                     <div class="form-group">
-                                        <div class="maxl">
+                                        {{-- <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="GENDER" required/> --}}
 
-                                            {{-- <label class="radio inline">
-                                                <input type="radio" name="gender" value="L" checked>
-                                                <span> L </span>
-                                            </label>
-                                            <label class="radio inline">
-                                                <input type="radio" name="gender" value="P">
-                                                <span>P </span>
-                                            </label> --}}
-
+                                        <div class="col-sm-12">
+                                            <select class="form-select col-sm-12" aria-label="Default select example" name="GENDER">
+                                                <option selected>Jenis Kelamin</option>
+                                                <option value="M">Laki - Laki </option>
+                                                <option value="F">Perempuan</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Jenis Kelamin" value="" name="GENDER" required/>
-                                    </div>
+
                                     <div class="form-group">
                                         <input type="email" class="form-control" placeholder="Email" value="" name="EMAIL" required/>
                                     </div>
@@ -89,6 +82,7 @@
                                         <label for="foto" class="form-label">Upload Foto</label>
                                         <input class="form-control" type="file" id="foto" name="foto" >
                                     </div>
+
                                     <input type="submit" class="btnRegister"  value="Tambah Data"/>
                                 </div>
                             </div>

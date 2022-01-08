@@ -6,7 +6,7 @@ use App\Models\Santri;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 
-
+use App\Http\Controllers\Auth\LoginController as DefaultLoginController;
 // panggil model Santri
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -14,16 +14,14 @@ use Illuminate\Support\Facades\Auth;
 
 class SantriController extends Controller
 {
-    public function index($IDSANTRI){
+    // public function __construct()
+    // {
+    //     $this->middleware('guest:santri')->except('logout');
+    // }
 
-        //ambil data dari table santri
-        $santri = DB::table('santri')->where('IDSANTRI',$IDSANTRI)->get();
+    public function index(){
 
-
-        // mengirim data ke view santri
-        return view('santrii/santri2', [
-            'santri' => $santri
-        ]);
+        return view('santrii/santri2');
     }
 
     //yang dikiri nama kolom yang di kanan request nama dari form
@@ -32,7 +30,6 @@ class SantriController extends Controller
     {
         // dd($request);
         $validatedData = $request->validate([
-            'IDSANTRI' => 'required|unique:santri',
             'NAMASATRI' =>['required', 'max:255'],
             // 'EMAIL' => 'required|email:dns|max:30',
             'HP' => ['required', 'max:15'],
@@ -46,7 +43,7 @@ class SantriController extends Controller
         $validatedpass=  password_hash($request->PASSWORD, PASSWORD_DEFAULT);
         // insert data ke table Santri
         DB::table('santri')->insert([
-            'IDSANTRI' => $request->IDSANTRI,
+
             'PASSWORD' => $validatedpass,
             'NAMASATRI' => $request->NAMASATRI,
             'TAGGALLHR' => $request->TAGGALLHR,
@@ -169,6 +166,7 @@ class SantriController extends Controller
 
 
 
+
         public function postLogin(Request $request){
 
             $santri = Santri::where('EMAIL', $request->EMAIL)->first();
@@ -177,18 +175,32 @@ class SantriController extends Controller
                 return back()->with('logerror', 'Login Gagal');
             }else{
                 if(password_verify($request->PASSWORD, $santri->PASSWORD)){
-                    if(Auth::loginUsingId($santri->IDSANTRI)){
-                        // $request->session()->regenerate();
-                        $request->session()->put('santri', $santri['IDSANTRI']);
-                        return redirect('/santri'.$santri->IDSANTRI);
+                    // if(Auth::guard('websantri')){
+                        Auth::guard('websantri')->login($santri);
+                        $request->session()->regenerate();
+                        $request->session()->put('santri', $santri);
 
-                    }
+                        return redirect('/santri');
+
+                    // }
                 }else{
                     return back()->with('logerror', 'Login Gagal');
                 }
             }
 
 
+        }
+
+        public function logout(){
+
+            Auth::logout();
+
+            request()->session()->invalidate();
+
+            request()->session()->regenerateToken();
+            session()->forget('santri');
+
+            return redirect('/');
         }
 
 };

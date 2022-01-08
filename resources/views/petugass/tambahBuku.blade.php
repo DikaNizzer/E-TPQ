@@ -19,9 +19,7 @@
                             <h3 class="register-heading">Tambah Daftar Buku</h3>
                             <div class="row register-form mt-15">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="ID Buku" value="" name="idbuku"/>
-                                    </div>
+
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Nama Buku" value="" name="namabuku"/>
                                     </div>

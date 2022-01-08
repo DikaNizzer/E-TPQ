@@ -17,8 +17,6 @@ class PengurusController extends Controller
 
     public function index(){
 
-
-        // mengirim data ke view santri
         return view('petugass/pengurus');
     }
 

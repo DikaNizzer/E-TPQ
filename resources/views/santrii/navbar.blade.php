@@ -1,5 +1,5 @@
 
-	
+
     <!-- LOADER -->
 	<div id="preloader">
 		<div class="loader-container">
@@ -8,8 +8,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- END LOADER -->	
-	
+	<!-- END LOADER -->
+
 	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,7 +39,7 @@
 						</li>
 						<li class="nav-item"><a class="nav-link" href="data">Pengajar</a></li>
 						{{-- <li class="nav-item"><a class="nav-link" href="#">Pengajar</a></li> --}}
-						<li class="nav-item"><a class="nav-link" href="/">Keluar</a></li>
+						<li class="nav-item"><a class="nav-link" href="/logoutsan">Keluar</a></li>
 						<ul></ul>
 						<ul></ul>
 					</ul>

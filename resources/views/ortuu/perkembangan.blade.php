@@ -1,39 +1,3 @@
-<!-- Modal -->
-    <div class="modal fade" id="buku" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header tit-up">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Buku Yang Telah Di Baca</h4>
-            </div>
-            <div class="modal-body customer-box">
-                <!-- Nav tabs -->
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div class="tab-pane active" id="Registration">
-                        <form role="form" class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" placeholder="Nama Buku" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" placeholder="Nama Bab" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" placeholder="Ketengan" type="text">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
 
 
 @extends('ortuu.main')
@@ -45,22 +9,45 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                Tanggal : {{ $maju->TANGGAL }}
+                <strong> Guru yang menilai  : {{ $maju['NAMA'] }}</strong>
+            </div>
+            <div class="card-header">
+                <strong> Tanggal Penilaian : {{ $maju['TANGGAL'] }}</strong>
             </div>
             <div class="card-body">
-                {{-- @foreach ($maju->pengurus as $pengurus )
-                <h5 class="card-title">Petugas Yang Menilai : {{ $pengurus->NAMA }} </h5>
-                @endforeach --}}
+                {{-- <p class="card-text">Bab Yang dibaca : {{ $maju['BAB'] }} </p>
+                <p class="card-text">Judul Bab Yang dibaca : {{ $maju['JUDUL'] }} </p>
+                <p class="card-text">Keterangan {{ $maju['keterangan'] }} </p>
 
-                <p class="card-text">{{ $maju->keterangan }} </p>
-                <p class="card-text">Dengan Nilai : {{ $maju->nilai }} </p>
-                <a href="#" data-toggle="modal" data-target="#buku" class="btn btn-primary">Buku Yang Telah Di Baca</a>
+                <p class="card-text">{{ $maju['keterangan'] }} </p>
+                <p class="card-text">Dengan Nilai : {{ $maju['nilai'] }} </p> --}}
+
+
+
+                  <ul class="list-ticked">
+                    <li>Bab Yang dibaca : {{ $maju['BAB'] }}</li>
+                    <li>Judul Bab Yang dibaca : {{ $maju['JUDUL'] }}</li>
+                    <li>Keterangan : {{ $maju['keterangan'] }}</li>
+                    <li>
+                        Status : @if ($maju['STATUS'] == "N")
+                                Naik
+                                @elseif ($maju['STATUS'] == "T")
+                                Tetap
+                                @elseif ($maju['STATUS'] == "M")
+                                Mundur
+                                @endif
+                    </li>
+                  </ul>
+                  <blockquote class="blockquote blockquote-primary">
+                    <footer class="blockquote-footer"> Dengan Nilai : <cite title="Source Title">Dengan Nilai : {{ $maju['nilai'] }}</cite>
+                    </footer>
+                  </blockquote>
             </div>
         </div>
     </div>
     @endforeach
 
-    <a href="santri" class="btn btn-primary mt-5">Kembali</a>
+    <a href="ortu" class="btn btn-primary mt-5">Kembali</a>
 </div>
 
 

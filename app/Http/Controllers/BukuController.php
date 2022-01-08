@@ -24,7 +24,6 @@ class BukuController extends Controller
     {
         // insert data ke table buku
         DB::table('buku')->insert([
-            'IDBUKU' => $request->idbuku,
             'BUKU' => $request->namabuku,
             'KETERANGAN' => $request->ketbuku
         ]);

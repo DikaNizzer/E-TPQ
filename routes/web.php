@@ -73,7 +73,7 @@ Route::get('/detail{IDSANTRI}', [SantriController::class, 'detail'] );
 Route::get('/cetak{IDSANTRI}', [SantriController::class, 'cetak'] );
 
 //menampilkan Detail Santri yang mau di update
-Route::get('/edit{IDSANTRI}', [SantriController::class, 'edit'] );
+Route::get('/editKemajuan{IDSANTRI}', [SantriController::class, 'edit'] );
 
 //Menyimpan Data Santri Baru
 Route::post('/santriupdate', [SantriController::class, 'update'] );
@@ -126,11 +126,6 @@ Route::get('/logoutpetug', [PengurusController::class, 'logout']);
 
 //Menampilkan tbel santri dan menu kemajuan
 Route::get('/Kemajuan', [KemajuanController::class, 'tampil'] );
-
-//
-// Route::get('/kelasIqra', function () {
-//     return view('kelasIqra');
-// });
 
 //kelasIqra
 Route::get('/kelasIqra', [BukuController::class, 'indexBuku'] );
@@ -193,8 +188,20 @@ Route::get('/bab{IDBUKU}', [BukuController::class, 'bab'] );
 //untuk menampilkan riwayat perkembangan santri
 Route::get('/kemajuan{IDSANTRI}', [KemajuanController::class, 'index'] );
 
+//menampilkan Detail Kemajuan Santri yang mau di update
+Route::get('/editKemajuan{IDSANTRI}', [KemajuanController::class, 'edit'] );
+
+//Menyimpan Data peran baru
+Route::post('/kemajuanupdate', [KemajuanController::class, 'update'] );
+
+//halaman Tabel Santri
+Route::get('/tabelkemajuan', [KemajuanController::class, 'tabel'] );
+
 // Membuat Data Perkembangan
 Route::post('/buatkemajuan', [KemajuanController::class, 'buat'] );
+
+//Untuk menghapus(soft delete data Santri)
+Route::get('/kemajuanhapus{IDKEMAJUAN}', [KemajuanController::class, 'hapus'] );
 
 
 //LOGIN ORANG TUA

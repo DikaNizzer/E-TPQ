@@ -7,8 +7,10 @@
 
     @foreach ($kemajuan as $maju)
     <div class="container mt-4">
+        <center><h2> Daftar Buku Bacaan</h2></center>
         <div class="card">
             <div class="card-header">
+
                 <strong> Guru yang menilai  : {{ $maju['NAMA'] }}</strong>
             </div>
             <div class="card-header">
@@ -42,6 +44,7 @@
                     <footer class="blockquote-footer"> Dengan Nilai : <cite title="Source Title">Dengan Nilai : {{ $maju['nilai'] }}</cite>
                     </footer>
                   </blockquote>
+
             </div>
         </div>
     </div>
